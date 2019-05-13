@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9D32289EC7000A01E8E /* AppDelegate.swift */; };
+		80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9D72289EC7000A01E8E /* Main.storyboard */; };
+		80B1E9DB2289EC7300A01E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9DA2289EC7300A01E8E /* Assets.xcassets */; };
+		80B1E9DE2289EC7300A01E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9DC2289EC7300A01E8E /* LaunchScreen.storyboard */; };
+		80B1E9E92289EC7400A01E8E /* MyScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9E82289EC7400A01E8E /* MyScheduleTests.swift */; };
+		80B1E9F42289EC7400A01E8E /* MyScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9F32289EC7400A01E8E /* MyScheduleUITests.swift */; };
+		80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA012289ED2800A01E8E /* ActivityItem.swift */; };
+		80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */; };
+		80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */; };
+		80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA092289EDB300A01E8E /* AdminViewController.swift */; };
+		80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */; };
+		80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */; };
+		80B1EA102289EFFB00A01E8E /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
+		80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80B1E9E52289EC7400A01E8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80B1E9C82289EC7000A01E8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B1E9CF2289EC7000A01E8E;
+			remoteInfo = MySchedule;
+		};
+		80B1E9F02289EC7400A01E8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80B1E9C82289EC7000A01E8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B1E9CF2289EC7000A01E8E;
+			remoteInfo = MySchedule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80B1E9D02289EC7000A01E8E /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B1E9D32289EC7000A01E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80B1E9D82289EC7000A01E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80B1E9DA2289EC7300A01E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80B1E9DD2289EC7300A01E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80B1E9DF2289EC7400A01E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B1E9E42289EC7400A01E8E /* MyScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyScheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B1E9E82289EC7400A01E8E /* MyScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTests.swift; sourceTree = "<group>"; };
+		80B1E9EA2289EC7400A01E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B1E9EF2289EC7400A01E8E /* MyScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyScheduleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B1E9F32289EC7400A01E8E /* MyScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleUITests.swift; sourceTree = "<group>"; };
+		80B1E9F52289EC7400A01E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B1EA012289ED2800A01E8E /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
+		80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBlock.swift; sourceTree = "<group>"; };
+		80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		80B1EA092289EDB300A01E8E /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesViewController.swift; sourceTree = "<group>"; };
+		80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeWeekViewController.swift; sourceTree = "<group>"; };
+		80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewController.swift; sourceTree = "<group>"; };
+		80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80B1E9CD2289EC7000A01E8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B1E9E12289EC7400A01E8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B1E9EC2289EC7400A01E8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80B1E9C72289EC7000A01E8E = {
+			isa = PBXGroup;
+			children = (
+				80B1E9D22289EC7000A01E8E /* MySchedule */,
+				80B1E9E72289EC7400A01E8E /* MyScheduleTests */,
+				80B1E9F22289EC7400A01E8E /* MyScheduleUITests */,
+				80B1E9D12289EC7000A01E8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80B1E9D12289EC7000A01E8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80B1E9D02289EC7000A01E8E /* MySchedule.app */,
+				80B1E9E42289EC7400A01E8E /* MyScheduleTests.xctest */,
+				80B1E9EF2289EC7400A01E8E /* MyScheduleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80B1E9D22289EC7000A01E8E /* MySchedule */ = {
+			isa = PBXGroup;
+			children = (
+				80B1E9D32289EC7000A01E8E /* AppDelegate.swift */,
+				80B1E9D72289EC7000A01E8E /* Main.storyboard */,
+				80B1E9DA2289EC7300A01E8E /* Assets.xcassets */,
+				80B1E9DC2289EC7300A01E8E /* LaunchScreen.storyboard */,
+				80B1E9DF2289EC7400A01E8E /* Info.plist */,
+				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
+				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
+				80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */,
+				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
+				80B1EA092289EDB300A01E8E /* AdminViewController.swift */,
+				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
+				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
+				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
+			);
+			path = MySchedule;
+			sourceTree = "<group>";
+		};
+		80B1E9E72289EC7400A01E8E /* MyScheduleTests */ = {
+			isa = PBXGroup;
+			children = (
+				80B1E9E82289EC7400A01E8E /* MyScheduleTests.swift */,
+				80B1E9EA2289EC7400A01E8E /* Info.plist */,
+			);
+			path = MyScheduleTests;
+			sourceTree = "<group>";
+		};
+		80B1E9F22289EC7400A01E8E /* MyScheduleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80B1E9F32289EC7400A01E8E /* MyScheduleUITests.swift */,
+				80B1E9F52289EC7400A01E8E /* Info.plist */,
+			);
+			path = MyScheduleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80B1E9CF2289EC7000A01E8E /* MySchedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B1E9F82289EC7400A01E8E /* Build configuration list for PBXNativeTarget "MySchedule" */;
+			buildPhases = (
+				80B1E9CC2289EC7000A01E8E /* Sources */,
+				80B1E9CD2289EC7000A01E8E /* Frameworks */,
+				80B1E9CE2289EC7000A01E8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySchedule;
+			productName = MySchedule;
+			productReference = 80B1E9D02289EC7000A01E8E /* MySchedule.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80B1E9E32289EC7400A01E8E /* MyScheduleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B1E9FB2289EC7400A01E8E /* Build configuration list for PBXNativeTarget "MyScheduleTests" */;
+			buildPhases = (
+				80B1E9E02289EC7400A01E8E /* Sources */,
+				80B1E9E12289EC7400A01E8E /* Frameworks */,
+				80B1E9E22289EC7400A01E8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B1E9E62289EC7400A01E8E /* PBXTargetDependency */,
+			);
+			name = MyScheduleTests;
+			productName = MyScheduleTests;
+			productReference = 80B1E9E42289EC7400A01E8E /* MyScheduleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80B1E9EE2289EC7400A01E8E /* MyScheduleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B1E9FE2289EC7400A01E8E /* Build configuration list for PBXNativeTarget "MyScheduleUITests" */;
+			buildPhases = (
+				80B1E9EB2289EC7400A01E8E /* Sources */,
+				80B1E9EC2289EC7400A01E8E /* Frameworks */,
+				80B1E9ED2289EC7400A01E8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B1E9F12289EC7400A01E8E /* PBXTargetDependency */,
+			);
+			name = MyScheduleUITests;
+			productName = MyScheduleUITests;
+			productReference = 80B1E9EF2289EC7400A01E8E /* MyScheduleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80B1E9C82289EC7000A01E8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = AppsByGeorge;
+				TargetAttributes = {
+					80B1E9CF2289EC7000A01E8E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					80B1E9E32289EC7400A01E8E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 80B1E9CF2289EC7000A01E8E;
+					};
+					80B1E9EE2289EC7400A01E8E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 80B1E9CF2289EC7000A01E8E;
+					};
+				};
+			};
+			buildConfigurationList = 80B1E9CB2289EC7000A01E8E /* Build configuration list for PBXProject "MySchedule" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80B1E9C72289EC7000A01E8E;
+			productRefGroup = 80B1E9D12289EC7000A01E8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80B1E9CF2289EC7000A01E8E /* MySchedule */,
+				80B1E9E32289EC7400A01E8E /* MyScheduleTests */,
+				80B1E9EE2289EC7400A01E8E /* MyScheduleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80B1E9CE2289EC7000A01E8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B1E9DE2289EC7300A01E8E /* LaunchScreen.storyboard in Resources */,
+				80B1E9DB2289EC7300A01E8E /* Assets.xcassets in Resources */,
+				80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B1E9E22289EC7400A01E8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B1E9ED2289EC7400A01E8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80B1E9CC2289EC7000A01E8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */,
+				80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */,
+				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
+				80B1EA102289EFFB00A01E8E /* SignUpCollectionViewController.swift in Sources */,
+				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
+				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
+				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
+				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,
+				80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B1E9E02289EC7400A01E8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B1E9E92289EC7400A01E8E /* MyScheduleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B1E9EB2289EC7400A01E8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B1E9F42289EC7400A01E8E /* MyScheduleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80B1E9E62289EC7400A01E8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B1E9CF2289EC7000A01E8E /* MySchedule */;
+			targetProxy = 80B1E9E52289EC7400A01E8E /* PBXContainerItemProxy */;
+		};
+		80B1E9F12289EC7400A01E8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B1E9CF2289EC7000A01E8E /* MySchedule */;
+			targetProxy = 80B1E9F02289EC7400A01E8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80B1E9D72289EC7000A01E8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B1E9D82289EC7000A01E8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80B1E9DC2289EC7300A01E8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B1E9DD2289EC7300A01E8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80B1E9F62289EC7400A01E8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80B1E9F72289EC7400A01E8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80B1E9F92289EC7400A01E8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GW4E92HSRQ;
+				INFOPLIST_FILE = MySchedule/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "apps-by-george.com.MySchedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80B1E9FA2289EC7400A01E8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GW4E92HSRQ;
+				INFOPLIST_FILE = MySchedule/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "apps-by-george.com.MySchedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80B1E9FC2289EC7400A01E8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GW4E92HSRQ;
+				INFOPLIST_FILE = MyScheduleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "apps-by-george.com.MyScheduleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySchedule.app/MySchedule";
+			};
+			name = Debug;
+		};
+		80B1E9FD2289EC7400A01E8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GW4E92HSRQ;
+				INFOPLIST_FILE = MyScheduleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "apps-by-george.com.MyScheduleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySchedule.app/MySchedule";
+			};
+			name = Release;
+		};
+		80B1E9FF2289EC7400A01E8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GW4E92HSRQ;
+				INFOPLIST_FILE = MyScheduleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "apps-by-george.com.MyScheduleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MySchedule;
+			};
+			name = Debug;
+		};
+		80B1EA002289EC7400A01E8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GW4E92HSRQ;
+				INFOPLIST_FILE = MyScheduleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "apps-by-george.com.MyScheduleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MySchedule;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80B1E9CB2289EC7000A01E8E /* Build configuration list for PBXProject "MySchedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B1E9F62289EC7400A01E8E /* Debug */,
+				80B1E9F72289EC7400A01E8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B1E9F82289EC7400A01E8E /* Build configuration list for PBXNativeTarget "MySchedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B1E9F92289EC7400A01E8E /* Debug */,
+				80B1E9FA2289EC7400A01E8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B1E9FB2289EC7400A01E8E /* Build configuration list for PBXNativeTarget "MyScheduleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B1E9FC2289EC7400A01E8E /* Debug */,
+				80B1E9FD2289EC7400A01E8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B1E9FE2289EC7400A01E8E /* Build configuration list for PBXNativeTarget "MyScheduleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B1E9FF2289EC7400A01E8E /* Debug */,
+				80B1EA002289EC7400A01E8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80B1E9C82289EC7000A01E8E /* Project object */;
+}
