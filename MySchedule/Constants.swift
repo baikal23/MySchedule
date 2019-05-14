@@ -8,13 +8,13 @@
 
 import Foundation
 
-let kMondayAM = "mondayAM"
-let kMondayPM = "mondayPM"
-let kTuesdayAM = "tuesdayAM"
-let kTuesdayPM = "tuesdayPM"
-let kWednesdayAM = "wednesdayAM"
-let kWednesdayPM = "wednesdayPM"
-let kThursdayAM = "thursdayAM"
-let kThursdayPM = "thursdayPM"
-let kFridayAM = "fridayAM"
-let kFridayPM = "fridayPM"
+let kMondayAM = "Monday AM"
+let kMondayPM = "Monday PM"
+let kTuesdayAM = "Tuesday AM"
+let kTuesdayPM = "Tuesday PM"
+let kWednesdayAM = "Wednesday AM"
+let kWednesdayPM = "Wednesday PM"
+let kThursdayAM = "Thursday AM"
+let kThursdayPM = "Thursday PM"
+let kFridayAM = "Friday AM"
+let kFridayPM = "Friday PM"

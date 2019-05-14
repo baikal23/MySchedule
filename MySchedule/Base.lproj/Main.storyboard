@@ -120,10 +120,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCu-gR-s9b">
                                 <rect key="frame" x="344.5" y="784" width="79" height="30"/>
                                 <state key="normal" title="AddActivity"/>
+                                <connections>
+                                    <action selector="addActivityPressed:" destination="ToE-DD-6HD" eventType="touchUpInside" id="lyP-D1-USY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODJ-wf-IIg">
                                 <rect key="frame" x="332.5" y="864" width="103" height="30"/>
                                 <state key="normal" title="NextTimeBlock"/>
+                                <connections>
+                                    <action selector="nextTimeBlockPressed:" destination="ToE-DD-6HD" eventType="touchUpInside" id="5EI-rH-cZk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-qz-eSP">
                                 <rect key="frame" x="365.5" y="944" width="37" height="30"/>
@@ -215,6 +221,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ezp-Gg-DJH"/>
                     </view>
+                    <connections>
+                        <outlet property="activityTextField" destination="HWN-tL-gke" id="mqz-9J-scR"/>
+                        <outlet property="allDayTextField" destination="kpF-ez-A4N" id="3Ut-OF-Xlb"/>
+                        <outlet property="limitTextField" destination="FRZ-up-Reo" id="AfL-Od-2HZ"/>
+                        <outlet property="scheduleBlockPicker" destination="ZqB-hw-mGn" id="yk1-nl-fLO"/>
+                        <outlet property="weekPicker" destination="dgM-wK-UWK" id="kc4-xX-dgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFz-m9-ITw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

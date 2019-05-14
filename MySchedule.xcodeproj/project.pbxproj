@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BE48228B6D44000935AD /* Filehelpers.swift */; };
 		80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9D32289EC7000A01E8E /* AppDelegate.swift */; };
 		80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9D72289EC7000A01E8E /* Main.storyboard */; };
 		80B1E9DB2289EC7300A01E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9DA2289EC7300A01E8E /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8069BE48228B6D44000935AD /* Filehelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filehelpers.swift; sourceTree = "<group>"; };
 		80B1E9D02289EC7000A01E8E /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B1E9D32289EC7000A01E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B1E9D82289EC7000A01E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				80B1E9DA2289EC7300A01E8E /* Assets.xcassets */,
 				80B1E9DC2289EC7300A01E8E /* LaunchScreen.storyboard */,
 				80B1E9DF2289EC7400A01E8E /* Info.plist */,
+				8069BE48228B6D44000935AD /* Filehelpers.swift */,
 				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
 				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
 				80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */,
@@ -288,6 +291,7 @@
 				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
 				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
+				8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */,
 				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,
 				80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */,
 			);

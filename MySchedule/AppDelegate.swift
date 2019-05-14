@@ -5,6 +5,7 @@
 //  Created by Susan Kohler on 5/13/19.
 //  Copyright © 2019 AppsByGeorge. All rights reserved.
 //  May 13 - initial commit
+// May 14 - working on making activities and scheduleBlocks
 
 import UIKit
 
