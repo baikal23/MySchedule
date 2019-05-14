@@ -21,6 +21,7 @@
 		80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */; };
 		80B1EA102289EFFB00A01E8E /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */; };
+		80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA4D228B3E0C00A01E8E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeWeekViewController.swift; sourceTree = "<group>"; };
 		80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewController.swift; sourceTree = "<group>"; };
 		80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewCell.swift; sourceTree = "<group>"; };
+		80B1EA4D228B3E0C00A01E8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
 				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
 				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
+				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
 				80B1EA102289EFFB00A01E8E /* SignUpCollectionViewController.swift in Sources */,
 				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
+				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
 				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
 				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,
