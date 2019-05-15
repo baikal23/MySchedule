@@ -134,6 +134,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ2-qz-eSP">
                                 <rect key="frame" x="365.5" y="944" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="ToE-DD-6HD" eventType="touchUpInside" id="tW0-rg-iAr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AllDay ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzJ-Qj-VJB">
                                 <rect key="frame" x="100" y="655" width="62" height="21"/>
@@ -169,7 +172,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dgM-wK-UWK">
-                                <rect key="frame" x="294" y="130.5" width="320" height="100"/>
+                                <rect key="frame" x="294" y="131" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="AKP-Ci-SU1"/>
                                 </constraints>
@@ -178,7 +181,7 @@
                                 </date>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-hw-mGn">
-                                <rect key="frame" x="294" y="396.5" width="320" height="100"/>
+                                <rect key="frame" x="294" y="397" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="sNj-iX-jvd"/>
                                 </constraints>
@@ -246,6 +249,22 @@
                                 <state key="normal" title="Add Activities"/>
                                 <connections>
                                     <segue destination="ToE-DD-6HD" kind="show" id="9z5-ij-gmD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5b-IO-wRx">
+                                <rect key="frame" x="318" y="633" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ClearOldSchedules"/>
+                                <connections>
+                                    <action selector="clearOldSchedulesPressed:" destination="jNz-TU-wOB" eventType="touchUpInside" id="Rlp-gS-Ud8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWB-R4-RId">
+                                <rect key="frame" x="328" y="752" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GetAllSchedules"/>
+                                <connections>
+                                    <action selector="getAllSchedulesPressed:" destination="jNz-TU-wOB" eventType="touchUpInside" id="iI1-u4-QOs"/>
                                 </connections>
                             </button>
                         </subviews>

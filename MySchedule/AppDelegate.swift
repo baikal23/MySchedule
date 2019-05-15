@@ -6,6 +6,7 @@
 //  Copyright © 2019 AppsByGeorge. All rights reserved.
 //  May 13 - initial commit
 // May 14 - working on making activities and scheduleBlocks
+// working on archiving schedules - basic mechanism works, but need more testing
 
 import UIKit
 

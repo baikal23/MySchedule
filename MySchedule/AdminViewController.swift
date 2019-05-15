@@ -16,7 +16,16 @@ class AdminViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func clearOldSchedulesPressed(_ sender: Any) {
+        ScheduleBlock.deleteAllOldSchedules()
+    }
+    
+    @IBAction func getAllSchedulesPressed(_ sender: Any) {
+        let theSchedules = ScheduleBlock.getSchedules()
+        if theSchedules.count > 0 {
+            print("We have schedules")
+        }
+    }
     /*
     // MARK: - Navigation
 

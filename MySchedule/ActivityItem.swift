@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityItem: NSObject {
+class ActivityItem: NSObject, NSCoding {
     var activityName:String
     var activityLimit:Int
     var participants:[String]
@@ -23,13 +23,13 @@ class ActivityItem: NSObject {
     
     required init(coder: NSCoder) {
         self.activityName = coder.decodeObject(forKey: "activityName")! as! String
-        self.activityLimit = coder.decodeObject(forKey: "activityLimit")! as! Int
-        self.participants = coder.decodeObject(forKey: "participants")! as! [String]
+        self.activityLimit = coder.decodeInteger(forKey: "activityLimit")
+        self.participants = coder.decodeObject(forKey: "participants")! as! [String] 
         self.allDay = coder.decodeObject(forKey: "allDay") as? Bool ?? coder.decodeBool(forKey: "allDay")
         super.init()
     }
     
-    func encodeWithCoder(_ coder: NSCoder) {
+    func encode(with coder: NSCoder) {
         coder.encode(self.activityName, forKey: "activityName")
         coder.encode(self.activityLimit, forKey:"activityLimit")
         coder.encode(self.participants, forKey:"participants")

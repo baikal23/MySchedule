@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleBlock: NSObject {
+class ScheduleBlock: NSObject, NSCoding {
     var scheduleTime:String
     var dateStamp:Date
     var displayIndex:Int
@@ -45,12 +45,12 @@ class ScheduleBlock: NSObject {
     required init(coder: NSCoder) {
         self.scheduleTime = coder.decodeObject(forKey: "scheduleTime")! as! String
         self.dateStamp = coder.decodeObject(forKey: "dateStamp")! as! Date
-        self.displayIndex = coder.decodeObject(forKey: "displayIndex")! as! Int
+        self.displayIndex = coder.decodeInteger(forKey: "displayIndex")
         self.activityArray = coder.decodeObject(forKey: "activityArray") as! [ActivityItem]
         super.init()
     }
     
-    func encodeWithCoder(_ coder: NSCoder) {
+    func encode(with coder: NSCoder) {
         coder.encode(self.scheduleTime, forKey: "scheduleTime")
         coder.encode(self.dateStamp, forKey:"dateStamp")
         coder.encode(self.displayIndex, forKey:"displayIndex")

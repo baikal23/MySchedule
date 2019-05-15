@@ -14,6 +14,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     var currentBlock:String = ""
     var currentRow = 0
     var currentScheduleBlock:ScheduleBlock!  // must initialize before use
+    var scheduleArray:[ScheduleBlock] = []
     
     @IBOutlet weak var weekPicker: UIDatePicker!
     @IBOutlet weak var scheduleBlockPicker: UIPickerView!
@@ -29,6 +30,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         pickerData = [kMondayAM, kMondayPM, kTuesdayAM, kTuesdayPM, kWednesdayAM, kWednesdayPM, kThursdayAM, kThursdayPM, kFridayAM, kFridayPM]
         // must initialize the currentScheduleBlock
         currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date)
+        self.pickerView(self.scheduleBlockPicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
         // Do any additional setup after loading the view.
     }
     
@@ -48,16 +50,23 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         currentScheduleBlock.activityArray.append(newActivity)
     }
     @IBAction func nextTimeBlockPressed(_ sender: Any) {
-        self.saveCurrentScheduleBlock()
+        self.scheduleArray.append(currentScheduleBlock)
         let newRow = currentRow + 1
         print("Now new row is \(newRow)")
         self.scheduleBlockPicker.selectRow(newRow, inComponent: 0, animated: true)
         self.pickerView(self.scheduleBlockPicker, didSelectRow: newRow, inComponent: 0)
+        self.activityTextField.text = ""
+        self.limitTextField.text = ""
+        self.allDayTextField.text = ""
+       // self.currentScheduleBlock.activityArray.removeAll()  //reset activityArray
+        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date) // make new currentScheduleBlock so new data does not overwrite existing stuff
     }
-    func saveCurrentScheduleBlock(){
-        //TODO:  add scheduleBlock to array of scheduleBlocks and archive
-        print("add scheduleBlock to array of scheduleBlocks and archive")
+    
+    @IBAction func donePressed(_ sender: Any) {
+        self.scheduleArray.append(currentScheduleBlock)
+        ScheduleBlock.saveSchedules(scheduleArray: scheduleArray)
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
