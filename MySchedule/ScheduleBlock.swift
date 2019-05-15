@@ -56,4 +56,38 @@ class ScheduleBlock: NSObject {
         coder.encode(self.displayIndex, forKey:"displayIndex")
         coder.encode(self.activityArray, forKey: "activityArray")
     }
+    
+    class func saveSchedules(scheduleArray:[ScheduleBlock]) {
+        let scheduleArchive = Filehelpers.fileInUserDocumentDirectory("scheduleArchive")
+        let scheduleURL = URL(fileURLWithPath: scheduleArchive)
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: scheduleArray, requiringSecureCoding: false)
+            try data.write(to: scheduleURL)
+        } catch {
+            print("Couldn't write file")
+        }
+    }
+
+    class func getSchedules() -> [ScheduleBlock] {
+        let scheduleArchive = Filehelpers.fileInUserDocumentDirectory("scheduleArchive")
+        
+        let manager = FileManager.default
+        let scheduleData = manager.contents(atPath: scheduleArchive) as Data?
+        if (scheduleData == nil ) {
+            print("no schedules")
+        } else {
+            do {
+                if let loadedSchedules = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(scheduleData!) as? [ScheduleBlock] {
+                    return loadedSchedules
+                }
+            } catch {
+                print("Couldn't read file.")
+            }
+        }
+        return []
+    }
+    class func deleteAllOldSchedules() {
+        let emptySchedules:[ScheduleBlock] = []
+        ScheduleBlock.saveSchedules(scheduleArray: emptySchedules)
+    }
 }
