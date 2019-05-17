@@ -13,6 +13,7 @@ class ScheduleBlock: NSObject, NSCoding {
     var dateStamp:Date
     var displayIndex:Int
     var activityArray:[ActivityItem]
+    var addedToScheduleArray = false
 
     init(scheduleTime:String, dateStamp:Date) {
         self.scheduleTime = scheduleTime

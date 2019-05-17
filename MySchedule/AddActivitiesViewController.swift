@@ -11,10 +11,11 @@ import UIKit
 class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var pickerData: [String] = [String]()
-    var currentBlock:String = ""
+    var currentTime:String = ""
     var currentRow = 0
     var currentScheduleBlock:ScheduleBlock!  // must initialize before use
     var scheduleArray:[ScheduleBlock] = []
+    var addedToScheduleArray = false
     
     @IBOutlet weak var weekPicker: UIDatePicker!
     @IBOutlet weak var scheduleBlockPicker: UIPickerView!
@@ -29,12 +30,13 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         // Input the data into the array
         pickerData = [kMondayAM, kMondayPM, kTuesdayAM, kTuesdayPM, kWednesdayAM, kWednesdayPM, kThursdayAM, kThursdayPM, kFridayAM, kFridayPM]
         // must initialize the currentScheduleBlock
-        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date)
+        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date) // make a scheduleBlock
         self.pickerView(self.scheduleBlockPicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
         // Do any additional setup after loading the view.
     }
     
     @IBAction func addActivityPressed(_ sender: Any) {
+        // this adds an activity to the currentScheduleBlock
         let name = activityTextField.text!
         let limit = limitTextField.text!
         let limitNumber = Int(limit)!
@@ -43,30 +45,37 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
             allDay = true
         }
         let newActivity = ActivityItem(activityName: name, activityLimit: limitNumber, allDay: allDay)
-        print("Activity is \(newActivity)")
-        currentScheduleBlock.scheduleTime = currentBlock
-        currentScheduleBlock.dateStamp = weekPicker.date
-        currentScheduleBlock.displayIndex = currentRow
+        // add activity to currentBlock or save it and make a new schedule block
+        if (currentScheduleBlock.scheduleTime != currentTime) {
+            self.scheduleArray.append(currentScheduleBlock)
+            self.updateScheduleBlock()
+        }
         currentScheduleBlock.activityArray.append(newActivity)
+        print("Activity is" + newActivity.activityName)
+        print("Added to " + currentScheduleBlock.scheduleTime)
     }
     @IBAction func nextTimeBlockPressed(_ sender: Any) {
-        self.scheduleArray.append(currentScheduleBlock)
         let newRow = currentRow + 1
-        print("Now new row is \(newRow)")
         self.scheduleBlockPicker.selectRow(newRow, inComponent: 0, animated: true)
         self.pickerView(self.scheduleBlockPicker, didSelectRow: newRow, inComponent: 0)
         self.activityTextField.text = ""
         self.limitTextField.text = ""
-        self.allDayTextField.text = ""
-       // self.currentScheduleBlock.activityArray.removeAll()  //reset activityArray
-        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date) // make new currentScheduleBlock so new data does not overwrite existing stuff
+        self.allDayTextField.text = "n"
+        self.view.setNeedsDisplay()
     }
     
     @IBAction func donePressed(_ sender: Any) {
         self.scheduleArray.append(currentScheduleBlock)
         ScheduleBlock.saveSchedules(scheduleArray: scheduleArray)
     }
-    
+
+    func updateScheduleBlock() {
+        // self.currentScheduleBlock.activityArray.removeAll()  //reset activityArray
+        let newScheduleBlock = ScheduleBlock(scheduleTime: currentTime, dateStamp: weekPicker.date) // make new currentScheduleBlock so new data does not overwrite existing stuff
+        newScheduleBlock.displayIndex = currentRow
+        newScheduleBlock.activityArray = []
+        currentScheduleBlock = newScheduleBlock
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -80,9 +89,9 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentBlock = pickerData[row]
+        currentTime = pickerData[row]
         currentRow = row
-        print("currentBlock is \(currentBlock)")
+        print("currentTime is \(currentTime)")
         print("CurrentRow is \(currentRow)")
     }
     /*
