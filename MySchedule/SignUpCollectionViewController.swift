@@ -11,9 +11,13 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SignUpCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    @IBOutlet weak var headerView: UICollectionReusableView!
+    
     fileprivate var itemsToDisplay = [ActivityItem]()
+    fileprivate var mondayAM = [ActivityItem]()
+    fileprivate var mondayPM = [ActivityItem]()
     let reuseIdentifier = "ActivityCell"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,13 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     }
     // convenience function to get activityItem from array
     func activityItemForIndexPath(_ indexPath: IndexPath) -> ActivityItem {
-        return itemsToDisplay[indexPath.row]
+        var returnItem:ActivityItem!
+        if indexPath.section == 0 {
+            returnItem = mondayAM[indexPath.row]
+        }else if indexPath.section == 1 {
+            returnItem = mondayPM[indexPath.row]
+        }
+        return returnItem
     }
     
     func getItemsToDisplay() {
@@ -38,7 +48,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             print("We have schedules")
             for item in theSchedules {
                 if item.scheduleTime == kMondayAM {
-                    itemsToDisplay = item.activityArray
+                    mondayAM = item.activityArray
+                } else if item.scheduleTime == kMondayPM {
+                    mondayPM = item.activityArray
                 }
             }
         }
@@ -57,14 +69,17 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return itemsToDisplay.count
+        if section == 0 {
+            return mondayAM.count
+        } else {
+            return mondayPM.count
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,6 +94,61 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         return cell
     }
 
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        // 1
+        switch kind {
+        // 2
+        case UICollectionView.elementKindSectionHeader:
+            // 3
+            guard
+                let headerView = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: "SignUpHeaderView",
+                    for: indexPath) as? SignUpHeaderCollectionReusableView
+                else {
+                    fatalError("Invalid view type")
+            }
+            if (indexPath.section == 0) {
+                headerView.signUpHeaderLabel.text = "Monday AM"
+            } else {
+                headerView.signUpHeaderLabel.text = "Monday PM"
+            }
+            return headerView
+        default:
+            // 4
+            assert(false, "Invalid element type")
+        }
+    }
+    // MARK: UICollectionViewDelegateFlowLayout
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var size = collectionView.bounds.size
+        size.height = size.height / 4
+        size.width = size.width / 2
+        size.height -= topLayoutGuide.length
+        //size.height -= view.safeAreaLayoutGuide.topAnchor
+        //size.height -= view.safeAreaLayoutGuide.topAnchor
+        size.height -= (sectionInsets.top + sectionInsets.right)
+        size.width -= (sectionInsets.left + sectionInsets.right)
+        
+        return size
+        // }
+    }
+    
+    // specify spacings for margins
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
     // MARK: UICollectionViewDelegate
     // MARK: UICollectionViewDelegate
     

@@ -8,7 +8,9 @@
 // May 14 - working on making activities and scheduleBlocks
 // working on archiving schedules - basic mechanism works, but need more testing
 // can make and retrieve schedules - only blocks with activities are created
-// working on SignUp page - can display and select cells
+// working on SignUp page - can display and select cells - need to generalize logic
+// will display one day at a time (2 sections)  need Next and Back butons in header view
+// admin will have ten sections that scroll
 
 import UIKit
 
