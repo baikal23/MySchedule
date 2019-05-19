@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -172,7 +171,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dgM-wK-UWK">
-                                <rect key="frame" x="294" y="131" width="320" height="100"/>
+                                <rect key="frame" x="294" y="130.5" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="AKP-Ci-SU1"/>
                                 </constraints>
@@ -181,7 +180,7 @@
                                 </date>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-hw-mGn">
-                                <rect key="frame" x="294" y="397" width="320" height="100"/>
+                                <rect key="frame" x="294" y="396.5" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="sNj-iX-jvd"/>
                                 </constraints>
@@ -283,36 +282,56 @@
         <!--Sign Up Collection View Controller-->
         <scene sceneID="xP8-nQ-8nE">
             <objects>
-                <collectionViewController id="2Bh-YV-aee" customClass="SignUpCollectionViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="2Bh-YV-aee" customClass="SignUpCollectionViewController" customModule="MySchedule" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="10W-Iz-guD">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4d2-6w-nnA">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="206" height="187"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bbA-d9-kTe">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActivityCell" id="bbA-d9-kTe" customClass="ActivityCell" customModule="MySchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="206" height="187"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-yl-bUa">
+                                            <rect key="frame" x="53" y="83" width="100" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="tEw-33-7Sg"/>
+                                                <constraint firstAttribute="height" constant="21" id="wOG-ZT-mcK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.1678770117" blue="0.1570787578" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="EIe-yl-bUa" firstAttribute="centerY" secondItem="bbA-d9-kTe" secondAttribute="centerY" id="ZhT-V9-x5P"/>
+                                    <constraint firstItem="EIe-yl-bUa" firstAttribute="centerX" secondItem="bbA-d9-kTe" secondAttribute="centerX" id="gvi-WU-byW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="label" destination="EIe-yl-bUa" id="4YK-q4-Pqw"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="2Bh-YV-aee" id="Yqj-aq-Kgk"/>
-                            <outlet property="delegate" destination="2Bh-YV-aee" id="WAW-CN-I7l"/>
+                            <outlet property="dataSource" destination="2Bh-YV-aee" id="bHR-Cx-y5Y"/>
+                            <outlet property="delegate" destination="2Bh-YV-aee" id="50J-C8-TRI"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bph-M1-Kqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="803"/>
+            <point key="canvasLocation" x="95.3125" y="802.734375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JgD-hy-Nzi">

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8038239A2290A024006209C0 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803823992290A024006209C0 /* ActivityCell.swift */; };
+		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BE48228B6D44000935AD /* Filehelpers.swift */; };
 		80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9D32289EC7000A01E8E /* AppDelegate.swift */; };
 		80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9D72289EC7000A01E8E /* Main.storyboard */; };
@@ -20,7 +22,6 @@
 		80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA092289EDB300A01E8E /* AdminViewController.swift */; };
 		80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */; };
 		80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */; };
-		80B1EA102289EFFB00A01E8E /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */; };
 		80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA4D228B3E0C00A01E8E /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		8069BE48228B6D44000935AD /* Filehelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filehelpers.swift; sourceTree = "<group>"; };
 		80B1E9D02289EC7000A01E8E /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B1E9D32289EC7000A01E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,11 +125,12 @@
 				8069BE48228B6D44000935AD /* Filehelpers.swift */,
 				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
 				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
-				80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */,
 				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
+				803823992290A024006209C0 /* ActivityCell.swift */,
 				80B1EA092289EDB300A01E8E /* AdminViewController.swift */,
 				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
 				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
+				80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */,
 				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
 				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
 			);
@@ -283,10 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */,
+				8038239A2290A024006209C0 /* ActivityCell.swift in Sources */,
 				80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */,
 				80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */,
 				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
-				80B1EA102289EFFB00A01E8E /* SignUpCollectionViewController.swift in Sources */,
 				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
 				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
@@ -399,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -454,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

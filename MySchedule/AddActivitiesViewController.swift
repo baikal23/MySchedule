@@ -33,6 +33,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date) // make a scheduleBlock
         self.pickerView(self.scheduleBlockPicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
         // Do any additional setup after loading the view.
+        self.weekPicker.datePickerMode = .date
     }
     
     @IBAction func addActivityPressed(_ sender: Any) {
