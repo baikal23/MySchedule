@@ -14,8 +14,8 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     @IBOutlet weak var headerView: UICollectionReusableView!
     
     fileprivate var itemsToDisplay = [ActivityItem]()
-    fileprivate var mondayAM = [ActivityItem]()
-    fileprivate var mondayPM = [ActivityItem]()
+    var currentDay = 0
+    var doubleArray = [[ActivityItem]]()
     let reuseIdentifier = "ActivityCell"
     
     
@@ -35,9 +35,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     func activityItemForIndexPath(_ indexPath: IndexPath) -> ActivityItem {
         var returnItem:ActivityItem!
         if indexPath.section == 0 {
-            returnItem = mondayAM[indexPath.row]
-        }else if indexPath.section == 1 {
-            returnItem = mondayPM[indexPath.row]
+            returnItem = doubleArray[currentDay * 2][indexPath.row]
+        } else if indexPath.section == 1 {
+            returnItem = doubleArray[currentDay * 2 + 1][indexPath.row]
         }
         return returnItem
     }
@@ -47,11 +47,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         if theSchedules.count > 0 {
             print("We have schedules")
             for item in theSchedules {
-                if item.scheduleTime == kMondayAM {
-                    mondayAM = item.activityArray
-                } else if item.scheduleTime == kMondayPM {
-                    mondayPM = item.activityArray
-                }
+                doubleArray.append(item.activityArray)
             }
         }
         
@@ -76,9 +72,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         if section == 0 {
-            return mondayAM.count
+            return doubleArray[currentDay * 2].count
         } else {
-            return mondayPM.count
+            return doubleArray[currentDay * 2 + 1].count
         }
     }
 
@@ -111,9 +107,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
                     fatalError("Invalid view type")
             }
             if (indexPath.section == 0) {
-                headerView.signUpHeaderLabel.text = "Monday AM"
+                headerView.signUpHeaderLabel.text = weekTimes[currentDay * 2]
             } else {
-                headerView.signUpHeaderLabel.text = "Monday PM"
+                headerView.signUpHeaderLabel.text = weekTimes[currentDay * 2 + 1]
             }
             return headerView
         default:

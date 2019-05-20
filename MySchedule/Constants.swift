@@ -18,3 +18,4 @@ let kThursdayAM = "Thursday AM"
 let kThursdayPM = "Thursday PM"
 let kFridayAM = "Friday AM"
 let kFridayPM = "Friday PM"
+let weekTimes = [kMondayAM, kMondayPM, kTuesdayAM, kTuesdayPM, kWednesdayAM, kWednesdayPM, kThursdayAM, kThursdayPM, kFridayAM, kFridayPM]

@@ -11,6 +11,8 @@
 // working on SignUp page - can display and select cells - need to generalize logic
 // will display one day at a time (2 sections)  need Next and Back butons in header view
 // admin will have ten sections that scroll
+// making activities and looking at schedule works - need button to control currentDay
+// also need to register users
 
 import UIKit
 

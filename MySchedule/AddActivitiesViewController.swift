@@ -14,7 +14,8 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     var currentTime:String = ""
     var currentRow = 0
     var currentScheduleBlock:ScheduleBlock!  // must initialize before use
-    var scheduleArray:[ScheduleBlock] = []
+    //var scheduleArray:[ScheduleBlock] = []
+    var weekSchedule:[ScheduleBlock] = []
     var addedToScheduleArray = false
     
     @IBOutlet weak var weekPicker: UIDatePicker!
@@ -34,6 +35,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.pickerView(self.scheduleBlockPicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
         // Do any additional setup after loading the view.
         self.weekPicker.datePickerMode = .date
+        self.makeWeekScheduleArray()
     }
     
     @IBAction func addActivityPressed(_ sender: Any) {
@@ -47,13 +49,18 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
         let newActivity = ActivityItem(activityName: name, activityLimit: limitNumber, allDay: allDay)
         // add activity to currentBlock or save it and make a new schedule block
-        if (currentScheduleBlock.scheduleTime != currentTime) {
-            self.scheduleArray.append(currentScheduleBlock)
+        /*if (currentScheduleBlock.scheduleTime != currentTime) {
+           // self.scheduleArray.append(currentScheduleBlock)
             self.updateScheduleBlock()
+        }*/
+        for item in weekSchedule {
+            if item.scheduleTime == currentTime {
+                item.activityArray.append(newActivity)
+            }
         }
-        currentScheduleBlock.activityArray.append(newActivity)
+       /* currentScheduleBlock.activityArray.append(newActivity)
         print("Activity is" + newActivity.activityName)
-        print("Added to " + currentScheduleBlock.scheduleTime)
+        print("Added to " + currentScheduleBlock.scheduleTime)*/
     }
     @IBAction func nextTimeBlockPressed(_ sender: Any) {
         let newRow = currentRow + 1
@@ -66,8 +73,8 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        self.scheduleArray.append(currentScheduleBlock)
-        ScheduleBlock.saveSchedules(scheduleArray: scheduleArray)
+       // self.scheduleArray.append(currentScheduleBlock)
+        ScheduleBlock.saveSchedules(scheduleArray: weekSchedule)
     }
 
     func updateScheduleBlock() {
@@ -76,6 +83,17 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         newScheduleBlock.displayIndex = currentRow
         newScheduleBlock.activityArray = []
         currentScheduleBlock = newScheduleBlock
+    }
+    
+    func makeWeekScheduleArray() {
+        weekSchedule = []
+        for (index,element) in weekTimes.enumerated() {
+            print("\(index) = \(element)")
+            let daySchedule = ScheduleBlock(scheduleTime: element, dateStamp: weekPicker.date)
+            weekSchedule.append(daySchedule)
+        }
+        ScheduleBlock.saveSchedules(scheduleArray: weekSchedule)
+
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
