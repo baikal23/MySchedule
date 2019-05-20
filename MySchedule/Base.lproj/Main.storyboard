@@ -83,7 +83,7 @@
                         <outlet property="passwordTextField" destination="FVW-SA-MaQ" id="Kw9-qq-OCn"/>
                         <outlet property="userTextField" destination="61f-SE-qt2" id="qMp-Il-XiP"/>
                         <segue destination="jNz-TU-wOB" kind="show" identifier="adminSegue" id="YjQ-z3-J4y"/>
-                        <segue destination="2Bh-YV-aee" kind="show" identifier="signUpSegue" id="Jub-9x-r7z"/>
+                        <segue destination="wHO-Rs-qxL" kind="show" identifier="signUpSegue" id="Jub-9x-r7z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -352,10 +352,24 @@
                             <outlet property="delegate" destination="2Bh-YV-aee" id="50J-C8-TRI"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Mza-5e-S7Z">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="iAc-au-0lv">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="2Bh-YV-aee" id="CCd-1A-bSv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="jAd-oj-iNP">
+                            <connections>
+                                <action selector="nextButtonPressed:" destination="2Bh-YV-aee" id="hWT-h1-bKy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bph-M1-Kqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95.3125" y="802.734375"/>
+            <point key="canvasLocation" x="860.9375" y="802.734375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JgD-hy-Nzi">
@@ -374,6 +388,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHd-aO-MGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1073" y="4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L1C-Vd-Am3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wHO-Rs-qxL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sdM-pd-kvM">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Bh-YV-aee" kind="relationship" relationship="rootViewController" id="SwS-TW-VdI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hf-4M-RYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.3125" y="802.734375"/>
         </scene>
     </scenes>
 </document>

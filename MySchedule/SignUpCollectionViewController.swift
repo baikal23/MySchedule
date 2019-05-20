@@ -52,6 +52,20 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         }
         
     }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        if currentDay != 0 {
+            currentDay = currentDay - 1
+            self.collectionView.reloadData()
+        }
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if currentDay != 9 {
+            currentDay = currentDay + 1
+            self.collectionView.reloadData()
+        }
+    }
     /*
     // MARK: - Navigation
 
