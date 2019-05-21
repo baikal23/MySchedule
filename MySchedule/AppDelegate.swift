@@ -12,7 +12,8 @@
 // will display one day at a time (2 sections)  need Next and Back butons in header view
 // Next and back buttons work for SignUp - but do we want Back button?? would have to de-register users
 // admin will have ten sections that scroll
-// also need to register users
+// also need to register users - done for fake user SK
+
 
 import UIKit
 

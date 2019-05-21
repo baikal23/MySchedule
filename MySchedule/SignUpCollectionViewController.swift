@@ -17,6 +17,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     var currentDay = 0
     var doubleArray = [[ActivityItem]]()
     let reuseIdentifier = "ActivityCell"
+    var user:String = "SK"  //TODO: fix this
     
     
     override func viewDidLoad() {
@@ -42,17 +43,58 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         return returnItem
     }
     
+    func activityArrayForIndexPath(_ indexPath: IndexPath) -> [ActivityItem] {
+        var returnArray:[ActivityItem] = []
+        if indexPath.section == 0 {
+            returnArray = doubleArray[currentDay * 2]
+        } else if indexPath.section == 1 {
+            returnArray = doubleArray[currentDay * 2 + 1]
+        }
+        return returnArray
+    }
     func getItemsToDisplay() {
         let theSchedules = ScheduleBlock.getSchedules()
         if theSchedules.count > 0 {
             print("We have schedules")
             for item in theSchedules {
+                for activity in item.activityArray {
+                    activity.chosen = false  // no activities chosen yet by current user
+                }
                 doubleArray.append(item.activityArray)
             }
         }
         
     }
     
+    func updateActivityParticipants() {
+        let theSchedules = ScheduleBlock.getSchedules()
+        if theSchedules.count == 10 {
+            print("We have schedules")
+            for index in 0...9 {
+                theSchedules[index].activityArray = doubleArray[index]
+            }
+        }
+        for item in theSchedules {
+            for activity in item.activityArray {
+                print(activity.activityName + " has  \(activity.participants.count) " + " participants ")
+            }
+        }
+        ScheduleBlock.saveSchedules(scheduleArray: theSchedules)
+            
+        
+    }
+    func registerUser() {
+        for item in doubleArray[currentDay * 2] {
+            if item.chosen == true {
+                item.participants.append(user)
+            }
+        }
+        for item in doubleArray[currentDay * 2 + 1] {
+            if item.chosen == true {
+                item.participants.append(user)
+            }
+        }
+    }
     @IBAction func backButtonPressed(_ sender: Any) {
         if currentDay != 0 {
             currentDay = currentDay - 1
@@ -61,6 +103,8 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        self.registerUser()
+        self.updateActivityParticipants()
         if currentDay != 9 {
             currentDay = currentDay + 1
             self.collectionView.reloadData()
@@ -166,6 +210,15 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
         print("Item selected")
+        let selectedArray = activityArrayForIndexPath(indexPath)
+        let chosenActivity = activityItemForIndexPath(indexPath)
+        for item in selectedArray {
+            if item.activityName == chosenActivity.activityName {
+                item.chosen = true
+            } else {
+                item.chosen = false  // so only the currently selected activity is true
+            }
+        }
     }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
