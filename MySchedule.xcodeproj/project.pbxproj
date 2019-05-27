@@ -10,6 +10,7 @@
 		8038239A2290A024006209C0 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803823992290A024006209C0 /* ActivityCell.swift */; };
 		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		804246EE2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */; };
+		804246F0229CA22B00E1F281 /* Participants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246EF229CA22B00E1F281 /* Participants.swift */; };
 		8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BE48228B6D44000935AD /* Filehelpers.swift */; };
 		80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9D32289EC7000A01E8E /* AppDelegate.swift */; };
 		80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9D72289EC7000A01E8E /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		804246EF229CA22B00E1F281 /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
 		8069BE48228B6D44000935AD /* Filehelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filehelpers.swift; sourceTree = "<group>"; };
 		80B1E9D02289EC7000A01E8E /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B1E9D32289EC7000A01E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
 				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
 				804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */,
+				804246EF229CA22B00E1F281 /* Participants.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
 				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
+				804246F0229CA22B00E1F281 /* Participants.swift in Sources */,
 				8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */,
 				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,
 				80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */,

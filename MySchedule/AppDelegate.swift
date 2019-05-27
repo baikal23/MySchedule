@@ -13,7 +13,7 @@
 // Next and back buttons work for SignUp - but do we want Back button?? would have to de-register users
 // admin will have ten sections that scroll
 // also need to register users - done for fake user SK
-
+// can now add participants - must make remove and check functions
 
 import UIKit
 
