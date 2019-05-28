@@ -28,7 +28,6 @@
 		80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA092289EDB300A01E8E /* AdminViewController.swift */; };
 		80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */; };
 		80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */; };
-		80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */; };
 		80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA4D228B3E0C00A01E8E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +76,6 @@
 		80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesViewController.swift; sourceTree = "<group>"; };
 		80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeWeekViewController.swift; sourceTree = "<group>"; };
 		80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewController.swift; sourceTree = "<group>"; };
-		80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewCell.swift; sourceTree = "<group>"; };
 		80B1EA4D228B3E0C00A01E8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,19 +135,18 @@
 				8069BE48228B6D44000935AD /* Filehelpers.swift */,
 				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
 				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
-				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
 				803823992290A024006209C0 /* ActivityCell.swift */,
+				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
+				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
 				80B1EA092289EDB300A01E8E /* AdminViewController.swift */,
 				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
 				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
-				80B1EA112289F06600A01E8E /* SignUpCollectionViewCell.swift */,
-				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
 				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
 				804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */,
+				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
 				804246EF229CA22B00E1F281 /* Participants.swift */,
 				80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */,
 				80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */,
-				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
 				805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */,
 			);
 			path = MySchedule;
@@ -320,7 +317,6 @@
 				8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */,
 				805D7D7E229DE34A006A2819 /* EditActivityViewController.swift in Sources */,
 				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,
-				80B1EA122289F06600A01E8E /* SignUpCollectionViewCell.swift in Sources */,
 				804246EE2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
