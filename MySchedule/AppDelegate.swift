@@ -14,7 +14,7 @@
 // admin will have ten sections that scroll
 // also need to register users - done for fake user SK
 // can now add participants - and see weekly schedule
-// admin can add or remove participant list
+// admin can add or remove participant in activity - BUT MUST ARCHIVE IT
 
 import UIKit
 

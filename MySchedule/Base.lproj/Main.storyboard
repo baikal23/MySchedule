@@ -529,10 +529,88 @@
                             <outlet property="delegate" destination="lUY-kR-ggb" id="iOO-ze-yf2"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="tgA-wX-14i" kind="show" identifier="editActivitySegue" id="JHC-TI-DhK"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpk-M5-zIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-318.75" y="1487.6953125"/>
+        </scene>
+        <!--Edit Activity View Controller-->
+        <scene sceneID="e7a-ug-26V">
+            <objects>
+                <viewController id="tgA-wX-14i" customClass="EditActivityViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T7z-JX-WCr">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zFE-WH-6iJ">
+                                <rect key="frame" x="359" y="420" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bsx-vV-Dhu"/>
+                                    <constraint firstAttribute="width" constant="50" id="nNv-r6-z3d"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDM-Pt-276">
+                                <rect key="frame" x="284" y="270" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Y9-um-vAF"/>
+                                    <constraint firstAttribute="width" constant="200" id="vuW-o0-IZg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oA5-06-odg">
+                                <rect key="frame" x="334" y="680" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DEL-bG-o4H"/>
+                                    <constraint firstAttribute="height" constant="50" id="Maa-HT-0DS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Remove"/>
+                                <connections>
+                                    <action selector="removeButtonPressed:" destination="tgA-wX-14i" eventType="touchUpInside" id="uDH-JU-hlY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-4J-OjT">
+                                <rect key="frame" x="334" y="550" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="gSk-5a-djY"/>
+                                    <constraint firstAttribute="height" constant="30" id="mmL-Dn-PSt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="tgA-wX-14i" eventType="touchUpInside" id="9xW-nb-5Uh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zFE-WH-6iJ" firstAttribute="top" secondItem="eDM-Pt-276" secondAttribute="bottom" constant="100" id="BQA-HT-0OR"/>
+                            <constraint firstItem="Ixt-4J-OjT" firstAttribute="top" secondItem="zFE-WH-6iJ" secondAttribute="bottom" constant="100" id="Ow4-7I-7Ls"/>
+                            <constraint firstItem="oA5-06-odg" firstAttribute="top" secondItem="Ixt-4J-OjT" secondAttribute="bottom" constant="100" id="PoG-Rg-L5X"/>
+                            <constraint firstItem="eDM-Pt-276" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="TTA-M7-nqr"/>
+                            <constraint firstItem="Ixt-4J-OjT" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="mIR-Lg-yMz"/>
+                            <constraint firstItem="oA5-06-odg" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="qAJ-a8-fF4"/>
+                            <constraint firstItem="zFE-WH-6iJ" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="sNY-gq-5do"/>
+                            <constraint firstItem="eDM-Pt-276" firstAttribute="top" secondItem="hGw-CT-mnz" secondAttribute="top" constant="200" id="wDb-mi-Q98"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hGw-CT-mnz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HMx-TE-aad"/>
+                    <connections>
+                        <outlet property="participantTextField" destination="zFE-WH-6iJ" id="50I-fE-Tbh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsM-yR-tb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110.9375" y="1485.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L1C-Vd-Am3">
