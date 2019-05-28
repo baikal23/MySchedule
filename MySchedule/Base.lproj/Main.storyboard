@@ -298,16 +298,28 @@
                                     <action selector="addButtonPressed:" destination="jNz-TU-wOB" eventType="touchUpInside" id="Bdi-6b-Pyo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ba-wW-EqJ">
+                                <rect key="frame" x="306.5" y="894" width="155" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="72u-jV-aLD"/>
+                                </constraints>
+                                <state key="normal" title="View Weekly Schedule"/>
+                                <connections>
+                                    <segue destination="lUY-kR-ggb" kind="show" id="x8o-sQ-GDE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96379815150000003" blue="0.25110642259999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vm7-FU-o1M" firstAttribute="centerY" secondItem="Zkm-ro-JDa" secondAttribute="centerY" id="0Ca-oS-Kgj"/>
                             <constraint firstItem="Vm7-FU-o1M" firstAttribute="leading" secondItem="Zkm-ro-JDa" secondAttribute="trailing" constant="50" id="43a-9u-2qU"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="top" secondItem="Zkm-ro-JDa" secondAttribute="bottom" constant="60" id="8Nc-Sn-rhO"/>
+                            <constraint firstItem="cGS-j5-BEG" firstAttribute="bottom" secondItem="7ba-wW-EqJ" secondAttribute="bottom" constant="100" id="DoK-xF-EEO"/>
                             <constraint firstItem="Zkm-ro-JDa" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="Fru-YX-3pG"/>
                             <constraint firstItem="Vm7-FU-o1M" firstAttribute="top" secondItem="WDe-MD-buj" secondAttribute="bottom" constant="25" id="W3b-U0-Bkw"/>
                             <constraint firstItem="Vm7-FU-o1M" firstAttribute="leading" secondItem="WDe-MD-buj" secondAttribute="leading" id="avf-T0-hc4"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="centerY" secondItem="1HZ-tJ-3sv" secondAttribute="centerY" id="ogh-MZ-5ec"/>
+                            <constraint firstItem="7ba-wW-EqJ" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="onA-o3-Q6S"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="wCR-1v-EOC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGS-j5-BEG"/>
@@ -430,6 +442,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHd-aO-MGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1073" y="4"/>
+        </scene>
+        <!--Week Collection View Controller-->
+        <scene sceneID="qof-rs-AG4">
+            <objects>
+                <collectionViewController id="lUY-kR-ggb" customClass="WeekCollectionViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BFN-QF-gxx">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Agc-BA-UZ0">
+                            <size key="itemSize" width="415" height="416"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeekCollectionViewCell" id="bnc-ak-d1n" customClass="WeekCollectionViewCell" customModule="MySchedule" customModuleProvider="target">
+                                <rect key="frame" x="176.5" y="50" width="415" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="415" height="416"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-4B-PM3">
+                                            <rect key="frame" x="13" y="38" width="389" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="fQv-M1-dxJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPf-pf-Fsu">
+                                            <rect key="frame" x="13" y="338" width="389" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="jGK-XZ-7AL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Que-4B-PM3" firstAttribute="centerX" secondItem="bnc-ak-d1n" secondAttribute="centerX" id="61j-l4-Elj"/>
+                                    <constraint firstItem="rPf-pf-Fsu" firstAttribute="leading" secondItem="bnc-ak-d1n" secondAttribute="leadingMargin" constant="5" id="E2A-x5-WFq"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="rPf-pf-Fsu" secondAttribute="bottom" constant="20" id="G6S-6H-czf"/>
+                                    <constraint firstItem="Que-4B-PM3" firstAttribute="leading" secondItem="bnc-ak-d1n" secondAttribute="leadingMargin" constant="5" id="NIP-OW-chp"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="rPf-pf-Fsu" secondAttribute="trailing" constant="5" id="XCQ-aH-qt1"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Que-4B-PM3" secondAttribute="trailing" constant="5" id="gg1-Xa-Tkt"/>
+                                    <constraint firstItem="rPf-pf-Fsu" firstAttribute="centerX" secondItem="bnc-ak-d1n" secondAttribute="centerX" id="hVk-TQ-dAK"/>
+                                    <constraint firstItem="Que-4B-PM3" firstAttribute="top" secondItem="bnc-ak-d1n" secondAttribute="topMargin" constant="10" id="nha-bK-J6S"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="activityNameLabel" destination="Que-4B-PM3" id="oKi-Ri-VIP"/>
+                                    <outlet property="activityParticipantLabel" destination="rPf-pf-Fsu" id="1N4-Bk-HwL"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="WeekHeaderView" id="Gx7-Nu-ja1" customClass="WeekCollectionReusableView" customModule="MySchedule" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sn-kq-TPi">
+                                    <rect key="frame" x="284" y="0.0" width="200" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="MS1-Gt-qGx"/>
+                                        <constraint firstAttribute="height" constant="50" id="NdV-oc-ckb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="2sn-kq-TPi" firstAttribute="centerY" secondItem="Gx7-Nu-ja1" secondAttribute="centerY" id="LtE-9S-ZNi"/>
+                                <constraint firstItem="2sn-kq-TPi" firstAttribute="centerX" secondItem="Gx7-Nu-ja1" secondAttribute="centerX" id="oZa-p6-XNP"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="weekHeaderLabel" destination="2sn-kq-TPi" id="LqO-cj-RZA"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="lUY-kR-ggb" id="l16-a4-sFv"/>
+                            <outlet property="delegate" destination="lUY-kR-ggb" id="iOO-ze-yf2"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpk-M5-zIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-318.75" y="1487.6953125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L1C-Vd-Am3">

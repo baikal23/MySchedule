@@ -53,6 +53,15 @@ class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            self.participants.remove(at: indexPath.row)
+            Participants.saveParticipants(participantArray: participants)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     /*
     // MARK: - Navigation
 

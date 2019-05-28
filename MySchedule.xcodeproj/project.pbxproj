@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */; };
+		80139CCC229D8E22005DB896 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */; };
+		80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */; };
 		8038239A2290A024006209C0 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803823992290A024006209C0 /* ActivityCell.swift */; };
 		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		804246EE2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewController.swift; sourceTree = "<group>"; };
+		80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewCell.swift; sourceTree = "<group>"; };
+		80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionReusableView.swift; sourceTree = "<group>"; };
 		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		804246EF229CA22B00E1F281 /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
 				804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */,
 				804246EF229CA22B00E1F281 /* Participants.swift */,
+				80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */,
+				80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */,
+				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -294,13 +303,16 @@
 			files = (
 				8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */,
 				8038239A2290A024006209C0 /* ActivityCell.swift in Sources */,
+				80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */,
 				80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */,
 				80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */,
+				80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */,
 				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
 				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
 				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
 				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
+				80139CCC229D8E22005DB896 /* WeekCollectionViewCell.swift in Sources */,
 				804246F0229CA22B00E1F281 /* Participants.swift in Sources */,
 				8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */,
 				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,

@@ -17,19 +17,13 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     var currentDay = 0
     var doubleArray = [[ActivityItem]]()
     let reuseIdentifier = "ActivityCell"
-    var user:String = "SK"  //TODO: fix this
+    var participant:String = "SK"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
          print("In viewDidLoad for SignUp View")
          self.getItemsToDisplay()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-       // self.collectionView!.register(ActivityCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-       
         // Do any additional setup after loading the view.
     }
     // convenience function to get activityItem from array
@@ -83,15 +77,15 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             
         
     }
-    func registerUser() {
+    func registerParticipant() {
         for item in doubleArray[currentDay * 2] {
             if item.chosen == true {
-                item.participants.append(user)
+                item.participants.append(participant)
             }
         }
         for item in doubleArray[currentDay * 2 + 1] {
             if item.chosen == true {
-                item.participants.append(user)
+                item.participants.append(participant)
             }
         }
     }
@@ -103,7 +97,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        self.registerUser()
+        self.registerParticipant()
         self.updateActivityParticipants()
         if currentDay != 9 {
             currentDay = currentDay + 1

@@ -28,13 +28,26 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
         if userTextField.text == "ADMIN" {
             performSegue(withIdentifier: "adminSegue", sender: self)
         } else {
-            performSegue(withIdentifier: "signUpSegue", sender: self)
+            if (Participants.verifyParticipant(userTextField.text ?? "")) {
+              performSegue(withIdentifier: "signUpSegue", sender: self)
+            } else {
+                let alert = UIAlertController(title: "Alert", message: "You are not a registered user", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
     
     
     // MARK: - Navigation
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signUpSegue" {
+            let destinationNv = segue.destination as! UINavigationController
+            let destinationVC = destinationNv.viewControllers[0] as! SignUpCollectionViewController
+            destinationVC.participant = userTextField.text!
+        }
+    }
 
 }
