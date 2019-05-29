@@ -91,4 +91,14 @@ class ScheduleBlock: NSObject, NSCoding {
         let emptySchedules:[ScheduleBlock] = []
         ScheduleBlock.saveSchedules(scheduleArray: emptySchedules)
     }
+    
+    class func updateScheduleBlock(_ index:Int, updatedActivity:ActivityItem, newParticipants:[String]) {
+        let theSchedules = ScheduleBlock.getSchedules()
+        for activity in theSchedules[index].activityArray {
+            if activity.activityName == updatedActivity.activityName {
+                activity.participants = newParticipants
+            }
+        }
+        ScheduleBlock.saveSchedules(scheduleArray: theSchedules)
+    }
 }

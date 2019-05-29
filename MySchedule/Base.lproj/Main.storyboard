@@ -553,7 +553,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDM-Pt-276">
                                 <rect key="frame" x="284" y="270" width="200" height="50"/>
@@ -589,13 +589,25 @@
                                     <action selector="addButtonPressed:" destination="tgA-wX-14i" eventType="touchUpInside" id="9xW-nb-5Uh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpD-BW-uuO">
+                                <rect key="frame" x="5" y="120" width="758" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QZk-s5-Sdm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IpD-BW-uuO" firstAttribute="top" secondItem="hGw-CT-mnz" secondAttribute="top" constant="50" id="9S6-6C-h5S"/>
                             <constraint firstItem="zFE-WH-6iJ" firstAttribute="top" secondItem="eDM-Pt-276" secondAttribute="bottom" constant="100" id="BQA-HT-0OR"/>
+                            <constraint firstItem="IpD-BW-uuO" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="GwB-6Y-aml"/>
                             <constraint firstItem="Ixt-4J-OjT" firstAttribute="top" secondItem="zFE-WH-6iJ" secondAttribute="bottom" constant="100" id="Ow4-7I-7Ls"/>
                             <constraint firstItem="oA5-06-odg" firstAttribute="top" secondItem="Ixt-4J-OjT" secondAttribute="bottom" constant="100" id="PoG-Rg-L5X"/>
                             <constraint firstItem="eDM-Pt-276" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="TTA-M7-nqr"/>
+                            <constraint firstItem="IpD-BW-uuO" firstAttribute="leading" secondItem="hGw-CT-mnz" secondAttribute="leading" constant="5" id="kWM-RR-hcf"/>
                             <constraint firstItem="Ixt-4J-OjT" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="mIR-Lg-yMz"/>
                             <constraint firstItem="oA5-06-odg" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="qAJ-a8-fF4"/>
                             <constraint firstItem="zFE-WH-6iJ" firstAttribute="centerX" secondItem="T7z-JX-WCr" secondAttribute="centerX" id="sNY-gq-5do"/>
@@ -605,6 +617,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HMx-TE-aad"/>
                     <connections>
+                        <outlet property="activityNameLabel" destination="IpD-BW-uuO" id="zUv-Mj-kqW"/>
                         <outlet property="participantTextField" destination="zFE-WH-6iJ" id="50I-fE-Tbh"/>
                     </connections>
                 </viewController>

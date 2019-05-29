@@ -10,19 +10,22 @@ import UIKit
 
 class EditActivityViewController: UIViewController {
 
-    var selectedArray:[ActivityItem] = []
+    var selectedArrayIndex:Int = 0
     var chosenActivity:ActivityItem!
     @IBOutlet weak var participantTextField: UITextField!
+    @IBOutlet weak var activityNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Activity is " + chosenActivity.activityName)
+        self.activityNameLabel.text = chosenActivity.activityName
         // Do any additional setup after loading the view.
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
         chosenActivity.participants.append(participantTextField.text!)
         print("Added participant. Count is \(chosenActivity.participants.count)")
+        ScheduleBlock.updateScheduleBlock(selectedArrayIndex, updatedActivity: chosenActivity, newParticipants: chosenActivity.participants)
     }
     
     @IBAction func removeButtonPressed(_ sender: Any) {
@@ -30,10 +33,12 @@ class EditActivityViewController: UIViewController {
             if chosenActivity.participants[index] == participantTextField.text! {
                 chosenActivity.participants.remove(at: index)
                 print("Removed participant.  Count is \(chosenActivity.participants.count)")
+                ScheduleBlock.updateScheduleBlock(selectedArrayIndex, updatedActivity: chosenActivity, newParticipants: chosenActivity.participants)
                 return
             }
         }
     }
+    
     /*
     // MARK: - Navigation
 
