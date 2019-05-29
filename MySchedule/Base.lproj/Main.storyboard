@@ -356,9 +356,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-yl-bUa">
-                                            <rect key="frame" x="53" y="83" width="100" height="21"/>
+                                            <rect key="frame" x="28" y="83" width="150" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="tEw-33-7Sg"/>
+                                                <constraint firstAttribute="width" constant="150" id="tEw-33-7Sg"/>
                                                 <constraint firstAttribute="height" constant="21" id="wOG-ZT-mcK"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -382,9 +382,9 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7R-hD-PZG">
-                                    <rect key="frame" x="330.5" y="21.5" width="200" height="50"/>
+                                    <rect key="frame" x="255.5" y="21.5" width="350" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="857-mY-XQK"/>
+                                        <constraint firstAttribute="width" constant="350" id="857-mY-XQK"/>
                                         <constraint firstAttribute="height" constant="50" id="zSA-l5-B5N"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -506,9 +506,9 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sn-kq-TPi">
-                                    <rect key="frame" x="284" y="0.0" width="200" height="50"/>
+                                    <rect key="frame" x="209" y="0.0" width="350" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="MS1-Gt-qGx"/>
+                                        <constraint firstAttribute="width" constant="350" id="MS1-Gt-qGx"/>
                                         <constraint firstAttribute="height" constant="50" id="NdV-oc-ckb"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>

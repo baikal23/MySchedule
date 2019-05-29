@@ -15,7 +15,7 @@
 // also need to register users - done for fake user SK
 // can now add participants - and see weekly schedule
 // admin can add or remove participant in activity - results saved
-// need to filter out filled activities in sign up
+// show activities as full as needed andd make them unselectable
 
 import UIKit
 

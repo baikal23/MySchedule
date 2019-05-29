@@ -51,8 +51,8 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         if theSchedules.count > 0 {
             print("We have schedules")
             for item in theSchedules {
-                for activity in item.activityArray {
-                    activity.chosen = false  // no activities chosen yet by current user
+                for index in 0..<item.activityArray.count {
+                    item.activityArray[index].chosen = false  // no activities chosen yet by current user
                 }
                 doubleArray.append(item.activityArray)
             }
@@ -136,7 +136,11 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         cell.backgroundColor = UIColor.gray
         
         let cellActivityItem = activityItemForIndexPath(indexPath)
-        cell.label.text! = cellActivityItem.activityName
+        if cellActivityItem.activityLimit == cellActivityItem.participants.count {
+            cell.label.text! = "ACTIVITY FULL"
+        } else {
+            cell.label.text! = cellActivityItem.activityName
+        }
         // Configure the cell
     
         return cell
@@ -221,12 +225,14 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     }
     */
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
+    
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let cellActivityItem = activityItemForIndexPath(indexPath)
+        if cellActivityItem.activityLimit == cellActivityItem.participants.count {
+            return false
+        }
         return true
     }
-    */
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
