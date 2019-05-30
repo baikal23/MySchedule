@@ -24,6 +24,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         super.viewDidLoad()
          print("In viewDidLoad for SignUp View")
          self.getItemsToDisplay()
+        self.collectionView.allowsMultipleSelection = true
         // Do any additional setup after loading the view.
     }
     // convenience function to get activityItem from array
@@ -215,8 +216,16 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
                 item.chosen = true
             } else {
                 item.chosen = false  // so only the currently selected activity is true
+              //  self.collectionView(collectionView, didDeselectItemAt: indexPath)
             }
         }
+        let selectedCells = self.collectionView.indexPathsForSelectedItems!
+        for item in selectedCells {
+            if((item.section == indexPath.section) && (item.row != indexPath.row)) {
+                self.collectionView.deselectItem(at: indexPath, animated: false)
+            }
+        }
+        
     }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

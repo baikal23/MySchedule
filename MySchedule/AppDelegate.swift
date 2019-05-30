@@ -15,7 +15,8 @@
 // also need to register users - done for fake user SK
 // can now add participants - and see weekly schedule
 // admin can add or remove participant in activity - results saved
-// show activities as full as needed andd make them unselectable
+// show activities as full as needed and make them unselectable
+// both selected cells show as highlighted
 
 import UIKit
 
