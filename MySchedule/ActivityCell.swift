@@ -21,7 +21,7 @@ class ActivityCell: UICollectionViewCell {
         //self.selected = false
     }
     
-    override var isSelected : Bool {
+   override var isSelected : Bool {
         didSet {
             self.backgroundColor = isSelected ? UIColor.yellow : baseColor
         }

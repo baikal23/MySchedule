@@ -142,6 +142,11 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         } else {
             cell.label.text! = cellActivityItem.activityName
         }
+        if cellActivityItem.chosen {
+            cell.isSelected = true
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+        }
+        return cell
         // Configure the cell
     
         return cell
@@ -208,31 +213,49 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
-        print("Item selected")
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ActivityCell else {
+            return
+        }
+        cell.checkView.image = UIImage(named:"check.png")
+       
         let selectedArray = activityArrayForIndexPath(indexPath)
         let chosenActivity = activityItemForIndexPath(indexPath)
         for item in selectedArray {
             if item.activityName == chosenActivity.activityName {
                 item.chosen = true
+                print("\(item.activityName) selected")
             } else {
                 item.chosen = false  // so only the currently selected activity is true
-              //  self.collectionView(collectionView, didDeselectItemAt: indexPath)
+                print("\(item.activityName) NOT selected")
             }
         }
-        let selectedCells = self.collectionView.indexPathsForSelectedItems!
-        for item in selectedCells {
-            if((item.section == indexPath.section) && (item.row != indexPath.row)) {
-                self.collectionView.deselectItem(at: indexPath, animated: false)
-            }
+        let selectedIndexPaths = self.collectionView.indexPathsForSelectedItems!
+        for path in selectedIndexPaths {
+            
+            if((path.section == indexPath.section) && (path.row != indexPath.row)) {
+                guard let cell = collectionView.cellForItem(at: path) as? ActivityCell else {
+                    return
+                }
+                cell.checkView.image = UIImage(named:"blank.png")
+                self.collectionView.deselectItem(at: path, animated: false)
+            } 
         }
         
     }
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
+
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ActivityCell else {
+            return
+        }
+        cell.checkView.image = UIImage(named:"")
+        
+        
+    }
+    /* Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
-    }
-    */
+    }*/
+   
 
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {

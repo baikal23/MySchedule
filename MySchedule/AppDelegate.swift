@@ -17,6 +17,7 @@
 // admin can add or remove participant in activity - results saved
 // show activities as full as needed and make them unselectable
 // both selected cells show as highlighted
+// added green checkmarks
 
 import UIKit
 
