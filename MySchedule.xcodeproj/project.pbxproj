@@ -12,6 +12,7 @@
 		80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */; };
 		8018F2D022A17C900097FAD3 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8018F2CF22A17C900097FAD3 /* check.png */; };
 		8018F2D222A185EF0097FAD3 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 8018F2D122A185EF0097FAD3 /* blank.png */; };
+		8032ED5B22A48AC200F17A43 /* CalendarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032ED5A22A48AC200F17A43 /* CalendarDays.swift */; };
 		8038239A2290A024006209C0 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803823992290A024006209C0 /* ActivityCell.swift */; };
 		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		804246EE2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */; };
@@ -56,6 +57,7 @@
 		80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionReusableView.swift; sourceTree = "<group>"; };
 		8018F2CF22A17C900097FAD3 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		8018F2D122A185EF0097FAD3 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
+		8032ED5A22A48AC200F17A43 /* CalendarDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDays.swift; sourceTree = "<group>"; };
 		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		804246EF229CA22B00E1F281 /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */,
 				80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */,
 				805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */,
+				8032ED5A22A48AC200F17A43 /* CalendarDays.swift */,
 				8018F2D122A185EF0097FAD3 /* blank.png */,
 				8018F2CF22A17C900097FAD3 /* check.png */,
 			);
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8032ED5B22A48AC200F17A43 /* CalendarDays.swift in Sources */,
 				8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */,
 				8038239A2290A024006209C0 /* ActivityCell.swift in Sources */,
 				80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */,
