@@ -17,8 +17,11 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     //var scheduleArray:[ScheduleBlock] = []
     var weekSchedule:[ScheduleBlock] = []
     var addedToScheduleArray = false
+    var mondayDate:Date = Date() // initialize as today
+    var weekPickerData:[String] = []
     
-    @IBOutlet weak var weekPicker: UIDatePicker!
+    
+    @IBOutlet weak var weekPickerView: UIPickerView!
     @IBOutlet weak var scheduleBlockPicker: UIPickerView!
     @IBOutlet weak var activityTextField: UITextField!
     @IBOutlet weak var limitTextField: UITextField!
@@ -28,13 +31,15 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         self.scheduleBlockPicker.delegate = self
         self.scheduleBlockPicker.dataSource = self
+        weekPickerView.delegate = self
+        weekPickerView.dataSource = self
         // Input the data into the array
         pickerData = [kMondayAM, kMondayPM, kTuesdayAM, kTuesdayPM, kWednesdayAM, kWednesdayPM, kThursdayAM, kThursdayPM, kFridayAM, kFridayPM]
+        weekPickerData = CalendarDays.getNextMondays()
         // must initialize the currentScheduleBlock
-        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: weekPicker.date) // make a scheduleBlock
+        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: mondayDate) // make a scheduleBlock
         self.pickerView(self.scheduleBlockPicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
-        // Do any additional setup after loading the view.
-        self.weekPicker.datePickerMode = .date
+        self.pickerView(self.weekPickerView, didSelectRow: 0, inComponent: 0)  //initialize week Picker
         self.makeWeekScheduleArray()
     }
     
@@ -79,7 +84,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     func updateScheduleBlock() {
         // self.currentScheduleBlock.activityArray.removeAll()  //reset activityArray
-        let newScheduleBlock = ScheduleBlock(scheduleTime: currentTime, dateStamp: weekPicker.date) // make new currentScheduleBlock so new data does not overwrite existing stuff
+        let newScheduleBlock = ScheduleBlock(scheduleTime: currentTime, dateStamp: mondayDate) // make new currentScheduleBlock so new data does not overwrite existing stuff
         newScheduleBlock.displayIndex = currentRow
         newScheduleBlock.activityArray = []
         currentScheduleBlock = newScheduleBlock
@@ -89,7 +94,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         weekSchedule = []
         for (index,element) in weekTimes.enumerated() {
             print("\(index) = \(element)")
-            let daySchedule = ScheduleBlock(scheduleTime: element, dateStamp: weekPicker.date)
+            let daySchedule = ScheduleBlock(scheduleTime: element, dateStamp: mondayDate)
             weekSchedule.append(daySchedule)
         }
         ScheduleBlock.saveSchedules(scheduleArray: weekSchedule)
@@ -100,18 +105,29 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if pickerView == self.scheduleBlockPicker {
+            return pickerData.count
+        } else {
+            return weekPickerData.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        if pickerView == self.scheduleBlockPicker {
+            return pickerData[row]
+        } else {
+            return weekPickerData[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentTime = pickerData[row]
-        currentRow = row
-        print("currentTime is \(currentTime)")
-        print("CurrentRow is \(currentRow)")
+        if pickerView == self.scheduleBlockPicker {
+            currentTime = pickerData[row]
+            currentRow = row
+        } else {
+            mondayDate = CalendarDays.dateFromString(weekPickerData[row])
+            print ("Date is \(mondayDate)")
+        }
     }
     /*
     // MARK: - Navigation

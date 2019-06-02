@@ -162,23 +162,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpF-ez-A4N">
-                                <rect key="frame" x="294" y="650.5" width="25" height="30"/>
+                                <rect key="frame" x="294" y="650.5" width="50" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="eNe-UF-lth"/>
+                                    <constraint firstAttribute="width" constant="50" id="eNe-UF-lth"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dgM-wK-UWK">
-                                <rect key="frame" x="294" y="130.5" width="320" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="AKP-Ci-SU1"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="579555981.86756897">
-                                    <!--2019-05-14 19:46:21 +0000-->
-                                </date>
-                            </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-hw-mGn">
                                 <rect key="frame" x="294" y="396.5" width="320" height="100"/>
                                 <constraints>
@@ -191,32 +182,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQV-JI-Qvh">
+                                <rect key="frame" x="294" y="131" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="yjc-kN-pgT"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HWN-tL-gke" firstAttribute="leading" secondItem="dgM-wK-UWK" secondAttribute="leading" id="1aF-Tm-8T2"/>
                             <constraint firstItem="GAo-dY-Qnu" firstAttribute="leading" secondItem="68Q-nK-1zm" secondAttribute="leading" id="2Ld-F0-xRG"/>
                             <constraint firstItem="GAo-dY-Qnu" firstAttribute="top" secondItem="68Q-nK-1zm" secondAttribute="bottom" constant="161" id="46f-yR-PuH"/>
-                            <constraint firstItem="FRZ-up-Reo" firstAttribute="leading" secondItem="dgM-wK-UWK" secondAttribute="leading" id="5O0-gN-7aA"/>
                             <constraint firstItem="ZqB-hw-mGn" firstAttribute="leading" secondItem="96B-j1-vZ0" secondAttribute="trailing" constant="80" id="9Xw-AR-eg9"/>
                             <constraint firstItem="ZqB-hw-mGn" firstAttribute="centerY" secondItem="96B-j1-vZ0" secondAttribute="centerY" id="DA5-oS-CJb"/>
                             <constraint firstItem="Pak-ff-ciV" firstAttribute="leading" secondItem="68Q-nK-1zm" secondAttribute="leading" id="DgI-05-I7k"/>
                             <constraint firstItem="68Q-nK-1zm" firstAttribute="top" secondItem="ezp-Gg-DJH" secondAttribute="top" constant="100" id="EGJ-wf-HB5"/>
                             <constraint firstItem="KQ2-qz-eSP" firstAttribute="top" secondItem="ODJ-wf-IIg" secondAttribute="bottom" constant="50" id="GlI-LN-yOL"/>
-                            <constraint firstItem="dgM-wK-UWK" firstAttribute="centerY" secondItem="68Q-nK-1zm" secondAttribute="centerY" id="Gsh-ff-8x4"/>
+                            <constraint firstItem="BQV-JI-Qvh" firstAttribute="centerY" secondItem="68Q-nK-1zm" secondAttribute="centerY" id="IpP-3H-Pjx"/>
                             <constraint firstItem="68Q-nK-1zm" firstAttribute="leading" secondItem="ezp-Gg-DJH" secondAttribute="leading" constant="100" id="Kax-W9-fwB"/>
+                            <constraint firstItem="ZqB-hw-mGn" firstAttribute="leading" secondItem="HWN-tL-gke" secondAttribute="leading" id="N14-UQ-MUE"/>
                             <constraint firstItem="FRZ-up-Reo" firstAttribute="centerY" secondItem="Pak-ff-ciV" secondAttribute="centerY" id="N3e-Rn-fx2"/>
                             <constraint firstItem="TzJ-Qj-VJB" firstAttribute="top" secondItem="Pak-ff-ciV" secondAttribute="bottom" constant="69" id="TgA-a3-Pbe"/>
                             <constraint firstItem="ezp-Gg-DJH" firstAttribute="bottom" secondItem="KQ2-qz-eSP" secondAttribute="bottom" constant="50" id="Wfo-CX-nZX"/>
-                            <constraint firstItem="kpF-ez-A4N" firstAttribute="leading" secondItem="dgM-wK-UWK" secondAttribute="leading" id="aSy-em-1YT"/>
                             <constraint firstItem="tCu-gR-s9b" firstAttribute="centerX" secondItem="thG-vj-byh" secondAttribute="centerX" id="aud-rE-uVn"/>
+                            <constraint firstItem="ZqB-hw-mGn" firstAttribute="trailing" secondItem="BQV-JI-Qvh" secondAttribute="trailing" id="dCz-Fj-ISV"/>
+                            <constraint firstItem="FRZ-up-Reo" firstAttribute="leading" secondItem="HWN-tL-gke" secondAttribute="leading" id="eX6-U1-8we"/>
                             <constraint firstItem="KQ2-qz-eSP" firstAttribute="centerX" secondItem="thG-vj-byh" secondAttribute="centerX" id="exN-eV-WWo"/>
+                            <constraint firstItem="ZqB-hw-mGn" firstAttribute="leading" secondItem="BQV-JI-Qvh" secondAttribute="leading" id="fD3-P5-DxK"/>
+                            <constraint firstItem="kpF-ez-A4N" firstAttribute="leading" secondItem="HWN-tL-gke" secondAttribute="leading" id="h0P-xA-bhC"/>
                             <constraint firstItem="ODJ-wf-IIg" firstAttribute="centerX" secondItem="thG-vj-byh" secondAttribute="centerX" id="jlZ-L6-Rd7"/>
                             <constraint firstItem="96B-j1-vZ0" firstAttribute="top" secondItem="GAo-dY-Qnu" secondAttribute="bottom" constant="63" id="kfO-9R-Iob"/>
                             <constraint firstItem="Pak-ff-ciV" firstAttribute="top" secondItem="96B-j1-vZ0" secondAttribute="bottom" constant="108" id="qiK-7q-2eu"/>
                             <constraint firstItem="ODJ-wf-IIg" firstAttribute="top" secondItem="tCu-gR-s9b" secondAttribute="bottom" constant="50" id="qlM-cW-Bnr"/>
                             <constraint firstItem="HWN-tL-gke" firstAttribute="centerY" secondItem="GAo-dY-Qnu" secondAttribute="centerY" id="sxK-bl-mF4"/>
-                            <constraint firstItem="ZqB-hw-mGn" firstAttribute="leading" secondItem="dgM-wK-UWK" secondAttribute="leading" id="u5p-s3-xms"/>
                             <constraint firstItem="TzJ-Qj-VJB" firstAttribute="leading" secondItem="68Q-nK-1zm" secondAttribute="leading" id="vza-nX-84u"/>
                             <constraint firstItem="96B-j1-vZ0" firstAttribute="leading" secondItem="68Q-nK-1zm" secondAttribute="leading" id="wr8-lI-E2D"/>
                             <constraint firstItem="kpF-ez-A4N" firstAttribute="centerY" secondItem="TzJ-Qj-VJB" secondAttribute="centerY" id="z8v-lK-df7"/>
@@ -228,7 +226,7 @@
                         <outlet property="allDayTextField" destination="kpF-ez-A4N" id="3Ut-OF-Xlb"/>
                         <outlet property="limitTextField" destination="FRZ-up-Reo" id="AfL-Od-2HZ"/>
                         <outlet property="scheduleBlockPicker" destination="ZqB-hw-mGn" id="yk1-nl-fLO"/>
-                        <outlet property="weekPicker" destination="dgM-wK-UWK" id="kc4-xX-dgd"/>
+                        <outlet property="weekPickerView" destination="BQV-JI-Qvh" id="P8t-Xm-x2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFz-m9-ITw" userLabel="First Responder" sceneMemberID="firstResponder"/>

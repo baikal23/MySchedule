@@ -144,7 +144,10 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         }
         if cellActivityItem.chosen {
             cell.isSelected = true
+            cell.checkView.image = UIImage(named: "check.png")
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+        } else {
+            cell.checkView.image = UIImage(named: "blank.png")
         }
         return cell
         // Configure the cell
