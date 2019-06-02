@@ -90,13 +90,18 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             }
         }
     }
-    @IBAction func backButtonPressed(_ sender: Any) {
+   /* @IBAction func backButtonPressed(_ sender: Any) {
         if currentDay != 0 {
             currentDay = currentDay - 1
             self.collectionView.reloadData()
         }
-    }
+    }*/
     
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        self.registerParticipant()
+        self.updateActivityParticipants()
+        self.performSegue(withIdentifier: "doneSegue", sender: self)
+    }
     @IBAction func nextButtonPressed(_ sender: Any) {
         self.registerParticipant()
         self.updateActivityParticipants()

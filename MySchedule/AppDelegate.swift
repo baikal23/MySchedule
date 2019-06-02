@@ -18,6 +18,8 @@
 // show activities as full as needed and make them unselectable
 // both selected cells show as highlighted
 // added green checkmarks
+// added CalendarDays and view only Mondays
+// changed Back button to Done for SignUp page
 
 import UIKit
 
