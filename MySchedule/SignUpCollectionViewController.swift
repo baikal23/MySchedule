@@ -100,7 +100,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     @IBAction func doneButtonPressed(_ sender: Any) {
         self.registerParticipant()
         self.updateActivityParticipants()
-        self.performSegue(withIdentifier: "doneSegue", sender: self)
+        self.performSegue(withIdentifier: "unwindToFirstPageSegue", sender: self)
     }
     @IBAction func nextButtonPressed(_ sender: Any) {
         self.registerParticipant()

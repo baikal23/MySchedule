@@ -19,7 +19,7 @@
 // both selected cells show as highlighted
 // added green checkmarks
 // added CalendarDays and view only Mondays
-// changed Back button to Done for SignUp page
+// changed Back button to Done for SignUp page and made unwind segue
 
 import UIKit
 
