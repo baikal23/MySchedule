@@ -23,7 +23,9 @@ class CalendarDays: NSObject {
         formatter.dateFormat = "MMMM d yyyy"
         var dateString:String = ""
         // Enumerate all of the dates
-        cal.enumerateDates(startingAfter: Date(), matching: components, matchingPolicy: .previousTimePreservingSmallerComponents, repeatedTimePolicy: .first, direction: .forward) { (date, match, stop) in
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        cal.enumerateDates(startingAfter: yesterday
+        , matching: components, matchingPolicy: .previousTimePreservingSmallerComponents, repeatedTimePolicy: .first, direction: .forward) { (date, match, stop) in
             if let date = date {
                 if date > stopDate {
                     stop = true // We've reached the end, exit the loop
@@ -44,14 +46,15 @@ class CalendarDays: NSObject {
         // Get the date of 1 year ago today
         let stopDate = cal.date(byAdding: .year, value: -1, to: Date())!
         
-        // We want to find dates that match on Mondays at midnight local time
+        // We want to find dates that match on Mondays
         var components = DateComponents()
         components.weekday = 2 // Monday
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d yyyy"
         var dateString:String = ""
         // Enumerate all of the dates
-        cal.enumerateDates(startingAfter: Date(), matching: components, matchingPolicy: .previousTimePreservingSmallerComponents, repeatedTimePolicy: .first, direction: .backward) { (date, match, stop) in
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        cal.enumerateDates(startingAfter: tomorrow, matching: components, matchingPolicy: .previousTimePreservingSmallerComponents, repeatedTimePolicy: .first, direction: .backward) { (date, match, stop) in
             if let date = date {
                 if date < stopDate {
                     stop = true // We've reached the end, exit the loop
