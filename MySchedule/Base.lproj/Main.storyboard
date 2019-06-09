@@ -198,6 +198,16 @@
                                     <action selector="useThisWeekPushed:" destination="ToE-DD-6HD" eventType="touchUpInside" id="TnO-8q-Heg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-hP-kDp">
+                                <rect key="frame" x="527" y="263" width="47" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GLQ-BN-zcl"/>
+                                </constraints>
+                                <state key="normal" title="View It"/>
+                                <connections>
+                                    <action selector="viewItPressed:" destination="ToE-DD-6HD" eventType="touchUpInside" id="ZBD-PN-Wbd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82249321912146667" green="1" blue="0.94508326548225641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -224,6 +234,8 @@
                             <constraint firstItem="ODJ-wf-IIg" firstAttribute="centerX" secondItem="thG-vj-byh" secondAttribute="centerX" id="jlZ-L6-Rd7"/>
                             <constraint firstItem="cBu-Z9-TgF" firstAttribute="top" secondItem="BQV-JI-Qvh" secondAttribute="bottom" constant="32.5" id="k4p-vW-Za3"/>
                             <constraint firstItem="96B-j1-vZ0" firstAttribute="top" secondItem="GAo-dY-Qnu" secondAttribute="bottom" constant="63" id="kfO-9R-Iob"/>
+                            <constraint firstItem="iFa-hP-kDp" firstAttribute="centerY" secondItem="cBu-Z9-TgF" secondAttribute="centerY" id="oKz-b2-quN"/>
+                            <constraint firstItem="iFa-hP-kDp" firstAttribute="leading" secondItem="cBu-Z9-TgF" secondAttribute="trailing" constant="92" id="qNf-Zm-fNi"/>
                             <constraint firstItem="Pak-ff-ciV" firstAttribute="top" secondItem="96B-j1-vZ0" secondAttribute="bottom" constant="108" id="qiK-7q-2eu"/>
                             <constraint firstItem="ODJ-wf-IIg" firstAttribute="top" secondItem="tCu-gR-s9b" secondAttribute="bottom" constant="50" id="qlM-cW-Bnr"/>
                             <constraint firstItem="HWN-tL-gke" firstAttribute="centerY" secondItem="GAo-dY-Qnu" secondAttribute="centerY" id="sxK-bl-mF4"/>
@@ -239,6 +251,7 @@
                         <outlet property="limitTextField" destination="FRZ-up-Reo" id="AfL-Od-2HZ"/>
                         <outlet property="scheduleBlockPicker" destination="ZqB-hw-mGn" id="yk1-nl-fLO"/>
                         <outlet property="weekPickerView" destination="BQV-JI-Qvh" id="P8t-Xm-x2t"/>
+                        <segue destination="lUY-kR-ggb" kind="show" identifier="viewWeekSegue" id="TTi-v0-MPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFz-m9-ITw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,9 +327,6 @@
                                     <constraint firstAttribute="height" constant="30" id="72u-jV-aLD"/>
                                 </constraints>
                                 <state key="normal" title="View Weekly Schedule"/>
-                                <connections>
-                                    <segue destination="lUY-kR-ggb" kind="show" id="x8o-sQ-GDE"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96379815150000003" blue="0.25110642259999999" alpha="1" colorSpace="calibratedRGB"/>

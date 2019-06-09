@@ -66,7 +66,7 @@ class ScheduleBlock: NSObject, NSCoding {
         }
     }
 
-    class func getSchedules() -> [ScheduleBlock] {
+   class func getSchedules() -> [ScheduleBlock] {
         let scheduleArchive = Filehelpers.fileInUserDocumentDirectory("scheduleArchive")
         
         let manager = FileManager.default

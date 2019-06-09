@@ -18,6 +18,7 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
     let reuseIdentifier = "WeekCollectionViewCell"
     var selectedArrayIndex:Int = 0
     var chosenActivity:ActivityItem!
+    var week:Week!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func getItemsToDisplay() {
-        let theSchedules = ScheduleBlock.getSchedules()
+        let theSchedules = self.week.scheduleArray
         if theSchedules.count > 0 {
             print("We have schedules")
             for item in theSchedules {

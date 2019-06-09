@@ -37,6 +37,15 @@ class Week: NSObject, NSCoding {
     
     class func saveWeek(week:Week) {
         var array = WeekArray.getWeekArray()
+        // update wek in the array if it exists
+        for index in 0..<array.count {
+            if array[index].dateStamp == week.dateStamp {
+                array[index] = week
+                WeekArray.saveWeekArray(weekArray: array)
+                return
+            }
+        }
+        // only get here if new week
         array.append(week)
         WeekArray.saveWeekArray(weekArray: array)
     }

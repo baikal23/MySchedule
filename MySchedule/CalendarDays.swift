@@ -9,7 +9,11 @@
 import UIKit
 
 class CalendarDays: NSObject {
-    
+    class func getLastMonday() ->Date {
+        let mondayArray = CalendarDays.getPreviousMondays()
+        let lastMonday = CalendarDays.dateFromString(mondayArray[0])
+        return lastMonday
+    }
     class func getNextMondays() -> [String]{
         var mondays:[String] = []
         let cal = Calendar.current

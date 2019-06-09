@@ -18,12 +18,14 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     var doubleArray = [[ActivityItem]]()
     let reuseIdentifier = "ActivityCell"
     var participant:String = "SK"
+    var currentWeek:Week!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         print("In viewDidLoad for SignUp View")
-         self.getItemsToDisplay()
+        let lastMonday = CalendarDays.getLastMonday()
+        currentWeek = Week.getWeekOf(lastMonday)
+        self.getItemsToDisplay()
         self.collectionView.allowsMultipleSelection = true
         // Do any additional setup after loading the view.
     }
@@ -48,7 +50,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         return returnArray
     }
     func getItemsToDisplay() {
-        let theSchedules = ScheduleBlock.getSchedules()
+        let theSchedules = currentWeek.scheduleArray
         if theSchedules.count > 0 {
             print("We have schedules")
             for item in theSchedules {
@@ -62,7 +64,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     func updateActivityParticipants() {
-        let theSchedules = ScheduleBlock.getSchedules()
+        let theSchedules = currentWeek.scheduleArray
         if theSchedules.count == 10 {
             print("We have schedules")
             for index in 0...9 {
@@ -74,7 +76,8 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
                 print(activity.activityName + " has  \(activity.participants.count) " + " participants ")
             }
         }
-        ScheduleBlock.saveSchedules(scheduleArray: theSchedules)
+        //ScheduleBlock.saveSchedules(scheduleArray: theSchedules)
+        Week.saveWeek(week: currentWeek)
             
         
     }

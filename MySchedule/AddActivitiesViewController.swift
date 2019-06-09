@@ -21,7 +21,6 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     var mondayDate:Date = Date() // initialize as today
     var weekPickerData:[String] = []
     
-    
     @IBOutlet weak var weekPickerView: UIPickerView!
     @IBOutlet weak var scheduleBlockPicker: UIPickerView!
     @IBOutlet weak var activityTextField: UITextField!
@@ -49,6 +48,11 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.getWeekScheduleArray()
         print("Got the week")
     }
+    
+    @IBAction func viewItPressed(_ sender: Any) {
+        performSegue(withIdentifier: "viewWeekSegue", sender: self)
+    }
+    
     @IBAction func addActivityPressed(_ sender: Any) {
         // this adds an activity to the currentScheduleBlock
         let name = activityTextField.text!
@@ -130,14 +134,19 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
             print ("Date is \(mondayDate)")
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewWeekSegue" {
+            let destinationVC = segue.destination as! WeekCollectionViewController
+            destinationVC.week = currentWeek
+        }
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
