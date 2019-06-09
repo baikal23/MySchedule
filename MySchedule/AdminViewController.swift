@@ -27,13 +27,13 @@ class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     @IBAction func clearOldSchedulesPressed(_ sender: Any) {
-        ScheduleBlock.deleteAllOldSchedules()
+        WeekArray.deleteAllWeeks()
     }
     
     @IBAction func getAllSchedulesPressed(_ sender: Any) {
-        let theSchedules = ScheduleBlock.getSchedules()
-        if theSchedules.count > 0 {
-            print("We have schedules")
+        let theWeekArray = WeekArray.getWeekArray()
+        if theWeekArray.count > 0 {
+            print("We have \(theWeekArray.count) weeks")
         }
     }
 

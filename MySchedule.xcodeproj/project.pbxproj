@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8005276622AC6EA9000E9E18 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005276522AC6EA9000E9E18 /* Week.swift */; };
+		8005276822AD15D9000E9E18 /* WeekArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005276722AD15D9000E9E18 /* WeekArray.swift */; };
 		80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */; };
 		80139CCC229D8E22005DB896 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */; };
 		80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8005276522AC6EA9000E9E18 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		8005276722AD15D9000E9E18 /* WeekArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekArray.swift; sourceTree = "<group>"; };
 		80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewController.swift; sourceTree = "<group>"; };
 		80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewCell.swift; sourceTree = "<group>"; };
 		80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				80B1E9DF2289EC7400A01E8E /* Info.plist */,
 				8069BE48228B6D44000935AD /* Filehelpers.swift */,
 				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
+				8005276522AC6EA9000E9E18 /* Week.swift */,
 				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
 				803823992290A024006209C0 /* ActivityCell.swift */,
 				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
@@ -157,6 +162,7 @@
 				8032ED5A22A48AC200F17A43 /* CalendarDays.swift */,
 				8018F2D122A185EF0097FAD3 /* blank.png */,
 				8018F2CF22A17C900097FAD3 /* check.png */,
+				8005276722AD15D9000E9E18 /* WeekArray.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -314,12 +320,14 @@
 			files = (
 				8032ED5B22A48AC200F17A43 /* CalendarDays.swift in Sources */,
 				8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */,
+				8005276622AC6EA9000E9E18 /* Week.swift in Sources */,
 				8038239A2290A024006209C0 /* ActivityCell.swift in Sources */,
 				80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */,
 				80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */,
 				80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */,
 				80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */,
 				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
+				8005276822AD15D9000E9E18 /* WeekArray.swift in Sources */,
 				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
 				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,

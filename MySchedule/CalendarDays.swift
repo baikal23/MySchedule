@@ -70,6 +70,16 @@ class CalendarDays: NSObject {
         }
         return mondays
     }
+    class func dateIsCurrentWeek(_ date:Date) ->Bool {
+        let cal = Calendar.current
+        let startDate = cal.date(byAdding: .day, value: -6, to: Date())!
+        let stopDate = cal.date(byAdding: .day, value: 6, to: Date())!
+        if ((date >= startDate) && (date <= stopDate)) {
+               return true
+            } else {
+               return false
+        }
+    }
     
     class func dateFromString(_ dateString:String) -> Date {
         let formatter = DateFormatter()

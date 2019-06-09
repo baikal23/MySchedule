@@ -14,6 +14,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     var currentTime:String = ""
     var currentRow = 0
     var currentScheduleBlock:ScheduleBlock!  // must initialize before use
+    var currentWeek:Week!
     //var scheduleArray:[ScheduleBlock] = []
     var weekSchedule:[ScheduleBlock] = []
     var addedToScheduleArray = false
@@ -37,12 +38,17 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         pickerData = [kMondayAM, kMondayPM, kTuesdayAM, kTuesdayPM, kWednesdayAM, kWednesdayPM, kThursdayAM, kThursdayPM, kFridayAM, kFridayPM]
         weekPickerData = CalendarDays.getNextMondays()
         // must initialize the currentScheduleBlock
-        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM, dateStamp: mondayDate) // make a scheduleBlock
+        currentScheduleBlock = ScheduleBlock(scheduleTime: kMondayAM) // make a scheduleBlock
         self.pickerView(self.scheduleBlockPicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
         self.pickerView(self.weekPickerView, didSelectRow: 0, inComponent: 0)  //initialize week Picker
-        self.makeWeekScheduleArray()
     }
     
+    @IBAction func useThisWeekPushed(_ sender: Any) {
+        let date = mondayDate
+        currentWeek = Week.getWeekOf(date)
+        self.getWeekScheduleArray()
+        print("Got the week")
+    }
     @IBAction func addActivityPressed(_ sender: Any) {
         // this adds an activity to the currentScheduleBlock
         let name = activityTextField.text!
@@ -79,27 +85,22 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func donePressed(_ sender: Any) {
        // self.scheduleArray.append(currentScheduleBlock)
-        ScheduleBlock.saveSchedules(scheduleArray: weekSchedule)
+        currentWeek.scheduleArray = weekSchedule    
+        Week.saveWeek(week: currentWeek)
     }
 
     func updateScheduleBlock() {
         // self.currentScheduleBlock.activityArray.removeAll()  //reset activityArray
-        let newScheduleBlock = ScheduleBlock(scheduleTime: currentTime, dateStamp: mondayDate) // make new currentScheduleBlock so new data does not overwrite existing stuff
+        let newScheduleBlock = ScheduleBlock(scheduleTime: currentTime) // make new currentScheduleBlock so new data does not overwrite existing stuff
         newScheduleBlock.displayIndex = currentRow
         newScheduleBlock.activityArray = []
         currentScheduleBlock = newScheduleBlock
     }
     
-    func makeWeekScheduleArray() {
-        weekSchedule = []
-        for (index,element) in weekTimes.enumerated() {
-            print("\(index) = \(element)")
-            let daySchedule = ScheduleBlock(scheduleTime: element, dateStamp: mondayDate)
-            weekSchedule.append(daySchedule)
-        }
-        ScheduleBlock.saveSchedules(scheduleArray: weekSchedule)
-
+    func getWeekScheduleArray() {
+        weekSchedule = currentWeek.scheduleArray
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

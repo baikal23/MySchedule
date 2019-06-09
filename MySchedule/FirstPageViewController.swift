@@ -21,7 +21,6 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.isEnabled = false
         userTextField.delegate = self
         passwordTextField.delegate = self
-
         // Do any additional setup after loading the view.
     }
     

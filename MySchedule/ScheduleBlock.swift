@@ -10,14 +10,12 @@ import UIKit
 
 class ScheduleBlock: NSObject, NSCoding {
     var scheduleTime:String
-    var dateStamp:Date
     var displayIndex:Int
     var activityArray:[ActivityItem]
     var addedToScheduleArray = false
 
-    init(scheduleTime:String, dateStamp:Date) {
+    init(scheduleTime:String) {
         self.scheduleTime = scheduleTime
-        self.dateStamp = dateStamp
         self.displayIndex = 0  // to seed the value
         if scheduleTime == kMondayAM {
             self.displayIndex = 0
@@ -45,7 +43,7 @@ class ScheduleBlock: NSObject, NSCoding {
     
     required init(coder: NSCoder) {
         self.scheduleTime = coder.decodeObject(forKey: "scheduleTime")! as! String
-        self.dateStamp = coder.decodeObject(forKey: "dateStamp")! as! Date
+        
         self.displayIndex = coder.decodeInteger(forKey: "displayIndex")
         self.activityArray = coder.decodeObject(forKey: "activityArray") as! [ActivityItem]
         super.init()
@@ -53,7 +51,6 @@ class ScheduleBlock: NSObject, NSCoding {
     
     func encode(with coder: NSCoder) {
         coder.encode(self.scheduleTime, forKey: "scheduleTime")
-        coder.encode(self.dateStamp, forKey:"dateStamp")
         coder.encode(self.displayIndex, forKey:"displayIndex")
         coder.encode(self.activityArray, forKey: "activityArray")
     }
