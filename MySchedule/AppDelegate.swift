@@ -20,6 +20,7 @@
 // added green checkmarks
 // added CalendarDays and view only Mondays
 // changed Back button to Done for SignUp page and made unwind segue
+//  working on conversion to Week based app - need to retrieve specific week and also do sign up stuff
 
 import UIKit
 
