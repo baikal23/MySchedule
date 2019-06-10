@@ -20,7 +20,13 @@ class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         // Do any additional setup after loading the view.
     }
+    @IBAction func activitiesManagerPushed(_ sender: Any) {
+    }
     
+    @IBAction func participantManagerPushed(_ sender: Any) {
+    }
+    @IBAction func reportManagerPushed(_ sender: Any) {
+    }
     @IBAction func addButtonPressed(_ sender: Any) {
         Participants.addParticipant(participant: participantTextField.text!)
         self.participants = Participants.getParticipants()

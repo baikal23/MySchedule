@@ -21,6 +21,9 @@
 		804246F0229CA22B00E1F281 /* Participants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246EF229CA22B00E1F281 /* Participants.swift */; };
 		805D7D7E229DE34A006A2819 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */; };
 		8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BE48228B6D44000935AD /* Filehelpers.swift */; };
+		80AD0FE522AE88F6006C3792 /* ParticipantManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD0FE422AE88F6006C3792 /* ParticipantManagerViewController.swift */; };
+		80AD0FE722AE8C73006C3792 /* ReportManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */; };
+		80AD0FE922AE8CE0006C3792 /* ActivitiesManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */; };
 		80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1E9D32289EC7000A01E8E /* AppDelegate.swift */; };
 		80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9D72289EC7000A01E8E /* Main.storyboard */; };
 		80B1E9DB2289EC7300A01E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B1E9DA2289EC7300A01E8E /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		804246EF229CA22B00E1F281 /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
 		805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityViewController.swift; sourceTree = "<group>"; };
 		8069BE48228B6D44000935AD /* Filehelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filehelpers.swift; sourceTree = "<group>"; };
+		80AD0FE422AE88F6006C3792 /* ParticipantManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantManagerViewController.swift; sourceTree = "<group>"; };
+		80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManagerViewController.swift; sourceTree = "<group>"; };
+		80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesManagerViewController.swift; sourceTree = "<group>"; };
 		80B1E9D02289EC7000A01E8E /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B1E9D32289EC7000A01E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B1E9D82289EC7000A01E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +156,9 @@
 				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
 				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
 				80B1EA092289EDB300A01E8E /* AdminViewController.swift */,
+				80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */,
+				80AD0FE422AE88F6006C3792 /* ParticipantManagerViewController.swift */,
+				80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */,
 				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
 				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
 				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
@@ -325,7 +334,9 @@
 				80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */,
 				80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */,
 				80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */,
+				80AD0FE922AE8CE0006C3792 /* ActivitiesManagerViewController.swift in Sources */,
 				80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */,
+				80AD0FE722AE8C73006C3792 /* ReportManagerViewController.swift in Sources */,
 				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
 				8005276822AD15D9000E9E18 /* WeekArray.swift in Sources */,
 				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
@@ -334,6 +345,7 @@
 				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
 				80139CCC229D8E22005DB896 /* WeekCollectionViewCell.swift in Sources */,
 				804246F0229CA22B00E1F281 /* Participants.swift in Sources */,
+				80AD0FE522AE88F6006C3792 /* ParticipantManagerViewController.swift in Sources */,
 				8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */,
 				805D7D7E229DE34A006A2819 /* EditActivityViewController.swift in Sources */,
 				80B1EA0E2289EE1D00A01E8E /* SeeWeekViewController.swift in Sources */,
