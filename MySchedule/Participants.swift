@@ -9,7 +9,7 @@
 import UIKit
 
 class Participants: NSObject {
-    class func getParticipants() -> [String]
+    class func getParticipants() -> [User]
     {
         let participantArchive = Filehelpers.fileInUserDocumentDirectory("participants")
         let manager = FileManager.default
@@ -18,7 +18,7 @@ class Participants: NSObject {
             print("no participants")
         } else {
             do {
-                if let loadedParticipants = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(participantData!) as? [String] {
+                if let loadedParticipants = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(participantData!) as? [User] {
                     return loadedParticipants
                 }
             } catch {
@@ -28,7 +28,7 @@ class Participants: NSObject {
         return []
     }
     
-    class func saveParticipants(participantArray:[String]) {
+    class func saveParticipants(participantArray:[User]) {
         let participantArchive = Filehelpers.fileInUserDocumentDirectory("participants")
         let participantURL = URL(fileURLWithPath: participantArchive)
         do {
@@ -39,7 +39,7 @@ class Participants: NSObject {
         }
     }
     
-    class func removeParticipant(participant:String) {
+    class func removeParticipant(participant:User) {
         var participantArray = Participants.getParticipants()
         for item in participantArray {
             if item == participant {
@@ -54,7 +54,7 @@ class Participants: NSObject {
         Participants.saveParticipants(participantArray: participantArray)
     }
     
-    class func addParticipant(participant:String) {
+    class func addParticipant(participant:User) {
         var array = Participants.getParticipants()
         array.append(participant)
         Participants.saveParticipants(participantArray: array)
@@ -63,7 +63,7 @@ class Participants: NSObject {
     class func verifyParticipant(_ participant:String) -> Bool {
         let array = Participants.getParticipants()
         for item in array {
-            if item == participant {
+            if item.name == participant {
                return true
             }
         }

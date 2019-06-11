@@ -158,9 +158,6 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             cell.checkView.image = UIImage(named: "blank.png")
         }
         return cell
-        // Configure the cell
-    
-        return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView,

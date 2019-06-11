@@ -39,6 +39,7 @@ class ScheduleBlock: NSObject, NSCoding {
             self.displayIndex = 9
         }
         self.activityArray = []
+        
     }
     
     required init(coder: NSCoder) {

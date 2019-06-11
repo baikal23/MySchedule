@@ -14,6 +14,8 @@
 		80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */; };
 		8018F2D022A17C900097FAD3 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8018F2CF22A17C900097FAD3 /* check.png */; };
 		8018F2D222A185EF0097FAD3 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 8018F2D122A185EF0097FAD3 /* blank.png */; };
+		80285F9122AF04B9007BF088 /* ScheduleBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */; };
+		80285F9322B0632B007BF088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285F9222B0632B007BF088 /* User.swift */; };
 		8032ED5B22A48AC200F17A43 /* CalendarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032ED5A22A48AC200F17A43 /* CalendarDays.swift */; };
 		8038239A2290A024006209C0 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803823992290A024006209C0 /* ActivityCell.swift */; };
 		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
@@ -64,6 +66,8 @@
 		80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionReusableView.swift; sourceTree = "<group>"; };
 		8018F2CF22A17C900097FAD3 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		8018F2D122A185EF0097FAD3 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
+		80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBlockCell.swift; sourceTree = "<group>"; };
+		80285F9222B0632B007BF088 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8032ED5A22A48AC200F17A43 /* CalendarDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDays.swift; sourceTree = "<group>"; };
 		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				8018F2CF22A17C900097FAD3 /* check.png */,
 				8005276722AD15D9000E9E18 /* WeekArray.swift */,
 				80AD0FEA22AE8E1C006C3792 /* ParticipantManagerViewController.swift */,
+				80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */,
+				80285F9222B0632B007BF088 /* User.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				8032ED5B22A48AC200F17A43 /* CalendarDays.swift in Sources */,
 				8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */,
 				80AD0FEB22AE8E1C006C3792 /* ParticipantManagerViewController.swift in Sources */,
+				80285F9322B0632B007BF088 /* User.swift in Sources */,
 				8005276622AC6EA9000E9E18 /* Week.swift in Sources */,
 				8038239A2290A024006209C0 /* ActivityCell.swift in Sources */,
 				80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */,
@@ -345,6 +352,7 @@
 				80B1EA0A2289EDB300A01E8E /* AdminViewController.swift in Sources */,
 				80B1E9D42289EC7000A01E8E /* AppDelegate.swift in Sources */,
 				80139CCC229D8E22005DB896 /* WeekCollectionViewCell.swift in Sources */,
+				80285F9122AF04B9007BF088 /* ScheduleBlockCell.swift in Sources */,
 				804246F0229CA22B00E1F281 /* Participants.swift in Sources */,
 				8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */,
 				805D7D7E229DE34A006A2819 /* EditActivityViewController.swift in Sources */,
