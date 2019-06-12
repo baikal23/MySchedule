@@ -46,8 +46,10 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "signUpSegue" {
             let destinationNv = segue.destination as! UINavigationController
             let destinationVC = destinationNv.viewControllers[0] as! SignUpCollectionViewController
-            destinationVC.participant = userTextField.text!
+            let participant = Participants.getParticipantWithName(userTextField.text!)
+            destinationVC.participant = participant
         }
+        
     }
 
 }

@@ -13,6 +13,7 @@ class ScheduleBlock: NSObject, NSCoding {
     var displayIndex:Int
     var activityArray:[ActivityItem]
     var addedToScheduleArray = false
+    var isHidden = false
 
     init(scheduleTime:String) {
         self.scheduleTime = scheduleTime
@@ -44,7 +45,6 @@ class ScheduleBlock: NSObject, NSCoding {
     
     required init(coder: NSCoder) {
         self.scheduleTime = coder.decodeObject(forKey: "scheduleTime")! as! String
-        
         self.displayIndex = coder.decodeInteger(forKey: "displayIndex")
         self.activityArray = coder.decodeObject(forKey: "activityArray") as! [ActivityItem]
         super.init()

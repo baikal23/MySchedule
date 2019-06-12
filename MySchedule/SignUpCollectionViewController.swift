@@ -17,7 +17,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     var currentDay = 0
     var doubleArray = [[ActivityItem]]()
     let reuseIdentifier = "ActivityCell"
-    var participant:String = "SK"
+    var participant:User!
     var currentWeek:Week!
     
     
@@ -62,6 +62,17 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         }
         
     }
+
+    func showBlock(currentBlock:Int)->Bool {
+        let block = weekTimes[currentBlock]
+        for item in participant.scheduleTimes {
+            if item == block {
+                return true
+            }
+        }
+        return false
+        
+    }
     
     func updateActivityParticipants() {
         let theSchedules = currentWeek.scheduleArray
@@ -84,12 +95,12 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     func registerParticipant() {
         for item in doubleArray[currentDay * 2] {
             if item.chosen == true {
-                item.participants.append(participant)
+                item.participants.append(participant.name)
             }
         }
         for item in doubleArray[currentDay * 2 + 1] {
             if item.chosen == true {
-                item.participants.append(participant)
+                item.participants.append(participant.name)
             }
         }
     }
@@ -131,7 +142,6 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         if section == 0 {
             return doubleArray[currentDay * 2].count
         } else {

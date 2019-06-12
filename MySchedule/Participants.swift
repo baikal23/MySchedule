@@ -38,7 +38,16 @@ class Participants: NSObject {
             print("Couldn't write file")
         }
     }
-    
+    class func getParticipantWithName(_ name:String)-> User {
+        var participantArray = Participants.getParticipants()
+        var index = 0
+        for item in participantArray {
+            if item.name == name {
+                index = participantArray.firstIndex(of: item) ?? 0
+            }
+        }
+        return participantArray[index]
+    }
     class func removeParticipant(participant:User) {
         var participantArray = Participants.getParticipants()
         for item in participantArray {
@@ -60,10 +69,10 @@ class Participants: NSObject {
         Participants.saveParticipants(participantArray: array)
     }
     
-    class func verifyParticipant(_ participant:String) -> Bool {
+    class func verifyParticipant(_ participantName:String) -> Bool {
         let array = Participants.getParticipants()
         for item in array {
-            if item.name == participant {
+            if item.name == participantName {
                return true
             }
         }
