@@ -14,7 +14,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     @IBOutlet weak var headerView: UICollectionReusableView!
     
     fileprivate var itemsToDisplay = [ActivityItem]()
-    var currentDay = 0
+    var currentBlock = 0
     var doubleArray = [[ActivityItem]]()
     let reuseIdentifier = "ActivityCell"
     var participant:User!
@@ -23,6 +23,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentBlock = self.verifyBlock(theBlock: currentBlock)
         let lastMonday = CalendarDays.getLastMonday()
         currentWeek = Week.getWeekOf(lastMonday)
         self.getItemsToDisplay()
@@ -33,20 +34,20 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     func activityItemForIndexPath(_ indexPath: IndexPath) -> ActivityItem {
         var returnItem:ActivityItem!
         if indexPath.section == 0 {
-            returnItem = doubleArray[currentDay * 2][indexPath.row]
-        } else if indexPath.section == 1 {
+            returnItem = doubleArray[currentBlock][indexPath.row]
+        }/* else if indexPath.section == 1 {
             returnItem = doubleArray[currentDay * 2 + 1][indexPath.row]
-        }
+        }*/
         return returnItem
     }
     
     func activityArrayForIndexPath(_ indexPath: IndexPath) -> [ActivityItem] {
         var returnArray:[ActivityItem] = []
         if indexPath.section == 0 {
-            returnArray = doubleArray[currentDay * 2]
-        } else if indexPath.section == 1 {
+            returnArray = doubleArray[currentBlock]
+        } /*else if indexPath.section == 1 {
             returnArray = doubleArray[currentDay * 2 + 1]
-        }
+        }*/
         return returnArray
     }
     func getItemsToDisplay() {
@@ -63,15 +64,17 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         
     }
 
-    func showBlock(currentBlock:Int)->Bool {
-        let block = weekTimes[currentBlock]
-        for item in participant.scheduleTimes {
-            if item == block {
-                return true
+    func verifyBlock(theBlock:Int)->Int {
+        var block = weekTimes[theBlock] // just to initialize
+        for index in theBlock ..< 9 {
+            block = weekTimes[index]
+            for item in participant.scheduleTimes {
+                if item == block {
+                    return index
+                }
             }
         }
-        return false
-        
+        return currentBlock // if no matches found
     }
     
     func updateActivityParticipants() {
@@ -93,16 +96,16 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         
     }
     func registerParticipant() {
-        for item in doubleArray[currentDay * 2] {
+        for item in doubleArray[currentBlock] {
             if item.chosen == true {
                 item.participants.append(participant.name)
             }
         }
-        for item in doubleArray[currentDay * 2 + 1] {
+       /* for item in doubleArray[currentDay * 2 + 1] {
             if item.chosen == true {
                 item.participants.append(participant.name)
             }
-        }
+        }*/
     }
    /* @IBAction func backButtonPressed(_ sender: Any) {
         if currentDay != 0 {
@@ -119,8 +122,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     @IBAction func nextButtonPressed(_ sender: Any) {
         self.registerParticipant()
         self.updateActivityParticipants()
-        if currentDay != 9 {
-            currentDay = currentDay + 1
+        if currentBlock != 9 {
+            currentBlock = currentBlock + 1
+            currentBlock = self.verifyBlock(theBlock: currentBlock)
             self.collectionView.reloadData()
         }
     }
@@ -137,16 +141,17 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return doubleArray[currentDay * 2].count
-        } else {
+            return doubleArray[currentBlock].count
+        } /*else {
             return doubleArray[currentDay * 2 + 1].count
-        }
+        }*/
+        return doubleArray[currentBlock].count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -187,10 +192,10 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
                     fatalError("Invalid view type")
             }
             if (indexPath.section == 0) {
-                headerView.signUpHeaderLabel.text = weekTimes[currentDay * 2]
-            } else {
+                headerView.signUpHeaderLabel.text = weekTimes[currentBlock]
+            } /*else {
                 headerView.signUpHeaderLabel.text = weekTimes[currentDay * 2 + 1]
-            }
+            }*/
             return headerView
         default:
             // 4
