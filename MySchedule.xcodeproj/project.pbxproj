@@ -21,6 +21,7 @@
 		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
 		804246EE2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */; };
 		804246F0229CA22B00E1F281 /* Participants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246EF229CA22B00E1F281 /* Participants.swift */; };
+		804AAC7422C82075004BC3BD /* ReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AAC7322C82075004BC3BD /* ReportGenerator.swift */; };
 		805D7D7E229DE34A006A2819 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */; };
 		8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BE48228B6D44000935AD /* Filehelpers.swift */; };
 		80AD0FE722AE8C73006C3792 /* ReportManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */; };
@@ -72,6 +73,7 @@
 		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		804246EF229CA22B00E1F281 /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
+		804AAC7322C82075004BC3BD /* ReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportGenerator.swift; sourceTree = "<group>"; };
 		805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityViewController.swift; sourceTree = "<group>"; };
 		8069BE48228B6D44000935AD /* Filehelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filehelpers.swift; sourceTree = "<group>"; };
 		80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManagerViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				80AD0FEA22AE8E1C006C3792 /* ParticipantManagerViewController.swift */,
 				80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */,
 				80285F9222B0632B007BF088 /* User.swift */,
+				804AAC7322C82075004BC3BD /* ReportGenerator.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */,
 				80AD0FE722AE8C73006C3792 /* ReportManagerViewController.swift in Sources */,
 				80B1EA0C2289EDCC00A01E8E /* AddActivitiesViewController.swift in Sources */,
+				804AAC7422C82075004BC3BD /* ReportGenerator.swift in Sources */,
 				8005276822AD15D9000E9E18 /* WeekArray.swift in Sources */,
 				80B1EA042289ED4500A01E8E /* ScheduleBlock.swift in Sources */,
 				80B1EA4E228B3E0C00A01E8E /* Constants.swift in Sources */,

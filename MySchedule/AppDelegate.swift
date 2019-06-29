@@ -24,6 +24,7 @@
 // can retrieve desired week and sign up - admin can edit user list and results are saved
 //  NEXT - reorganize admin pages, add reprting and printing and option to print specific schedule - also restricted schedule option when register user
 // Now register users available times - and only available times are displayed for sign up
+// added ReportGenerator to help with output
 
 import UIKit
 
