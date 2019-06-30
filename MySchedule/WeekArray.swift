@@ -54,6 +54,27 @@ class WeekArray: NSObject, NSCoding {
         return array // returns an empty archive
     }
     
+    class func getWeeksInRangeFrom(_ startDate:Date, endDate:Date) -> [Week] {
+        var foundWeeks:[Week] = []
+        let allWeeks = WeekArray.getWeekArray()
+        for week in allWeeks {
+            if (week.dateStamp >= startDate && week.dateStamp <= endDate) {
+                foundWeeks.append(week)
+            }
+        }
+        return foundWeeks
+    }
+    
+    class func getScheduleInRangeFor(_ user:String, startDate:Date, endDate:Date) -> [Week] {
+        var scheduleInRange:[Week] = []
+        let weeksInRange = WeekArray.getWeeksInRangeFrom(startDate, endDate: endDate)
+        for week in weeksInRange {
+            let scheduleInfo = Week.getWeeklyScheduleFor(user, weekOf: week.dateStamp)
+            scheduleInRange.append(scheduleInfo)
+        }
+        return scheduleInRange
+    }
+    
     class func deleteWeeks(from:Date, to:Date) {
         
         //TO DO:  Make this work
