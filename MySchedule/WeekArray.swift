@@ -76,8 +76,15 @@ class WeekArray: NSObject, NSCoding {
     }
     
     class func deleteWeeks(from:Date, to:Date) {
-        
-        //TO DO:  Make this work
+        var theWeeks = WeekArray.getWeekArray()
+        for week in theWeeks {
+            if (week.dateStamp >= from && week.dateStamp <= to) {
+                let index = theWeeks.firstIndex(of: week) ?? 0
+                theWeeks.remove(at: index)
+            }
+        }
+        WeekArray.saveWeekArray(weekArray: theWeeks)
+        //TO DO:  See if this works
     }
     
     class func deleteAllWeeks() {
