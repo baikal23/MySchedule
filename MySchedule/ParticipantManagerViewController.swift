@@ -48,6 +48,12 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
         self.tableView.reloadData()
     }
     
+    @IBAction func printSchedulePressed(_ sender: Any) {
+        let user = currentParticipant.name
+        let lastMonday = CalendarDays.getLastMonday()
+        let week = Week.getWeeklyScheduleFor(user, weekOf: lastMonday)
+        print("Got the schedule")
+    }
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return participants.count
@@ -89,7 +95,7 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("IndexPath row is \(indexPath.row) and indexPath.section is \(indexPath.section)")
+        //print("IndexPath row is \(indexPath.row) and indexPath.section is \(indexPath.section)")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ScheduleBlockCell
         cell.backgroundColor = UIColor.gray
         if cell.isSelected {

@@ -654,6 +654,9 @@
                                 <rect key="frame" x="139" y="849" width="184" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Print Weekly Schedule"/>
+                                <connections>
+                                    <action selector="printSchedulePressed:" destination="Msy-9U-5Qw" eventType="touchUpInside" id="vDW-sD-Ev6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Participant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-vA-BtZ">
                                 <rect key="frame" x="120" y="125" width="121.5" height="20.5"/>
