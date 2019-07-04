@@ -126,6 +126,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800BC87A22CE6AF800D99E6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
+				804246EF229CA22B00E1F281 /* Participants.swift */,
+				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
+				80285F9222B0632B007BF088 /* User.swift */,
+				8005276522AC6EA9000E9E18 /* Week.swift */,
+				8005276722AD15D9000E9E18 /* WeekArray.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		800BC87B22CE6B3300D99E6B /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				803823992290A024006209C0 /* ActivityCell.swift */,
+				80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */,
+				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		800BC87C22CE6B6600D99E6B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */,
+				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
+				80B1EA092289EDB300A01E8E /* AdminViewController.swift */,
+				805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */,
+				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
+				80AD0FEA22AE8E1C006C3792 /* ParticipantManagerViewController.swift */,
+				80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */,
+				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
+				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
+				80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		800BC87D22CE6BCB00D99E6B /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8032ED5A22A48AC200F17A43 /* CalendarDays.swift */,
+				8069BE48228B6D44000935AD /* Filehelpers.swift */,
+				804AAC7322C82075004BC3BD /* ReportGenerator.swift */,
+			);
+			path = HelperFiles;
+			sourceTree = "<group>";
+		};
 		80B1E9C72289EC7000A01E8E = {
 			isa = PBXGroup;
 			children = (
@@ -154,33 +204,15 @@
 				80B1E9DA2289EC7300A01E8E /* Assets.xcassets */,
 				80B1E9DC2289EC7300A01E8E /* LaunchScreen.storyboard */,
 				80B1E9DF2289EC7400A01E8E /* Info.plist */,
-				8069BE48228B6D44000935AD /* Filehelpers.swift */,
-				80B1EA012289ED2800A01E8E /* ActivityItem.swift */,
-				8005276522AC6EA9000E9E18 /* Week.swift */,
-				80B1EA032289ED4500A01E8E /* ScheduleBlock.swift */,
-				803823992290A024006209C0 /* ActivityCell.swift */,
-				80139CCB229D8E22005DB896 /* WeekCollectionViewCell.swift */,
-				80B1EA0B2289EDCC00A01E8E /* AddActivitiesViewController.swift */,
-				80B1EA092289EDB300A01E8E /* AdminViewController.swift */,
-				80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */,
-				80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */,
-				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
-				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
+				800BC87A22CE6AF800D99E6B /* Models */,
+				800BC87B22CE6B3300D99E6B /* CollectionViewCells */,
+				800BC87C22CE6B6600D99E6B /* ViewControllers */,
 				80B1EA4D228B3E0C00A01E8E /* Constants.swift */,
+				800BC87D22CE6BCB00D99E6B /* HelperFiles */,
 				804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */,
-				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
-				804246EF229CA22B00E1F281 /* Participants.swift */,
-				80139CC9229D893A005DB896 /* WeekCollectionViewController.swift */,
 				80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */,
-				805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */,
-				8032ED5A22A48AC200F17A43 /* CalendarDays.swift */,
 				8018F2D122A185EF0097FAD3 /* blank.png */,
 				8018F2CF22A17C900097FAD3 /* check.png */,
-				8005276722AD15D9000E9E18 /* WeekArray.swift */,
-				80AD0FEA22AE8E1C006C3792 /* ParticipantManagerViewController.swift */,
-				80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */,
-				80285F9222B0632B007BF088 /* User.swift */,
-				804AAC7322C82075004BC3BD /* ReportGenerator.swift */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";

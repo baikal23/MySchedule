@@ -25,7 +25,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var scheduleBlockPicker: UIPickerView!
     @IBOutlet weak var activityTextField: UITextField!
     @IBOutlet weak var limitTextField: UITextField!
-    @IBOutlet weak var allDayTextField: UITextField!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +42,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.pickerView(self.weekPickerView, didSelectRow: 0, inComponent: 0)  //initialize week Picker
     }
     
-    @IBAction func useThisWeekPushed(_ sender: Any) {
-        let date = mondayDate
-        currentWeek = Week.getWeekOf(date)
-        self.getWeekScheduleArray()
-        print("Got the week")
-    }
+    
     
     @IBAction func viewItPressed(_ sender: Any) {
         performSegue(withIdentifier: "viewWeekSegue", sender: self)
@@ -58,11 +53,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         let name = activityTextField.text!
         let limit = limitTextField.text!
         let limitNumber = Int(limit)!
-        var allDay = false
-        if (allDayTextField.text == "Y") {
-            allDay = true
-        }
-        let newActivity = ActivityItem(activityName: name, activityLimit: limitNumber, allDay: allDay)
+        let newActivity = ActivityItem(activityName: name, activityLimit: limitNumber)
         // add activity to currentBlock or save it and make a new schedule block
         /*if (currentScheduleBlock.scheduleTime != currentTime) {
            // self.scheduleArray.append(currentScheduleBlock)
@@ -76,15 +67,6 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
        /* currentScheduleBlock.activityArray.append(newActivity)
         print("Activity is" + newActivity.activityName)
         print("Added to " + currentScheduleBlock.scheduleTime)*/
-    }
-    @IBAction func nextTimeBlockPressed(_ sender: Any) {
-        let newRow = currentRow + 1
-        self.scheduleBlockPicker.selectRow(newRow, inComponent: 0, animated: true)
-        self.pickerView(self.scheduleBlockPicker, didSelectRow: newRow, inComponent: 0)
-        self.activityTextField.text = ""
-        self.limitTextField.text = ""
-        self.allDayTextField.text = "n"
-        self.view.setNeedsDisplay()
     }
     
     @IBAction func donePressed(_ sender: Any) {
@@ -132,6 +114,11 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         } else {
             mondayDate = CalendarDays.dateFromString(weekPickerData[row])
             print ("Date is \(mondayDate)")
+            // try this here - it works
+            let date = mondayDate
+            currentWeek = Week.getWeekOf(date)
+            self.getWeekScheduleArray()
+            print("Got the week")
         }
     }
     

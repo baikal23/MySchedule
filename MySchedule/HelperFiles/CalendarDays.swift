@@ -27,7 +27,8 @@ class CalendarDays: NSObject {
         formatter.dateFormat = "MMMM d yyyy"
         var dateString:String = ""
         // Enumerate all of the dates
-        let yesterday = Calendar.current.date(byAdding: .day, value: -8, to: Date())!
+       // let yesterday = Calendar.current.date(byAdding: .day, value: -8, to: Date())!
+        let yesterday = Calendar.current.date(byAdding: .day, value: -29, to: Date())!
         cal.enumerateDates(startingAfter: yesterday
         , matching: components, matchingPolicy: .previousTimePreservingSmallerComponents, repeatedTimePolicy: .first, direction: .forward) { (date, match, stop) in
             if let date = date {
