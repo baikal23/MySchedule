@@ -37,8 +37,38 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func participantReportPushed(_ sender: Any) {
+        var activitiesForReport:[String] = []
+        var activitySummary = (name:"name", count:0)
+        var testName = activitySummary.name
+        var summaryArray: [(name: String, count: Int)] = []
         let person = participantTextField.text!
         let schedule = WeekArray.getScheduleInRangeFor(person,  startDate:currentStartTime, endDate:currentEndTime)
+        // this logic is to count occurances of the activities
+        // first get them and alphabetize them
+        
+        for week in schedule {
+            for block in week.scheduleArray {
+                for activity in block.activityArray {
+                    activitiesForReport.append(activity.activityName)
+                }
+            }
+        }
+        // then sort the activities alphabetically
+        var sortedActivities = activitiesForReport.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+        // then count occurences of each name
+        if sortedActivities.count != 0 {
+            activitySummary.name = sortedActivities[0] // seed with first activity
+        }
+        for item in sortedActivities {
+            if activitySummary.name == item {
+                activitySummary.count = activitySummary.count + 1
+            } else {
+                summaryArray.append(activitySummary)
+                activitySummary.name = item
+                activitySummary.count = 1
+            }
+        }
+        summaryArray.append(activitySummary) // get the last one
         print("Got the schedule")
     }
     // MARK: - Picker Views
