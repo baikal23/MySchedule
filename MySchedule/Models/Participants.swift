@@ -78,4 +78,14 @@ class Participants: NSObject {
         }
         return false
     }
+    
+    class func updateParticipantLoginTime(_ participantName:String) {
+        let array = Participants.getParticipants()
+        for item in array {
+            if item.name == participantName {
+                item.lastLogin = Date()
+            }
+        }
+        Participants.saveParticipants(participantArray: array)
+    }
 }

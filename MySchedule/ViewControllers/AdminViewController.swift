@@ -10,10 +10,27 @@ import UIKit
 
 class AdminViewController: UIViewController {
 
+    var peopleWhoNeedSignUp:[String] = []
+    @IBOutlet weak var signUpTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let peopleArray = Participants.getParticipants()
+        peopleWhoNeedSignUp = []
+        let lastMonday = CalendarDays.getLastMonday()
+        for person in peopleArray {
+            if person.lastLogin < lastMonday {
+                peopleWhoNeedSignUp.append(person.name)
+            }
+        }
+        let joined = peopleWhoNeedSignUp.joined(separator: ", ")
+        self.signUpTextView.text = joined
+    }
+    
     @IBAction func activitiesManagerPushed(_ sender: Any) {
         performSegue(withIdentifier: "activitiesManagerSegue", sender: self)
     }

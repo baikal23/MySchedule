@@ -19,7 +19,6 @@ class CalendarDays: NSObject {
         let cal = Calendar.current
         // Get the date of 1 year ahead of today
         let stopDate = cal.date(byAdding: .year, value: 1, to: Date())!
-    
         // We want to find dates that match on Mondays at midnight local time
         var components = DateComponents()
         components.weekday = 2 // Monday

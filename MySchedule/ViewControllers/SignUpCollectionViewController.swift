@@ -96,6 +96,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         
     }
     func registerParticipant() {
+        Participants.updateParticipantLoginTime(participant.name)
         for item in doubleArray[currentBlock] {
             if item.chosen == true {
                 item.participants.append(participant.name)

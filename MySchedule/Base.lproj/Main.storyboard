@@ -349,13 +349,33 @@
                                     <action selector="activitiesManagerPushed:" destination="jNz-TU-wOB" eventType="touchUpInside" id="Cfu-GA-m7L"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need SignUp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIy-hm-ohE">
+                                <rect key="frame" x="198" y="284.5" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ob3-ar-uMw">
+                                <rect key="frame" x="364" y="220" width="354" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="rpP-AA-L2n"/>
+                                    <constraint firstAttribute="width" constant="354" id="wFt-5O-8il"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96379815150000003" blue="0.25110642259999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Ob3-ar-uMw" firstAttribute="centerY" secondItem="jIy-hm-ohE" secondAttribute="centerY" id="3PD-Fs-9dw"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="CZ0-FY-oqa"/>
                             <constraint firstItem="b5z-k0-Lrt" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="KN2-I2-Wnp"/>
+                            <constraint firstItem="cGS-j5-BEG" firstAttribute="trailing" secondItem="Ob3-ar-uMw" secondAttribute="trailing" constant="50" id="WYj-jQ-tjX"/>
                             <constraint firstItem="ENt-JS-FBo" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="YSO-sJ-11u"/>
+                            <constraint firstItem="Ob3-ar-uMw" firstAttribute="leading" secondItem="jIy-hm-ohE" secondAttribute="trailing" constant="65" id="dLg-Am-72Z"/>
                             <constraint firstItem="b5z-k0-Lrt" firstAttribute="top" secondItem="kQP-Ii-Rtz" secondAttribute="bottom" constant="70" id="f5Y-4K-ePl"/>
+                            <constraint firstItem="Ob3-ar-uMw" firstAttribute="top" secondItem="cGS-j5-BEG" secondAttribute="top" constant="150" id="gTM-0H-h3i"/>
                             <constraint firstItem="ENt-JS-FBo" firstAttribute="top" secondItem="b5z-k0-Lrt" secondAttribute="bottom" constant="70" id="nhC-9a-zZS"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="centerY" secondItem="1HZ-tJ-3sv" secondAttribute="centerY" id="ogh-MZ-5ec"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="wCR-1v-EOC"/>
@@ -363,6 +383,7 @@
                         <viewLayoutGuide key="safeArea" id="cGS-j5-BEG"/>
                     </view>
                     <connections>
+                        <outlet property="signUpTextView" destination="Ob3-ar-uMw" id="lWP-FN-ohE"/>
                         <segue destination="Msy-9U-5Qw" kind="show" identifier="participantManagerSegue" id="ZJ5-pS-lRZ"/>
                         <segue destination="BSq-qx-wzJ" kind="show" identifier="reportManagerSegue" id="KK3-Dr-J1z"/>
                         <segue destination="ToE-DD-6HD" kind="show" identifier="activitiesManagerSegue" id="bcj-sc-r0s"/>
@@ -370,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPQ-49-eur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735" y="286"/>
+            <point key="canvasLocation" x="-735.15625" y="285.9375"/>
         </scene>
         <!--Sign Up Collection View Controller-->
         <scene sceneID="xP8-nQ-8nE">

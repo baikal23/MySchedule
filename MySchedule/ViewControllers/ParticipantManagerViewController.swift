@@ -42,7 +42,6 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func addButtonPressed(_ sender: Any) {
         currentParticipant.name = participantTextField.text!
-        
         Participants.addParticipant(participant: currentParticipant)
         self.participants = Participants.getParticipants()
         self.tableView.reloadData()

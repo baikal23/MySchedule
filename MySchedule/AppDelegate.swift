@@ -30,6 +30,8 @@
 // also to get user schedule within a range - must test all of these
 // added activity counting -
 // admin can now remove activities - all seems to work for admin editting
+// added tracking of last login for participants
+
 import UIKit
 
 @UIApplicationMain
