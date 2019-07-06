@@ -97,4 +97,22 @@ class Week: NSObject, NSCoding {
         return newWeek
     }
     
+    class func removeActivityInScheduleBlockforWeek(block:Int, activityToRemove:ActivityItem, currentWeek:Week) {
+        for activity in currentWeek.scheduleArray[block].activityArray {
+            if activity.activityName == activityToRemove.activityName {
+                let index = currentWeek.scheduleArray[block].activityArray.firstIndex(of: activity) ?? 0
+                currentWeek.scheduleArray[block].activityArray.remove(at: index)
+            }
+        }
+        Week.saveWeek(week: currentWeek)
+    }
+    
+    class func updateActivityInScheduleBlockforWeek(_ block:Int, activityToUpdate:ActivityItem, newParticipants:[String], currentWeek:Week) {
+        for activity in currentWeek.scheduleArray[block].activityArray {
+            if activity.activityName == activityToUpdate.activityName {
+                activityToUpdate.participants = newParticipants
+            }
+        }
+        Week.saveWeek(week: currentWeek)
+    }
 }

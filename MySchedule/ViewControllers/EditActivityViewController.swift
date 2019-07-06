@@ -12,6 +12,7 @@ class EditActivityViewController: UIViewController {
 
     var selectedArrayIndex:Int = 0
     var chosenActivity:ActivityItem!
+    var currentWeek:Week!
     @IBOutlet weak var participantTextField: UITextField!
     @IBOutlet weak var activityNameLabel: UILabel!
     
@@ -25,7 +26,7 @@ class EditActivityViewController: UIViewController {
     @IBAction func addButtonPressed(_ sender: Any) {
         chosenActivity.participants.append(participantTextField.text!)
         print("Added participant. Count is \(chosenActivity.participants.count)")
-        ScheduleBlock.updateScheduleBlock(selectedArrayIndex, updatedActivity: chosenActivity, newParticipants: chosenActivity.participants)
+        Week.updateActivityInScheduleBlockforWeek(selectedArrayIndex, activityToUpdate: chosenActivity, newParticipants: chosenActivity.participants, currentWeek: currentWeek)
     }
     
     @IBAction func removeButtonPressed(_ sender: Any) {
@@ -33,7 +34,7 @@ class EditActivityViewController: UIViewController {
             if chosenActivity.participants[index] == participantTextField.text! {
                 chosenActivity.participants.remove(at: index)
                 print("Removed participant.  Count is \(chosenActivity.participants.count)")
-                ScheduleBlock.updateScheduleBlock(selectedArrayIndex, updatedActivity: chosenActivity, newParticipants: chosenActivity.participants)
+                Week.updateActivityInScheduleBlockforWeek(selectedArrayIndex, activityToUpdate: chosenActivity, newParticipants: chosenActivity.participants, currentWeek: currentWeek)
                 return
             }
         }

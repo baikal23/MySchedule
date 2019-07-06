@@ -28,7 +28,8 @@
 // added function to get the schedule for one user
 // added more functions to get weeks within range and delete weeks within range
 // also to get user schedule within a range - must test all of these
-// added activity counting - 
+// added activity counting -
+// admin can now remove activities - all seems to work for admin editting
 import UIKit
 
 @UIApplicationMain

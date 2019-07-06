@@ -128,7 +128,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewWeekSegue" {
             let destinationVC = segue.destination as! WeekCollectionViewController
-            destinationVC.week = currentWeek
+            destinationVC.currentWeek = currentWeek
         }
         
         // Get the new view controller using segue.destination.

@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class WeekCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class WeekCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var weekHeaderView: WeekCollectionReusableView!
     var weeklySchedule:[ScheduleBlock] = []
@@ -18,7 +18,7 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
     let reuseIdentifier = "WeekCollectionViewCell"
     var selectedArrayIndex:Int = 0
     var chosenActivity:ActivityItem!
-    var week:Week!
+    var currentWeek:Week!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,8 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func getItemsToDisplay() {
-        let theSchedules = self.week.scheduleArray
+        self.doubleArray = []
+        let theSchedules = self.currentWeek.scheduleArray
         if theSchedules.count > 0 {
             print("We have schedules")
             for item in theSchedules {
@@ -59,12 +60,27 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
         }
         
     }
-   
+
+    @objc func handleSwipe(_ sender:UISwipeGestureRecognizer) {
+        if (sender.state == .ended) {
+            print("Item selected to delete")
+            let p:CGPoint = sender.location(in: collectionView)
+            let indexPath = collectionView?.indexPathForItem(at: p)
+            if (indexPath != nil) {
+                selectedArrayIndex = indexPath!.section
+                chosenActivity = weeklyItemForIndexPath(indexPath!)
+                Week.removeActivityInScheduleBlockforWeek(block:selectedArrayIndex, activityToRemove:chosenActivity, currentWeek:currentWeek)
+            }
+            self.getItemsToDisplay()
+            self.collectionView.reloadData()
+        }
+    }
      // MARK: - Navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let destinationVC = segue.destination as! EditActivityViewController
         destinationVC.selectedArrayIndex = self.selectedArrayIndex
         destinationVC.chosenActivity = self.chosenActivity
+        destinationVC.currentWeek = self.currentWeek
      // Pass the selected object to the new view controller.
      }
     
@@ -87,6 +103,10 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
         let cellActivityItem = weeklyItemForIndexPath(indexPath)
         cell.activityNameLabel.text! = cellActivityItem.activityName
         cell.activityParticipantLabel.text! = cellActivityItem.participants.joined(separator: ", ")
+        let leftSwipeRecognizer = UISwipeGestureRecognizer(target:self, action:#selector(self.handleSwipe(_:)))
+        leftSwipeRecognizer.direction = .left
+        leftSwipeRecognizer.delegate = self
+        cell.addGestureRecognizer(leftSwipeRecognizer)
         // Configure the cell
         
         return cell

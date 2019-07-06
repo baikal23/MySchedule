@@ -56,7 +56,7 @@ class ScheduleBlock: NSObject, NSCoding {
         coder.encode(self.activityArray, forKey: "activityArray")
     }
     
-    class func saveSchedules(scheduleArray:[ScheduleBlock]) {
+   /* class func saveSchedules(scheduleArray:[ScheduleBlock]) {
         let scheduleArchive = Filehelpers.fileInUserDocumentDirectory("scheduleArchive")
         let scheduleURL = URL(fileURLWithPath: scheduleArchive)
         do {
@@ -99,4 +99,5 @@ class ScheduleBlock: NSObject, NSCoding {
         }
         ScheduleBlock.saveSchedules(scheduleArray: theSchedules)
     }
+*/
 }
