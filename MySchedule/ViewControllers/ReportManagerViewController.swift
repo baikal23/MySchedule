@@ -14,6 +14,7 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     var endPickerData: [String] = [String]()
     var currentStartTime = Date()
     var currentEndTime = Date()
+    var reportName = ""
     
     @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var endDatePicker: UIPickerView!
@@ -34,6 +35,9 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBAction func makeReportPushed(_ sender: Any) {
         let weeksInRange = WeekArray.getWeeksInRangeFrom(currentStartTime, endDate: currentEndTime)
         print("Got the schedules")
+        for item in weeksInRange {
+            self.makePDFreportFor(week:item)
+        }
     }
     
     @IBAction func participantReportPushed(_ sender: Any) {
@@ -70,6 +74,39 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
         summaryArray.append(activitySummary) // get the last one
         print("Got the schedule")
+    }
+    
+    func makePDFreportFor(week:Week){
+        let dateString = CalendarDays.stringFromDate(week.dateStamp)
+        let reportTitle = "Schedule for Week of " + dateString
+        let reporter = ReportGenerator()
+        let pageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
+        reportName = "WeeklySchedule"
+        reporter.setupPDFDocumentNamed(name: reportName, width: pdfPageWidth, height: pdfPageHeight)
+        reporter.beginPDFPage()
+        let titleTextRect = reporter.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
+        var verticalDistance = pdfPadding + titleTextRect.size.height + pdfPadding
+        let blueLineRect = reporter.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
+        verticalDistance = verticalDistance + blueLineRect.size.height + pdfPadding
+        
+        for block in week.scheduleArray {
+            let headingRect = reporter.addText(text: block.scheduleTime, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
+            verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
+            for activity in block.activityArray {
+                let activityRect = reporter.addText(text: activity.activityName, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
+                verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
+                if (verticalDistance > pdfPageHeight - pdfBottomMargin) {
+                    reporter.beginPDFPage()
+                    verticalDistance = pdfTopMargin
+                }
+            }
+        }
+        reporter.finishPDF()
+        let nextViewController = PDFViewController()
+        nextViewController.reportName = reportName
+        nextViewController.userName = ""
+    self.navigationController?.pushViewController(nextViewController, animated: true)
+        
     }
     // MARK: - Picker Views
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

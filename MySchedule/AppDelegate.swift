@@ -31,7 +31,8 @@
 // added activity counting -
 // admin can now remove activities - all seems to work for admin editting
 // added tracking of last login for participants
-
+// made a PDF report that actually shows schedule for a week
+// the email button doesn't work yet
 import UIKit
 
 @UIApplicationMain

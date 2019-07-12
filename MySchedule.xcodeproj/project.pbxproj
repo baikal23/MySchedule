@@ -23,6 +23,9 @@
 		804246F0229CA22B00E1F281 /* Participants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804246EF229CA22B00E1F281 /* Participants.swift */; };
 		804AAC7422C82075004BC3BD /* ReportGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AAC7322C82075004BC3BD /* ReportGenerator.swift */; };
 		805D7D7E229DE34A006A2819 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */; };
+		8064F45722D92290004A78AD /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8064F45622D92290004A78AD /* PDFViewController.swift */; };
+		8064F45922D926C7004A78AD /* emailBW.png in Resources */ = {isa = PBXBuildFile; fileRef = 8064F45822D926C7004A78AD /* emailBW.png */; };
+		8064F45B22D926D7004A78AD /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8064F45A22D926D7004A78AD /* back.png */; };
 		8069BE49228B6D44000935AD /* Filehelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BE48228B6D44000935AD /* Filehelpers.swift */; };
 		80AD0FE722AE8C73006C3792 /* ReportManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */; };
 		80AD0FE922AE8CE0006C3792 /* ActivitiesManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */; };
@@ -75,6 +78,9 @@
 		804246EF229CA22B00E1F281 /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
 		804AAC7322C82075004BC3BD /* ReportGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportGenerator.swift; sourceTree = "<group>"; };
 		805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityViewController.swift; sourceTree = "<group>"; };
+		8064F45622D92290004A78AD /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		8064F45822D926C7004A78AD /* emailBW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailBW.png; sourceTree = "<group>"; };
+		8064F45A22D926D7004A78AD /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		8069BE48228B6D44000935AD /* Filehelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filehelpers.swift; sourceTree = "<group>"; };
 		80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManagerViewController.swift; sourceTree = "<group>"; };
 		80AD0FE822AE8CE0006C3792 /* ActivitiesManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesManagerViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 				805D7D7D229DE34A006A2819 /* EditActivityViewController.swift */,
 				80B1EA072289ED8600A01E8E /* FirstPageViewController.swift */,
 				80AD0FEA22AE8E1C006C3792 /* ParticipantManagerViewController.swift */,
+				8064F45622D92290004A78AD /* PDFViewController.swift */,
 				80AD0FE622AE8C73006C3792 /* ReportManagerViewController.swift */,
 				80B1EA0D2289EE1D00A01E8E /* SeeWeekViewController.swift */,
 				80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */,
@@ -169,6 +176,8 @@
 		800BC87D22CE6BCB00D99E6B /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8064F45A22D926D7004A78AD /* back.png */,
+				8064F45822D926C7004A78AD /* emailBW.png */,
 				8032ED5A22A48AC200F17A43 /* CalendarDays.swift */,
 				8069BE48228B6D44000935AD /* Filehelpers.swift */,
 				804AAC7322C82075004BC3BD /* ReportGenerator.swift */,
@@ -343,7 +352,9 @@
 				80B1E9DB2289EC7300A01E8E /* Assets.xcassets in Resources */,
 				8018F2D022A17C900097FAD3 /* check.png in Resources */,
 				80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */,
+				8064F45B22D926D7004A78AD /* back.png in Resources */,
 				8018F2D222A185EF0097FAD3 /* blank.png in Resources */,
+				8064F45922D926C7004A78AD /* emailBW.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +388,7 @@
 				80139CCA229D893A005DB896 /* WeekCollectionViewController.swift in Sources */,
 				80B1EA082289ED8600A01E8E /* FirstPageViewController.swift in Sources */,
 				80B1EA022289ED2800A01E8E /* ActivityItem.swift in Sources */,
+				8064F45722D92290004A78AD /* PDFViewController.swift in Sources */,
 				80AD0FE922AE8CE0006C3792 /* ActivitiesManagerViewController.swift in Sources */,
 				80139CCE229D8F23005DB896 /* WeekCollectionReusableView.swift in Sources */,
 				80AD0FE722AE8C73006C3792 /* ReportManagerViewController.swift in Sources */,

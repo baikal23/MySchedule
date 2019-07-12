@@ -91,4 +91,11 @@ class CalendarDays: NSObject {
         guard let date = formatter.date(from: dateString) else { return Date() }
         return date
     }
+    
+    class func stringFromDate(_ date:Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d yyyy"
+        let dateString = formatter.string(from: date)
+        return dateString
+    }
 }
