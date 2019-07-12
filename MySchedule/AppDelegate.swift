@@ -32,6 +32,7 @@
 // admin can now remove activities - all seems to work for admin editting
 // added tracking of last login for participants
 // made a PDF report that actually shows schedule for a week - can do series of weeks, and blank schedule for current week
+// also can make activity report for an individual - could make it prettier and add the date range to title
 // the email button doesn't work yet
 import UIKit
 
