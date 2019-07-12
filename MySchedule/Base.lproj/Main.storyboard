@@ -290,17 +290,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDJ-Yc-SCG">
+                                <rect key="frame" x="331" y="861" width="106" height="30"/>
+                                <state key="normal" title="Blank Schedule"/>
+                                <connections>
+                                    <action selector="blankSchedulePushed:" destination="BSq-qx-wzJ" eventType="touchUpInside" id="yse-ge-xua"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="a9M-Ic-0n9" firstAttribute="top" secondItem="Tqa-3C-aWA" secondAttribute="bottom" constant="75" id="2W8-kF-kv3"/>
                             <constraint firstItem="WrE-U8-aTP" firstAttribute="leading" secondItem="Xqh-ZG-0dK" secondAttribute="leading" id="4V9-5q-vcJ"/>
+                            <constraint firstItem="HDJ-Yc-SCG" firstAttribute="centerX" secondItem="poU-RN-2DB" secondAttribute="centerX" id="5Rb-li-bwA"/>
                             <constraint firstItem="Hll-oY-0qo" firstAttribute="top" secondItem="a9M-Ic-0n9" secondAttribute="bottom" constant="70" id="9WS-ve-sfg"/>
                             <constraint firstItem="BAV-eS-orA" firstAttribute="leading" secondItem="Hll-oY-0qo" secondAttribute="trailing" constant="75" id="Dhe-8N-Pcb"/>
                             <constraint firstItem="a9M-Ic-0n9" firstAttribute="centerX" secondItem="poU-RN-2DB" secondAttribute="centerX" id="NO2-kA-CXI"/>
                             <constraint firstItem="Tqa-3C-aWA" firstAttribute="top" secondItem="JIj-vz-e66" secondAttribute="bottom" constant="148" id="QkW-aY-kci"/>
                             <constraint firstItem="Tqa-3C-aWA" firstAttribute="centerX" secondItem="poU-RN-2DB" secondAttribute="centerX" id="Qkv-KC-O3G"/>
                             <constraint firstItem="JIj-vz-e66" firstAttribute="firstBaseline" secondItem="Xqh-ZG-0dK" secondAttribute="baseline" constant="12.5" symbolType="layoutAnchor" id="WXq-YP-Orl"/>
+                            <constraint firstItem="HDJ-Yc-SCG" firstAttribute="top" secondItem="Hll-oY-0qo" secondAttribute="bottom" constant="50" id="alp-F5-OEJ"/>
                             <constraint firstItem="Tqa-3C-aWA" firstAttribute="top" secondItem="WrE-U8-aTP" secondAttribute="bottom" constant="1" id="hiM-XZ-svQ"/>
                             <constraint firstItem="JIj-vz-e66" firstAttribute="centerX" secondItem="poU-RN-2DB" secondAttribute="centerX" id="hkr-Ft-9gt"/>
                             <constraint firstItem="BAV-eS-orA" firstAttribute="centerY" secondItem="Hll-oY-0qo" secondAttribute="centerY" id="lgr-Ns-1aZ"/>
