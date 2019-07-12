@@ -101,6 +101,11 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
             print (" End Date is \(currentEndTime)")
         }
     }
+    func makeReportFromSummaryArray()
+    
+    {
+        
+    }
     /*
     // MARK: - Navigation
 
