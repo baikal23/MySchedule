@@ -70,7 +70,6 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         let schedule = WeekArray.getScheduleInRangeFor(person,  startDate:currentStartTime, endDate:currentEndTime)
         // this logic is to count occurances of the activities
         // first get them and alphabetize them
-        
         for week in schedule {
             for block in week.scheduleArray {
                 for activity in block.activityArray {
@@ -112,8 +111,13 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         var verticalDistance = pdfPadding + titleTextRect.size.height + pdfPadding
         let blueLineRect = reporter.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
         verticalDistance = verticalDistance + blueLineRect.size.height + pdfPadding
+        let startDate:String = CalendarDays.stringFromDate(currentStartTime)
+        let endDate = CalendarDays.stringFromDate(currentEndTime)
+        let headingText = "Week of " + startDate + " to Week of " + endDate
+        let headingRect = reporter.addText(text: headingText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
+        verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
         for item in summaryArray {
-            let activityText = item.name + "  " + String(item.count)
+            let activityText = item.name + "\t" + String(item.count) + " times"
             let activityRect = reporter.addText(text: activityText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
             verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
             if (verticalDistance > pdfPageHeight - pdfBottomMargin) {
