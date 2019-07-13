@@ -65,38 +65,50 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBAction func participantReportPushed(_ sender: Any) {
         var activitiesForReport:[String] = []
         var activitySummary = (name:"name", count:0)
-        var testName = activitySummary.name
         let person = participantTextField.text!
-        let schedule = WeekArray.getScheduleInRangeFor(person,  startDate:currentStartTime, endDate:currentEndTime)
-        // this logic is to count occurances of the activities
-        // first get them and alphabetize them
-        for week in schedule {
-            for block in week.scheduleArray {
-                for activity in block.activityArray {
-                    activitiesForReport.append(activity.activityName)
+        var peopleArray:[String] = [person]
+        let userArray:[User] = Participants.getParticipants()
+        reportName = "WeeklySchedule"
+         reporter.setupPDFDocumentNamed(name: reportName, width: pdfPageWidth, height: pdfPageHeight)
+        if person == "ALL" {
+            peopleArray = []
+            for item in userArray {
+                peopleArray.append(item.name)
+            }
+        }
+        for person in peopleArray {
+            summaryArray = []
+            activitiesForReport = []
+            let schedule = WeekArray.getScheduleInRangeFor(person,  startDate:currentStartTime, endDate:currentEndTime)
+            // this logic is to count occurances of the activities
+            // first get them and alphabetize them
+            for week in schedule {
+                for block in week.scheduleArray {
+                    for activity in block.activityArray {
+                        activitiesForReport.append(activity.activityName)
+                    }
                 }
             }
-        }
-        // then sort the activities alphabetically
-        var sortedActivities = activitiesForReport.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-        // then count occurences of each name
-        if sortedActivities.count != 0 {
-            activitySummary.name = sortedActivities[0] // seed with first activity
-        }
-        for item in sortedActivities {
-            if activitySummary.name == item {
-                activitySummary.count = activitySummary.count + 1
-            } else {
-                summaryArray.append(activitySummary)
-                activitySummary.name = item
-                activitySummary.count = 1
+            // then sort the activities alphabetically
+            var sortedActivities = activitiesForReport.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+            // then count occurences of each name
+            if sortedActivities.count != 0 {
+                activitySummary.name = sortedActivities[0] // seed with first activity
+                activitySummary.count = 0 // reinitialize
             }
+            for item in sortedActivities {
+                if activitySummary.name == item {
+                    activitySummary.count = activitySummary.count + 1
+                } else {
+                    summaryArray.append(activitySummary)
+                    activitySummary.name = item
+                    activitySummary.count = 1
+                }
+            }
+            summaryArray.append(activitySummary) // get the last one
+            print("Got the schedule")
+            makeReportFromSummaryArray(forPerson: person)
         }
-        summaryArray.append(activitySummary) // get the last one
-        print("Got the schedule")
-        reportName = "WeeklySchedule"
-        reporter.setupPDFDocumentNamed(name: reportName, width: pdfPageWidth, height: pdfPageHeight)
-        makeReportFromSummaryArray(forPerson: person)
         reporter.finishPDF()
         let nextViewController = PDFViewController()
         nextViewController.reportName = reportName
@@ -117,7 +129,7 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         let headingRect = reporter.addText(text: headingText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
         verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
         for item in summaryArray {
-            let activityText = item.name + "\t" + String(item.count) + " times"
+            let activityText = item.name + "\t\t" + String(item.count) + "  times"
             let activityRect = reporter.addText(text: activityText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
             verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
             if (verticalDistance > pdfPageHeight - pdfBottomMargin) {

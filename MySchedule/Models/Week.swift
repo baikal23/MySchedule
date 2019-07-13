@@ -71,7 +71,6 @@ class Week: NSObject, NSCoding {
                 print ("There are \(activity.participants.count) participants in \(activity.activityName)")
                 for participant in activity.participants {
                     print("Participant is \(participant)")
-                    print("User is \(user)")
                     if (participant == user) {
                         //block.activityArray.append(activity)
                         newWeek.scheduleArray.append(block)
