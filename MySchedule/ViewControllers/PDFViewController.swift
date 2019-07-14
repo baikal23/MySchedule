@@ -75,6 +75,8 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
         let rightImage2 = UIImage(named:"print.png")
         let rightButtonFrame2 = CGRect(x: 0, y: 0, width: rightImage2!.size.width, height: rightImage2!.size.height)
         let rightButton2 = UIButton(frame: rightButtonFrame2)
+        // need the following since bar buttons do not use frames for layout
+        rightButton2.widthAnchor.constraint(equalToConstant: rightImage2!.size.width / 4).isActive = true
         let rightItem2 = UIBarButtonItem(customView: rightButton2)
         rightButton2.setImage(rightImage2, for: UIControl.State())
         rightButton2.addTarget(self, action: #selector(PDFViewController.printPressed), for: .touchUpInside)
@@ -96,7 +98,7 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
         // 2
         let printInfo = UIPrintInfo(dictionary:nil)
         printInfo.outputType = .general
-        printInfo.jobName = "print Job"
+        printInfo.jobName = "PrintFromScheduleApp"
         printController.printInfo = printInfo
         printController.printingItem = pdfContents
         printController.present(animated: true, completionHandler: nil)
@@ -113,9 +115,9 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
         //mailComposerVC.setToRecipients(["someone@somewhere.com"])
-        mailComposerVC.setSubject("Activity Schedule")
-        mailComposerVC.setMessageBody("The report is in the attached PDF file", isHTML: false)
-        mailComposerVC.addAttachmentData(pdfContents!, mimeType: "application/pdf", fileName: "Report")
+        mailComposerVC.setSubject(reportName)
+        mailComposerVC.setMessageBody("Please see the attached PDF file", isHTML: false)
+        mailComposerVC.addAttachmentData(pdfContents!, mimeType: "application/pdf", fileName: reportName)
         
         
         return mailComposerVC
