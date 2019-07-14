@@ -72,7 +72,13 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
         let rightItem = UIBarButtonItem(customView: rightButton)
         rightButton.setImage(rightImage, for: UIControl.State())
         rightButton.addTarget(self, action: #selector(PDFViewController.emailPressed), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = rightItem
+        let rightImage2 = UIImage(named:"print.png")
+        let rightButtonFrame2 = CGRect(x: 0, y: 0, width: rightImage2!.size.width, height: rightImage2!.size.height)
+        let rightButton2 = UIButton(frame: rightButtonFrame2)
+        let rightItem2 = UIBarButtonItem(customView: rightButton2)
+        rightButton2.setImage(rightImage2, for: UIControl.State())
+        rightButton2.addTarget(self, action: #selector(PDFViewController.printPressed), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItems = [rightItem, rightItem2]
     }
     
     @objc func emailPressed() {
@@ -83,6 +89,17 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
         } else {
             self.showSendMailErrorAlert()
         }
+    }
+    
+    @objc func printPressed() {
+        let printController = UIPrintInteractionController.shared
+        // 2
+        let printInfo = UIPrintInfo(dictionary:nil)
+        printInfo.outputType = .general
+        printInfo.jobName = "print Job"
+        printController.printInfo = printInfo
+        printController.printingItem = pdfContents
+        printController.present(animated: true, completionHandler: nil)
     }
     
     @objc func backButtonPressed(){
@@ -96,9 +113,9 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
         //mailComposerVC.setToRecipients(["someone@somewhere.com"])
-        mailComposerVC.setSubject("MyLife report for \(userName)")
-        mailComposerVC.setMessageBody("The report for \(userName) is in the attached PDF file", isHTML: false)
-        mailComposerVC.addAttachmentData(pdfContents!, mimeType: "application/pdf", fileName: "Report for \(userName)")
+        mailComposerVC.setSubject("Activity Schedule")
+        mailComposerVC.setMessageBody("The report is in the attached PDF file", isHTML: false)
+        mailComposerVC.addAttachmentData(pdfContents!, mimeType: "application/pdf", fileName: "Report")
         
         
         return mailComposerVC

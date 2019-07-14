@@ -16,6 +16,8 @@
 		8018F2D222A185EF0097FAD3 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 8018F2D122A185EF0097FAD3 /* blank.png */; };
 		80285F9122AF04B9007BF088 /* ScheduleBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */; };
 		80285F9322B0632B007BF088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285F9222B0632B007BF088 /* User.swift */; };
+		802C115C22DB8262008848EC /* paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 802C115B22DB8262008848EC /* paper.png */; };
+		802C115E22DB8923008848EC /* print.png in Resources */ = {isa = PBXBuildFile; fileRef = 802C115D22DB8923008848EC /* print.png */; };
 		8032ED5B22A48AC200F17A43 /* CalendarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032ED5A22A48AC200F17A43 /* CalendarDays.swift */; };
 		8038239A2290A024006209C0 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803823992290A024006209C0 /* ActivityCell.swift */; };
 		8038239B2290AB7B006209C0 /* SignUpCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1EA0F2289EFFB00A01E8E /* SignUpCollectionViewController.swift */; };
@@ -72,6 +74,8 @@
 		8018F2D122A185EF0097FAD3 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
 		80285F9022AF04B9007BF088 /* ScheduleBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBlockCell.swift; sourceTree = "<group>"; };
 		80285F9222B0632B007BF088 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		802C115B22DB8262008848EC /* paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper.png; sourceTree = "<group>"; };
+		802C115D22DB8923008848EC /* print.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = print.png; sourceTree = "<group>"; };
 		8032ED5A22A48AC200F17A43 /* CalendarDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDays.swift; sourceTree = "<group>"; };
 		803823992290A024006209C0 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		804246ED2291DAC800E1F281 /* SignUpHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				80139CCD229D8F23005DB896 /* WeekCollectionReusableView.swift */,
 				8018F2D122A185EF0097FAD3 /* blank.png */,
 				8018F2CF22A17C900097FAD3 /* check.png */,
+				802C115D22DB8923008848EC /* print.png */,
+				802C115B22DB8262008848EC /* paper.png */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
@@ -352,6 +358,8 @@
 				80B1E9DB2289EC7300A01E8E /* Assets.xcassets in Resources */,
 				8018F2D022A17C900097FAD3 /* check.png in Resources */,
 				80B1E9D92289EC7000A01E8E /* Main.storyboard in Resources */,
+				802C115C22DB8262008848EC /* paper.png in Resources */,
+				802C115E22DB8923008848EC /* print.png in Resources */,
 				8064F45B22D926D7004A78AD /* back.png in Resources */,
 				8018F2D222A185EF0097FAD3 /* blank.png in Resources */,
 				8064F45922D926C7004A78AD /* emailBW.png in Resources */,
