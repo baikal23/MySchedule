@@ -17,7 +17,6 @@ class ReportGenerator: NSObject {
     }
     
     class func beginPDFPage() {
-       // pageSize = CGSizeMake(100.0,1000.0)
         let rect = CGRect(x: 0, y: 0, width: pdfPageSize.width, height: pdfPageSize.height)
         UIGraphicsBeginPDFPageWithInfo(rect, nil)
     }
@@ -29,10 +28,7 @@ class ReportGenerator: NSObject {
         // try this
         let width = Double(pdfPageSize.width) - pdfMargin
         let stringSize = sizeOfString(string: text, constrainedToWidth: width, ofFont:font)
-        // end
-      // new stuff
         var textWidth = frame.size.width;
-        
         if (textWidth < stringSize.width) {
             textWidth = stringSize.width;
         }
@@ -50,9 +46,7 @@ class ReportGenerator: NSObject {
             NSAttributedString.Key.foregroundColor: textColor,
             NSAttributedString.Key.paragraphStyle: textStyle
         ]
-        
         myText.draw(in: renderingRect, withAttributes: textFontAttributes)
-        
         let finalFrame = renderingRect
         return finalFrame
     }
@@ -67,9 +61,6 @@ class ReportGenerator: NSObject {
         let path = CGMutablePath()
         path.move(to: startPoint)
         path.addLine(to: endPoint)
-        //CGContextMoveToPoint(currentContext, startPoint.x, startPoint.y);
-        //CGContextAddLineToPoint(currentContext, endPoint.x, endPoint.y);
-        
         currentContext.closePath();
         //CGContextDrawPath(currentContext, CGPathDrawingMode.fillStroke)
         currentContext.drawPath(using: .fillStroke)
@@ -87,12 +78,9 @@ class ReportGenerator: NSObject {
     }
     
     class func sizeOfString (string: String, constrainedToWidth width: Double, ofFont:UIFont) -> CGSize {
- 
         return string.boundingRect(with: CGSize(width: width, height: Double.greatestFiniteMagnitude),
                                    options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                    attributes: [NSAttributedString.Key.font: ofFont],
             context: nil).size
     }
-
-
 }

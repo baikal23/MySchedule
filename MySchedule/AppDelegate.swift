@@ -35,6 +35,8 @@
 // also can make activity report for an individual - could make it prettier and add the date range to title
 //  can make individual activity summary or generate ALL
 // the email button and print button both work
+// added protection for double entry of activity and double registration
+// fixed deselection process
 import UIKit
 
 @UIApplicationMain

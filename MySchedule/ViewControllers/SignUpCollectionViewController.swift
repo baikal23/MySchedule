@@ -61,7 +61,6 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
                 doubleArray.append(item.activityArray)
             }
         }
-        
     }
 
     func verifyBlock(theBlock:Int)->Int {
@@ -97,28 +96,37 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     }
     func registerParticipant() {
         Participants.updateParticipantLoginTime(participant.name)
+        var alreadyRegistered = false
         for item in doubleArray[currentBlock] {
             if item.chosen == true {
-                item.participants.append(participant.name)
+                for person in item.participants {
+                    if person == participant.name {
+                        alreadyRegistered = true
+                    }
+                }
+                if (!alreadyRegistered) {
+                    item.participants.append(participant.name)
+                }
             }
         }
-       /* for item in doubleArray[currentDay * 2 + 1] {
-            if item.chosen == true {
-                item.participants.append(participant.name)
-            }
-        }*/
     }
-   /* @IBAction func backButtonPressed(_ sender: Any) {
-        if currentDay != 0 {
-            currentDay = currentDay - 1
-            self.collectionView.reloadData()
-        }
-    }*/
-    
+
     @IBAction func doneButtonPressed(_ sender: Any) {
         self.registerParticipant()
         self.updateActivityParticipants()
-        self.performSegue(withIdentifier: "unwindToFirstPageSegue", sender: self)
+        DispatchQueue.main.async {
+            let alertTitle = "Would you print the schedule?"
+            let alert = UIAlertController(title:alertTitle, message:"", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action)->Void in
+                self.printSchedule()
+                return
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) -> Void in
+                self.performSegue(withIdentifier: "unwindToFirstPageSegue", sender: self)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     @IBAction func nextButtonPressed(_ sender: Any) {
         self.registerParticipant()
@@ -127,6 +135,54 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             currentBlock = currentBlock + 1
             currentBlock = self.verifyBlock(theBlock: currentBlock)
             self.collectionView.reloadData()
+        }
+    }
+    
+    func printSchedule() {
+        print("Printing the schedule")
+        let dateString = CalendarDays.stringFromDate(currentWeek.dateStamp)
+        let reportTitle = "Schedule for Week of " + dateString
+        let reportName = "Schedule"
+        ReportGenerator.setupPDFDocumentNamed(name: reportName)
+        let pageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
+        ReportGenerator.beginPDFPage()
+        let titleTextRect = ReportGenerator.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
+        var verticalDistance = pdfPadding + titleTextRect.size.height + pdfPadding
+        let blueLineRect = ReportGenerator.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
+        verticalDistance = verticalDistance + blueLineRect.size.height + pdfPadding
+        for block in currentWeek.scheduleArray {
+            let headingRect = ReportGenerator.addText(text: block.scheduleTime, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
+            verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
+            for activity in block.activityArray {
+                for person in activity.participants {
+                    if (participant.name == person) {
+                        let activityRect = ReportGenerator.addText(text: activity.activityName, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
+                        verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
+                        if (verticalDistance > pdfPageHeight - pdfBottomMargin) {
+                            ReportGenerator.beginPDFPage()
+                            verticalDistance = pdfTopMargin
+                        }
+                    }
+                }
+            }
+        }
+        ReportGenerator.finishPDF()
+        let pdf = Filehelpers.fileInUserDocumentDirectory(reportName)
+        print("report name is: \(reportName)")
+        
+        if let contents = try? Data(contentsOf: URL(fileURLWithPath: pdf)) {
+            let printController = UIPrintInteractionController.shared
+            // 2
+            let printInfo = UIPrintInfo(dictionary:nil)
+            printInfo.outputType = .general
+            printInfo.jobName = "PrintFromScheduleApp"
+            printController.printInfo = printInfo
+            printController.printingItem = contents
+         //   printController.present(animated: true, completionHandler: nil)
+            printController.present(animated: true) { (controller, success, error) -> Void in
+                print("Done printing")
+                self.performSegue(withIdentifier: "unwindToFirstPageSegue", sender: self)
+            }
         }
     }
     /*
@@ -272,6 +328,14 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             return
         }
         cell.checkView.image = UIImage(named:"")
+        let selectedArray = activityArrayForIndexPath(indexPath)
+        let chosenActivity = activityItemForIndexPath(indexPath)
+        for item in selectedArray {
+            if item.activityName == chosenActivity.activityName {
+                item.chosen = false
+                print("\(item.activityName) has been deselected")
+            }
+        }
         
         
     }

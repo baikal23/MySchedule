@@ -61,7 +61,15 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         }*/
         for item in weekSchedule {
             if item.scheduleTime == currentTime {
-                item.activityArray.append(newActivity)
+                var alreadyAdded = false // prevent double entry
+                for activity in item.activityArray {
+                    if activity.activityName == newActivity.activityName {
+                        alreadyAdded = true
+                    }
+                }
+                if (!alreadyAdded) {
+                    item.activityArray.append(newActivity)
+                }
             }
         }
        /* currentScheduleBlock.activityArray.append(newActivity)
