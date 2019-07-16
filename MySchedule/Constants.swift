@@ -34,4 +34,7 @@ let pdfPadding = CGFloat(30.0)
 let pdfHeadingFont = CGFloat(36.0)
 let pdfBottomMargin = CGFloat(100)
 let pdfTopMargin = CGFloat(100)
+let pdfPageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
+let pdfMargin = Double(100.0)
+let pdfFont = UIFont.systemFont(ofSize: 24.0)
 

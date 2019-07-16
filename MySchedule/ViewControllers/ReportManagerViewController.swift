@@ -15,7 +15,6 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     var currentStartTime = Date()
     var currentEndTime = Date()
     var reportName = ""
-    var reporter:ReportGenerator!
     var summaryArray: [(name: String, count: Int)] = []
     
     @IBOutlet weak var startDatePicker: UIPickerView!
@@ -24,7 +23,6 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reporter = ReportGenerator()
         self.startDatePicker.delegate = self
         self.startDatePicker.dataSource = self
         endDatePicker.delegate = self
@@ -39,11 +37,11 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         let weeksInRange = WeekArray.getWeeksInRangeFrom(currentStartTime, endDate: currentEndTime)
         print("Got the schedules")
         reportName = "WeeklySchedule"
-        reporter.setupPDFDocumentNamed(name: reportName, width: pdfPageWidth, height: pdfPageHeight)
+        ReportGenerator.setupPDFDocumentNamed(name: reportName)
         for item in weeksInRange {
             self.makePDFreportFor(week:item, withParticipants: true)
         }
-        reporter.finishPDF()
+        ReportGenerator.finishPDF()
         let nextViewController = PDFViewController()
         nextViewController.reportName = reportName
         nextViewController.userName = ""
@@ -53,9 +51,9 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBAction func blankSchedulePushed(_ sender: Any) {
         let currentWeek = Week.getWeekOf(currentStartTime)
         reportName = "BlankSchedule"
-        reporter.setupPDFDocumentNamed(name: reportName, width: pdfPageWidth, height: pdfPageHeight)
+        ReportGenerator.setupPDFDocumentNamed(name: reportName)
         self.makePDFreportFor(week:currentWeek, withParticipants: false)
-        reporter.finishPDF()
+        ReportGenerator.finishPDF()
         let nextViewController = PDFViewController()
         nextViewController.reportName = reportName
         nextViewController.userName = ""
@@ -69,7 +67,7 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         var peopleArray:[String] = [person]
         let userArray:[User] = Participants.getParticipants()
         reportName = "WeeklySchedule"
-         reporter.setupPDFDocumentNamed(name: reportName, width: pdfPageWidth, height: pdfPageHeight)
+         ReportGenerator.setupPDFDocumentNamed(name: reportName)
         if person == "ALL" {
             peopleArray = []
             for item in userArray {
@@ -109,7 +107,7 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
             print("Got the schedule")
             makeReportFromSummaryArray(forPerson: person)
         }
-        reporter.finishPDF()
+        ReportGenerator.finishPDF()
         let nextViewController = PDFViewController()
         nextViewController.reportName = reportName
         nextViewController.userName = ""
@@ -118,22 +116,22 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     func makeReportFromSummaryArray(forPerson:String){
         let reportTitle = "Activity Summary for " + forPerson
         let pageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
-        reporter.beginPDFPage()
-        let titleTextRect = reporter.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
+        ReportGenerator.beginPDFPage()
+        let titleTextRect = ReportGenerator.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
         var verticalDistance = pdfPadding + titleTextRect.size.height + pdfPadding
-        let blueLineRect = reporter.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
+        let blueLineRect = ReportGenerator.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
         verticalDistance = verticalDistance + blueLineRect.size.height + pdfPadding
         let startDate:String = CalendarDays.stringFromDate(currentStartTime)
         let endDate = CalendarDays.stringFromDate(currentEndTime)
         let headingText = "Week of " + startDate + " to Week of " + endDate
-        let headingRect = reporter.addText(text: headingText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
+        let headingRect = ReportGenerator.addText(text: headingText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
         verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
         for item in summaryArray {
             let activityText = item.name + "\t\t" + String(item.count) + "  times"
-            let activityRect = reporter.addText(text: activityText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
+            let activityRect = ReportGenerator.addText(text: activityText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
             verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
             if (verticalDistance > pdfPageHeight - pdfBottomMargin) {
-                reporter.beginPDFPage()
+                ReportGenerator.beginPDFPage()
                 verticalDistance = pdfTopMargin
             }
         }
@@ -143,14 +141,14 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         let reportTitle = "Schedule for Week of " + dateString
         //let reporter = ReportGenerator()
         let pageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
-        reporter.beginPDFPage()
-        let titleTextRect = reporter.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
+        ReportGenerator.beginPDFPage()
+        let titleTextRect = ReportGenerator.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
         var verticalDistance = pdfPadding + titleTextRect.size.height + pdfPadding
-        let blueLineRect = reporter.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
+        let blueLineRect = ReportGenerator.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
         verticalDistance = verticalDistance + blueLineRect.size.height + pdfPadding
         
         for block in week.scheduleArray {
-            let headingRect = reporter.addText(text: block.scheduleTime, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
+            let headingRect = ReportGenerator.addText(text: block.scheduleTime, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
             verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
             for activity in block.activityArray {
                 var activityText = activity.activityName
@@ -158,10 +156,10 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
                     let joined = activity.participants.joined(separator: ", ")
                     activityText = activityText + ":  " + joined
                 }
-                let activityRect = reporter.addText(text: activityText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
+                let activityRect = ReportGenerator.addText(text: activityText, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
                 verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
                 if (verticalDistance > pdfPageHeight - pdfBottomMargin) {
-                    reporter.beginPDFPage()
+                    ReportGenerator.beginPDFPage()
                     verticalDistance = pdfTopMargin
                 }
             }
