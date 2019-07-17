@@ -42,6 +42,13 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func addButtonPressed(_ sender: Any) {
         currentParticipant.name = participantTextField.text!
+        if currentParticipant.name == "" {
+            let alert = UIAlertController(title: "Alert", message: "Please enter a participant name", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         Participants.addParticipant(participant: currentParticipant)
         self.participants = Participants.getParticipants()
         self.tableView.reloadData()

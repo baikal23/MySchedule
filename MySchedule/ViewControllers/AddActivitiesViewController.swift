@@ -52,8 +52,22 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         // this adds an activity to the currentScheduleBlock
         let name = activityTextField.text!
         let limit = limitTextField.text!
-        let limitNumber = Int(limit)!
-        let newActivity = ActivityItem(activityName: name, activityLimit: limitNumber)
+        if ((name == "") || (limit == "")) {
+            let alert = UIAlertController(title: "Alert", message: "Please fill in activity name and limit", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        let limitNumber = Int(limit)
+        if limitNumber == nil {
+            let alert = UIAlertController(title: "Alert", message: "Please enter a number for the limit", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        let newActivity = ActivityItem(activityName: name, activityLimit: limitNumber ?? 50)
         // add activity to currentBlock or save it and make a new schedule block
         /*if (currentScheduleBlock.scheduleTime != currentTime) {
            // self.scheduleArray.append(currentScheduleBlock)

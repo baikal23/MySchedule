@@ -37,6 +37,7 @@
 // the email button and print button both work
 // added protection for double entry of activity and double registration
 // fixed deselection process
+// added alerts for blank fields
 import UIKit
 
 @UIApplicationMain

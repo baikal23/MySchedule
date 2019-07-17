@@ -64,6 +64,13 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         var activitiesForReport:[String] = []
         var activitySummary = (name:"name", count:0)
         let person = participantTextField.text!
+        if person == "" {
+            let alert = UIAlertController(title: "Alert", message: "Please enter a participant name", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         var peopleArray:[String] = [person]
         let userArray:[User] = Participants.getParticipants()
         reportName = "WeeklySchedule"
