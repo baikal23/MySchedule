@@ -37,7 +37,8 @@
 // the email button and print button both work
 // added protection for double entry of activity and double registration
 // fixed deselection process
-// added alerts for blank fields
+// added alerts for blank fields and print option from ParticipantManager
+// TODO:  keyboard shifting, admin password
 import UIKit
 
 @UIApplicationMain

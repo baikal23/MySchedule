@@ -59,6 +59,49 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
         let lastMonday = CalendarDays.getLastMonday()
         let week = Week.getWeeklyScheduleFor(user, weekOf: lastMonday)
         print("Got the schedule")
+        let dateString = CalendarDays.stringFromDate(week.dateStamp)
+        let reportTitle = "Schedule for Week of " + dateString
+        let reportName = "Schedule"
+        ReportGenerator.setupPDFDocumentNamed(name: reportName)
+        let pageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
+        ReportGenerator.beginPDFPage()
+        let titleTextRect = ReportGenerator.addText(text: reportTitle, frame: CGRect(x: pdfPadding, y: pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfTitleBoxHeight), fontSize: pdfTitleFont)
+        var verticalDistance = pdfPadding + titleTextRect.size.height + pdfPadding
+        let blueLineRect = ReportGenerator.addLineWithFrame(frame: CGRect(x: pdfPadding, y: verticalDistance + pdfPadding, width: (pageSize.width) - 2 * pdfPadding, height: pdfLineBoxHeight), color: pdfLineColor)
+        verticalDistance = verticalDistance + blueLineRect.size.height + pdfPadding
+        for block in week.scheduleArray {
+            let headingRect = ReportGenerator.addText(text: block.scheduleTime, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfHeadingBoxHeight), fontSize: pdfHeadingFont)
+            verticalDistance = verticalDistance + headingRect.size.height + pdfPadding
+            for activity in block.activityArray {
+                for person in activity.participants {
+                    if (user == person) {
+                        let activityRect = ReportGenerator.addText(text: activity.activityName, frame: CGRect(x: pdfPadding, y: verticalDistance, width: (pageSize.width) - 2 * pdfPadding, height: pdfTextLineBoxHeight), fontSize: pdfActivityFont)
+                        verticalDistance = verticalDistance + activityRect.size.height + pdfPadding
+                        if (verticalDistance > pdfPageHeight - pdfBottomMargin) {
+                            ReportGenerator.beginPDFPage()
+                            verticalDistance = pdfTopMargin
+                        }
+                    }
+                }
+            }
+        }
+        ReportGenerator.finishPDF()
+        let pdf = Filehelpers.fileInUserDocumentDirectory(reportName)
+        print("report name is: \(reportName)")
+        
+        if let contents = try? Data(contentsOf: URL(fileURLWithPath: pdf)) {
+            let printController = UIPrintInteractionController.shared
+            // 2
+            let printInfo = UIPrintInfo(dictionary:nil)
+            printInfo.outputType = .general
+            printInfo.jobName = "PrintFromScheduleApp"
+            printController.printInfo = printInfo
+            printController.printingItem = contents
+            //   printController.present(animated: true, completionHandler: nil)
+            printController.present(animated: true) { (controller, success, error) -> Void in
+                print("Done printing")
+            }
+        }
     }
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
