@@ -40,7 +40,7 @@
 // added alerts for blank fields and print option from ParticipantManager
 // TODO:  keyboard shifting, admin password
 // aded ScrollView to ActivityManagerVC
-// updated layouts
+// updated layouts and added admin password
 
 import UIKit
 

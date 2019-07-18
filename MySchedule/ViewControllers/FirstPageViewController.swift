@@ -26,7 +26,9 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goButtonPushed(_ sender: Any) {
         if userTextField.text == "ADMIN" {
-            performSegue(withIdentifier: "adminSegue", sender: self)
+            passwordTextField.isHidden = false
+            passwordTextField.isEnabled = true
+            // performSegue(withIdentifier: "adminSegue", sender: self)
         } else {
             if (Participants.verifyParticipant(userTextField.text ?? "")) {
               performSegue(withIdentifier: "signUpSegue", sender: self)
@@ -36,6 +38,11 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
                 alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
+            passwordTextField.isHidden = true
+            passwordTextField.isEnabled = false
+        }
+        if ((!passwordTextField.isHidden) && ((passwordTextField.text == "ADMIN") || (passwordTextField.text == "admin"))) {
+            performSegue(withIdentifier: "adminSegue", sender: self)
         }
     }
     
