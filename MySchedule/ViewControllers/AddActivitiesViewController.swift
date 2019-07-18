@@ -31,6 +31,8 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var addActivitiesButton: UIButton!
+    @IBOutlet weak var viewWeekButton: UIButton!
     
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     override func viewDidLoad() {

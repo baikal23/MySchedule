@@ -41,7 +41,7 @@
 // TODO:  keyboard shifting, admin password
 // aded ScrollView to ActivityManagerVC
 // updated layouts and added admin password
-// started playing with setupUI for colors
+// started playing with setupUI for colors - must have alpha = 1 for view background color
 
 import UIKit
 

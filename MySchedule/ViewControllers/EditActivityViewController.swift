@@ -15,6 +15,8 @@ class EditActivityViewController: UIViewController {
     var currentWeek:Week!
     @IBOutlet weak var participantTextField: UITextField!
     @IBOutlet weak var activityNameLabel: UILabel!
+    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -82,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kUX-qi-gS0"/>
                     <connections>
+                        <outlet property="letsGoButton" destination="iWQ-La-Qix" id="sfn-Oh-B61"/>
                         <outlet property="passwordTextField" destination="FVW-SA-MaQ" id="Kw9-qq-OCn"/>
                         <outlet property="userTextField" destination="61f-SE-qt2" id="qMp-Il-XiP"/>
                         <segue destination="jNz-TU-wOB" kind="show" identifier="adminSegue" id="YjQ-z3-J4y"/>
@@ -240,11 +241,13 @@
                     </view>
                     <connections>
                         <outlet property="activityTextField" destination="HWN-tL-gke" id="mqz-9J-scR"/>
+                        <outlet property="addActivitiesButton" destination="tCu-gR-s9b" id="g4i-bk-vUv"/>
                         <outlet property="contentView" destination="wI7-B9-rbQ" id="dFQ-BQ-MOq"/>
                         <outlet property="contentViewHeight" destination="nzN-y5-UR5" id="enr-D4-hXq"/>
                         <outlet property="limitTextField" destination="FRZ-up-Reo" id="AfL-Od-2HZ"/>
                         <outlet property="scheduleBlockPicker" destination="ZqB-hw-mGn" id="yk1-nl-fLO"/>
                         <outlet property="scrollView" destination="thG-vj-byh" id="Qit-kc-pSE"/>
+                        <outlet property="viewWeekButton" destination="iFa-hP-kDp" id="9NO-Ct-paX"/>
                         <outlet property="weekPickerView" destination="BQV-JI-Qvh" id="P8t-Xm-x2t"/>
                         <segue destination="lUY-kR-ggb" kind="show" identifier="viewWeekSegue" id="TTi-v0-MPI"/>
                     </connections>
@@ -361,8 +364,11 @@
                         <viewLayoutGuide key="safeArea" id="HPj-VK-YhV"/>
                     </view>
                     <connections>
+                        <outlet property="blankScheduleButton" destination="HDJ-Yc-SCG" id="L1i-6a-W0D"/>
                         <outlet property="endDatePicker" destination="Tqa-3C-aWA" id="je0-u7-soK"/>
+                        <outlet property="makeReportButton" destination="a9M-Ic-0n9" id="jtA-Ve-K6K"/>
                         <outlet property="participantTextField" destination="BAV-eS-orA" id="JhH-MU-cfl"/>
+                        <outlet property="reportForButton" destination="Hll-oY-0qo" id="9eJ-GJ-0Pc"/>
                         <outlet property="startDatePicker" destination="JIj-vz-e66" id="lL3-0n-fRy"/>
                     </connections>
                 </viewController>
@@ -436,6 +442,9 @@
                         <viewLayoutGuide key="safeArea" id="cGS-j5-BEG"/>
                     </view>
                     <connections>
+                        <outlet property="activitiesManagerButton" destination="kQP-Ii-Rtz" id="nHq-vK-8kQ"/>
+                        <outlet property="participantManagerButton" destination="b5z-k0-Lrt" id="Ja7-dY-Fhj"/>
+                        <outlet property="reportManagerButton" destination="ENt-JS-FBo" id="qmz-bE-vyT"/>
                         <outlet property="signUpTextView" destination="Ob3-ar-uMw" id="lWP-FN-ohE"/>
                         <segue destination="Msy-9U-5Qw" kind="show" identifier="participantManagerSegue" id="ZJ5-pS-lRZ"/>
                         <segue destination="BSq-qx-wzJ" kind="show" identifier="reportManagerSegue" id="KK3-Dr-J1z"/>
@@ -743,7 +752,9 @@
                     <navigationItem key="navigationItem" id="HMx-TE-aad"/>
                     <connections>
                         <outlet property="activityNameLabel" destination="IpD-BW-uuO" id="zUv-Mj-kqW"/>
+                        <outlet property="addButton" destination="Ixt-4J-OjT" id="gmJ-6D-nFe"/>
                         <outlet property="participantTextField" destination="zFE-WH-6iJ" id="50I-fE-Tbh"/>
+                        <outlet property="removeButton" destination="oA5-06-odg" id="I2t-17-fvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GsM-yR-tb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -858,9 +869,11 @@
                         <viewLayoutGuide key="safeArea" id="7Aa-zj-RBq"/>
                     </view>
                     <connections>
+                        <outlet property="addParticipantButton" destination="hpr-Dd-aB1" id="fwk-qj-gJ5"/>
                         <outlet property="collectionView" destination="mK4-Ge-nZG" id="t3q-hf-nc1"/>
                         <outlet property="forLabel" destination="EYk-cW-wga" id="wbU-0Q-jDd"/>
                         <outlet property="participantTextField" destination="LGh-nx-X8Y" id="SoW-Kf-drM"/>
+                        <outlet property="printWeklyScheduleButton" destination="tyN-1Y-JXt" id="mlc-az-gZg"/>
                         <outlet property="tableView" destination="YNe-ve-zv2" id="Ab8-C6-BxD"/>
                     </connections>
                 </viewController>

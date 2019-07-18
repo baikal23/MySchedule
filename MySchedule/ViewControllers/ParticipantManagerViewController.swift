@@ -20,6 +20,8 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var participantTextField: UITextField!
     @IBOutlet weak var forLabel: UILabel!
     
+    @IBOutlet weak var addParticipantButton: UIButton!
+    @IBOutlet weak var printWeklyScheduleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,6 +17,9 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     var reportName = ""
     var summaryArray: [(name: String, count: Int)] = []
     
+    @IBOutlet weak var blankScheduleButton: UIButton!
+    @IBOutlet weak var reportForButton: UIButton!
+    @IBOutlet weak var makeReportButton: UIButton!
     @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var endDatePicker: UIPickerView!
     @IBOutlet weak var participantTextField: UITextField!

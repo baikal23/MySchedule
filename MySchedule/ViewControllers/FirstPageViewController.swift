@@ -12,6 +12,7 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userTextField: UITextField!
     
+    @IBOutlet weak var letsGoButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func unwindToFirstPage(segue:UIStoryboardSegue) { }
     

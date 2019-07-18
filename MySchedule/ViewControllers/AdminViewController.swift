@@ -12,7 +12,10 @@ class AdminViewController: UIViewController {
 
     var peopleWhoNeedSignUp:[String] = []
     @IBOutlet weak var signUpTextView: UITextView!
+    @IBOutlet weak var participantManagerButton: UIButton!
+    @IBOutlet weak var activitiesManagerButton: UIButton!
     
+    @IBOutlet weak var reportManagerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
