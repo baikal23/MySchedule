@@ -64,9 +64,12 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
         let newBackButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(AddActivitiesViewController.donePressed))
         self.navigationItem.leftBarButtonItem = newBackButton
         // Do any additional setup after loading the view.
-
+        self.setupUI()
     }
     
+    func setupUI() {
+        self.contentView.backgroundColor = ColorScheme.pageBackgroundColor
+    }
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

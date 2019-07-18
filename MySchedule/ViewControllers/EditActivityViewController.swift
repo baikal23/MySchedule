@@ -21,8 +21,11 @@ class EditActivityViewController: UIViewController {
         print("Activity is " + chosenActivity.activityName)
         self.activityNameLabel.text = chosenActivity.activityName
         // Do any additional setup after loading the view.
+        self.setupUI()
     }
-    
+    func setupUI() {
+        self.view.backgroundColor = ColorScheme.pageBackgroundColor
+    }
     @IBAction func addButtonPressed(_ sender: Any) {
         chosenActivity.participants.append(participantTextField.text!)
         print("Added participant. Count is \(chosenActivity.participants.count)")

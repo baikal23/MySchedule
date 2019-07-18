@@ -22,6 +22,15 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
         userTextField.delegate = self
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
+        self.setupUI()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        passwordTextField.isHidden = true
+        passwordTextField.isEnabled = false
+        userTextField.text = ""
+    }
+    func setupUI() {
+        self.view.backgroundColor = ColorScheme.pageBackgroundColor
     }
     
     @IBAction func goButtonPushed(_ sender: Any) {

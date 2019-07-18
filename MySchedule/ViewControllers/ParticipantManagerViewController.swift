@@ -38,6 +38,11 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
                 path.section = 0
             self.collectionView.selectItem(at: path, animated: true, scrollPosition: .top)
         }
+        self.setupUI()
+    }
+    
+    func setupUI() {
+        self.view.backgroundColor = ColorScheme.pageBackgroundColor
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {

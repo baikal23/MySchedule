@@ -15,9 +15,12 @@ class AdminViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
         // Do any additional setup after loading the view.
     }
-    
+    func setupUI() {
+        self.view.backgroundColor = ColorScheme.pageBackgroundColor
+    }
     override func viewWillAppear(_ animated: Bool) {
         let peopleArray = Participants.getParticipants()
         peopleWhoNeedSignUp = []

@@ -38,3 +38,25 @@ let pdfPageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
 let pdfMargin = Double(100.0)
 let pdfFont = UIFont.systemFont(ofSize: 24.0)
 
+public struct ColorScheme {
+    
+    static let buttonColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:1.0) // for buttons on question pages
+    static let labelBackgroundColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:0.2)
+    static let buttonSelectedColor = UIColor(red:0.00, green:0.27, blue:0.35, alpha:1.0)
+    static let buttonViewFrameColor = UIColor.clear // on question pages
+    static let standardTextColor = UIColor(red:0.00, green:0.27, blue:0.35, alpha:1.0)
+    static let standardButtonTextColor = UIColor.white
+    static let pageNavButtonColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:1.0)
+    static let validDataColor = UIColor(red:0.2, green:0.76, blue:0.35, alpha:1.0)
+    //static let pageBackgroundColor = UIColor(red:0.00, green:0.60, blue:0.70, alpha:1.0)
+    static let pageBackgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
+    static let lightTextColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:1.0)
+    static let ourGrayColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
+    static let ourDarkGrayColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0)
+}
+
+public struct Fonts {
+    static let PrimaryFontName: String = "HelveticaNeue"
+    static let PrimaryFontNameLight: String = "HelveticaNeue-Light"
+    static let buttonFont:UIFont = UIFont(name:"HelveticaNeue", size: 30)!
+}

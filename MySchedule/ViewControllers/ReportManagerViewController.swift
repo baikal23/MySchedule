@@ -32,7 +32,13 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.pickerView(self.startDatePicker, didSelectRow: 0, inComponent: 0)  //initialize Picker
         self.pickerView(self.endDatePicker, didSelectRow: 0, inComponent: 0)  //initialize week Picker
         // Do any additional setup after loading the view.
+        self.setupUI()
     }
+    
+    func setupUI() {
+        self.view.backgroundColor = ColorScheme.pageBackgroundColor
+    }
+    
     @IBAction func makeReportPushed(_ sender: Any) {
         let weeksInRange = WeekArray.getWeeksInRangeFrom(currentStartTime, endDate: currentEndTime)
         print("Got the schedules")

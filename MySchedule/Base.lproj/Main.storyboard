@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iWQ-La-Qix" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="179" id="04J-Re-1JW"/>
                             <constraint firstItem="t6I-L3-UZ6" firstAttribute="top" secondItem="czh-5a-PrO" secondAttribute="bottom" constant="20" id="9Am-Fx-pjC"/>
@@ -199,7 +199,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="68Q-nK-1zm" firstAttribute="top" secondItem="wI7-B9-rbQ" secondAttribute="top" constant="100" id="08q-PX-0oM"/>
                                     <constraint firstItem="tCu-gR-s9b" firstAttribute="top" secondItem="Pak-ff-ciV" secondAttribute="bottom" constant="50" id="1BQ-Jr-KBV"/>
@@ -337,7 +337,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HDJ-Yc-SCG" firstAttribute="centerX" secondItem="poU-RN-2DB" secondAttribute="centerX" id="1qI-vw-prp"/>
                             <constraint firstItem="a9M-Ic-0n9" firstAttribute="top" secondItem="Tqa-3C-aWA" secondAttribute="bottom" constant="75" id="2W8-kF-kv3"/>
@@ -419,7 +419,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ob3-ar-uMw" firstAttribute="centerY" secondItem="jIy-hm-ohE" secondAttribute="centerY" id="3PD-Fs-9dw"/>
                             <constraint firstItem="kQP-Ii-Rtz" firstAttribute="centerX" secondItem="1HZ-tJ-3sv" secondAttribute="centerX" id="CZ0-FY-oqa"/>
@@ -845,7 +845,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mK4-Ge-nZG" firstAttribute="firstBaseline" secondItem="LGh-nx-X8Y" secondAttribute="baseline" constant="40.5" id="1GZ-gA-Vcj"/>
                             <constraint firstItem="mK4-Ge-nZG" firstAttribute="centerX" secondItem="7bg-7x-y3Z" secondAttribute="centerX" id="8TN-ve-1py"/>
