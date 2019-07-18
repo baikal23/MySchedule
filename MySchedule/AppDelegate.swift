@@ -39,6 +39,9 @@
 // fixed deselection process
 // added alerts for blank fields and print option from ParticipantManager
 // TODO:  keyboard shifting, admin password
+// aded ScrollView to ActivityManagerVC
+// updated layouts
+
 import UIKit
 
 @UIApplicationMain
