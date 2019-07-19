@@ -29,12 +29,11 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var activityTextField: UITextField!
     @IBOutlet weak var limitTextField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
-    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var addActivitiesButton: UIButton!
     @IBOutlet weak var viewWeekButton: UIButton!
-    
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scheduleBlockPicker.delegate = self
@@ -71,6 +70,18 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func setupUI() {
         self.contentView.backgroundColor = ColorScheme.pageBackgroundColor
+        self.addActivitiesButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.addActivitiesButton.backgroundColor = ColorScheme.buttonColor
+        addActivitiesButton.layer.cornerRadius = cornerRadius
+        addActivitiesButton.layer.borderWidth = borderWidth
+        addActivitiesButton.layer.borderColor = UIColor.clear.cgColor
+        addActivitiesButton.clipsToBounds = true
+        self.viewWeekButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.viewWeekButton.backgroundColor = ColorScheme.buttonColor
+        viewWeekButton.layer.cornerRadius = cornerRadius
+        viewWeekButton.layer.borderWidth = borderWidth
+        viewWeekButton.layer.borderColor = UIColor.clear.cgColor
+        viewWeekButton.clipsToBounds = true
     }
     deinit {
         NotificationCenter.default.removeObserver(self)

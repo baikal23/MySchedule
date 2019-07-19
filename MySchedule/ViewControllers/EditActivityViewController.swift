@@ -27,6 +27,18 @@ class EditActivityViewController: UIViewController {
     }
     func setupUI() {
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
+        self.removeButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.removeButton.backgroundColor = ColorScheme.buttonColor
+        removeButton.layer.cornerRadius = cornerRadius
+        removeButton.layer.borderWidth = borderWidth
+        removeButton.layer.borderColor = UIColor.clear.cgColor
+        removeButton.clipsToBounds = true
+        self.addButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.addButton.backgroundColor = ColorScheme.buttonColor
+        addButton.layer.cornerRadius = cornerRadius
+        addButton.layer.borderWidth = borderWidth
+        addButton.layer.borderColor = UIColor.clear.cgColor
+        addButton.clipsToBounds = true
     }
     @IBAction func addButtonPressed(_ sender: Any) {
         chosenActivity.participants.append(participantTextField.text!)

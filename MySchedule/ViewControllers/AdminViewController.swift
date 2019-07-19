@@ -14,8 +14,8 @@ class AdminViewController: UIViewController {
     @IBOutlet weak var signUpTextView: UITextView!
     @IBOutlet weak var participantManagerButton: UIButton!
     @IBOutlet weak var activitiesManagerButton: UIButton!
-    
     @IBOutlet weak var reportManagerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -23,6 +23,24 @@ class AdminViewController: UIViewController {
     }
     func setupUI() {
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
+        self.activitiesManagerButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.activitiesManagerButton.backgroundColor = ColorScheme.buttonColor
+        activitiesManagerButton.layer.cornerRadius = cornerRadius
+        activitiesManagerButton.layer.borderWidth = borderWidth
+        activitiesManagerButton.layer.borderColor = UIColor.clear.cgColor
+        activitiesManagerButton.clipsToBounds = true
+        self.participantManagerButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.participantManagerButton.backgroundColor = ColorScheme.buttonColor
+        participantManagerButton.layer.cornerRadius = cornerRadius
+        participantManagerButton.layer.borderWidth = borderWidth
+        participantManagerButton.layer.borderColor = UIColor.clear.cgColor
+        participantManagerButton.clipsToBounds = true
+        self.reportManagerButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.reportManagerButton.backgroundColor = ColorScheme.buttonColor
+        reportManagerButton.layer.cornerRadius = cornerRadius
+        reportManagerButton.layer.borderWidth = borderWidth
+        reportManagerButton.layer.borderColor = UIColor.clear.cgColor
+        reportManagerButton.clipsToBounds = true
     }
     override func viewWillAppear(_ animated: Bool) {
         let peopleArray = Participants.getParticipants()

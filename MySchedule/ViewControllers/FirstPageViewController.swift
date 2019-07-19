@@ -11,7 +11,6 @@ import UIKit
 class FirstPageViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userTextField: UITextField!
-    
     @IBOutlet weak var letsGoButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func unwindToFirstPage(segue:UIStoryboardSegue) { }
@@ -32,6 +31,13 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
     }
     func setupUI() {
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
+        self.letsGoButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.letsGoButton.backgroundColor = ColorScheme.buttonColor
+        letsGoButton.layer.cornerRadius = cornerRadius
+        letsGoButton.layer.borderWidth = borderWidth
+        letsGoButton.layer.borderColor = UIColor.clear.cgColor
+        letsGoButton.clipsToBounds = true
+        
     }
     
     @IBAction func goButtonPushed(_ sender: Any) {

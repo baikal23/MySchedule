@@ -40,6 +40,24 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func setupUI() {
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
+        self.reportForButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.reportForButton.backgroundColor = ColorScheme.buttonColor
+        reportForButton.layer.cornerRadius = cornerRadius
+        reportForButton.layer.borderWidth = borderWidth
+        reportForButton.layer.borderColor = UIColor.clear.cgColor
+        reportForButton.clipsToBounds = true
+        self.makeReportButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.makeReportButton.backgroundColor = ColorScheme.buttonColor
+        makeReportButton.layer.cornerRadius = cornerRadius
+        makeReportButton.layer.borderWidth = borderWidth
+        makeReportButton.layer.borderColor = UIColor.clear.cgColor
+        makeReportButton.clipsToBounds = true
+        self.blankScheduleButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.blankScheduleButton.backgroundColor = ColorScheme.buttonColor
+        blankScheduleButton.layer.cornerRadius = cornerRadius
+        blankScheduleButton.layer.borderWidth = borderWidth
+        blankScheduleButton.layer.borderColor = UIColor.clear.cgColor
+        blankScheduleButton.clipsToBounds = true
     }
     
     @IBAction func makeReportPushed(_ sender: Any) {

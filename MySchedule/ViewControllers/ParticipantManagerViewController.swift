@@ -19,7 +19,6 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var participantTextField: UITextField!
     @IBOutlet weak var forLabel: UILabel!
-    
     @IBOutlet weak var addParticipantButton: UIButton!
     @IBOutlet weak var printWeklyScheduleButton: UIButton!
     
@@ -45,6 +44,18 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     
     func setupUI() {
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
+        self.addParticipantButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.addParticipantButton.backgroundColor = ColorScheme.buttonColor
+        addParticipantButton.layer.cornerRadius = cornerRadius
+        addParticipantButton.layer.borderWidth = borderWidth
+        addParticipantButton.layer.borderColor = UIColor.clear.cgColor
+        addParticipantButton.clipsToBounds = true
+        self.printWeklyScheduleButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
+        self.printWeklyScheduleButton.backgroundColor = ColorScheme.buttonColor
+        printWeklyScheduleButton.layer.cornerRadius = cornerRadius
+        printWeklyScheduleButton.layer.borderWidth = borderWidth
+        printWeklyScheduleButton.layer.borderColor = UIColor.clear.cgColor
+        printWeklyScheduleButton.clipsToBounds = true
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
