@@ -30,6 +30,7 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
         userTextField.text = ""
     }
     func setupUI() {
+        self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
         self.letsGoButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
         self.letsGoButton.backgroundColor = ColorScheme.buttonColor

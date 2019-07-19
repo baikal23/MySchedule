@@ -28,7 +28,11 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         currentWeek = Week.getWeekOf(lastMonday)
         self.getItemsToDisplay()
         self.collectionView.allowsMultipleSelection = true
+        self.setupUI()
         // Do any additional setup after loading the view.
+    }
+    func setupUI() {
+        self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
     }
     // convenience function to get activityItem from array
     func activityItemForIndexPath(_ indexPath: IndexPath) -> ActivityItem {
@@ -213,7 +217,8 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ActivityCell
         cell.backgroundColor = ColorScheme.cellColor
-        
+        cell.label.font = cellFont
+        cell.label.textColor = ColorScheme.cellFontColor
         let cellActivityItem = activityItemForIndexPath(indexPath)
         if cellActivityItem.activityLimit == cellActivityItem.participants.count {
             cell.label.text! = "ACTIVITY FULL"
@@ -247,7 +252,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
                     fatalError("Invalid view type")
             }
             if (indexPath.section == 0) {
+                headerView.backgroundColor = ColorScheme.headerViewBackgroundColor
                 headerView.signUpHeaderLabel.text = weekTimes[currentBlock]
+                headerView.signUpHeaderLabel.textColor = ColorScheme.headerTextColor
             }
             return headerView
         default:

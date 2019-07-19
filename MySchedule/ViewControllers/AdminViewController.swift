@@ -22,7 +22,7 @@ class AdminViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func setupUI() {
-        
+        self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
         self.activitiesManagerButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
         self.activitiesManagerButton.backgroundColor = ColorScheme.buttonColor

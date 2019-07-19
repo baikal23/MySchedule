@@ -534,7 +534,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7R-hD-PZG">
-                                    <rect key="frame" x="255.5" y="21.5" width="350" height="50"/>
+                                    <rect key="frame" x="209" y="21.5" width="350" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="350" id="857-mY-XQK"/>
                                         <constraint firstAttribute="height" constant="50" id="zSA-l5-B5N"/>
@@ -546,7 +546,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="q7R-hD-PZG" firstAttribute="centerX" secondItem="lSU-JB-kjL" secondAttribute="centerX" constant="46.5" id="By6-SW-jIH"/>
+                                <constraint firstItem="q7R-hD-PZG" firstAttribute="centerX" secondItem="lSU-JB-kjL" secondAttribute="centerX" id="By6-SW-jIH"/>
                                 <constraint firstItem="q7R-hD-PZG" firstAttribute="centerY" secondItem="lSU-JB-kjL" secondAttribute="centerY" id="QIR-na-Uu5"/>
                             </constraints>
                             <connections>

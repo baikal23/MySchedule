@@ -26,7 +26,7 @@ class EditActivityViewController: UIViewController {
         self.setupUI()
     }
     func setupUI() {
-        
+        self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
         self.removeButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
         self.removeButton.backgroundColor = ColorScheme.buttonColor

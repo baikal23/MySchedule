@@ -22,7 +22,7 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setupUI()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,7 +36,9 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
         self.getItemsToDisplay()
         self.collectionView.reloadData()
     }
-
+    func setupUI() {
+        
+    }
     // convenience function to get activityItem from array
     func weeklyItemForIndexPath(_ indexPath: IndexPath) -> ActivityItem {
         return doubleArray[indexPath.section][indexPath.row]
@@ -99,7 +101,8 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WeekCollectionViewCell
         cell.backgroundColor = ColorScheme.cellColor
-        
+        cell.activityNameLabel.font = cellFont
+        cell.activityNameLabel.textColor = ColorScheme.cellFontColor
         let cellActivityItem = weeklyItemForIndexPath(indexPath)
         cell.activityNameLabel.text! = cellActivityItem.activityName
         cell.activityParticipantLabel.text! = cellActivityItem.participants.joined(separator: ", ")
@@ -129,9 +132,9 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
                 else {
                     fatalError("Invalid view type")
             }
-            
+            headerView.backgroundColor = ColorScheme.weekHeaderViewBackgroundColor
             headerView.weekHeaderLabel.text = weekTimes[indexPath.section]
-            
+            headerView.weekHeaderLabel.textColor = ColorScheme.weekHeaderTextColor
             return headerView
         default:
             // 4

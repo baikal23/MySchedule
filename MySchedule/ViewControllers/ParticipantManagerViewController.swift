@@ -43,7 +43,7 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
     }
     
     func setupUI() {
-       
+       self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
         self.addParticipantButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
         self.addParticipantButton.backgroundColor = ColorScheme.buttonColor
@@ -166,6 +166,8 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
         //print("IndexPath row is \(indexPath.row) and indexPath.section is \(indexPath.section)")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ScheduleBlockCell
         cell.backgroundColor = ColorScheme.cellColor
+        cell.label.font = cellFont
+        cell.label.textColor = ColorScheme.cellFontColor
         if cell.isSelected {
             cell.backgroundColor = UIColor.yellow
         }

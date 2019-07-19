@@ -70,6 +70,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func setupUI() {
+        self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
         self.contentView.backgroundColor = ColorScheme.pageBackgroundColor
         self.addActivitiesButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
         self.addActivitiesButton.backgroundColor = ColorScheme.buttonColor
