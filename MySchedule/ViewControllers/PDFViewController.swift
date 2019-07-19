@@ -49,7 +49,7 @@ class PDFViewController : UIViewController, WKUIDelegate, MFMailComposeViewContr
             //print("WE HAVE CONTENTS")
            // let webView = UIWebView(frame: CGRect(x: kInset,y: kInset,width: self.view.frame.size.width - 2 * kInset,height: self.view.frame.size.height - 2 * kInset))
             webView.load(pdfContents!, mimeType: "application/pdf", characterEncodingName: "utf-8", baseURL: pdfURL)
-            webView.backgroundColor = UIColor.lightGray
+            webView.backgroundColor = ColorScheme.ourGrayColor
             //self.view.addSubview(webView)
         
         }

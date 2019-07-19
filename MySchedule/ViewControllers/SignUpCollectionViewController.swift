@@ -205,16 +205,14 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return doubleArray[currentBlock].count
-        } /*else {
-            return doubleArray[currentDay * 2 + 1].count
-        }*/
+        } 
         return doubleArray[currentBlock].count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ActivityCell
-        cell.backgroundColor = UIColor.gray
+        cell.backgroundColor = ColorScheme.cellColor
         
         let cellActivityItem = activityItemForIndexPath(indexPath)
         if cellActivityItem.activityLimit == cellActivityItem.participants.count {
@@ -250,9 +248,7 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
             }
             if (indexPath.section == 0) {
                 headerView.signUpHeaderLabel.text = weekTimes[currentBlock]
-            } /*else {
-                headerView.signUpHeaderLabel.text = weekTimes[currentDay * 2 + 1]
-            }*/
+            }
             return headerView
         default:
             // 4

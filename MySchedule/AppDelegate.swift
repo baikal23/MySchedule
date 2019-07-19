@@ -38,10 +38,10 @@
 // added protection for double entry of activity and double registration
 // fixed deselection process
 // added alerts for blank fields and print option from ParticipantManager
-// TODO:  keyboard shifting, admin password
 // aded ScrollView to ActivityManagerVC
 // updated layouts and added admin password
 // started playing with setupUI for colors - must have alpha = 1 for view background color
+// more layout work - NEED BIG FONT for activities
 
 import UIKit
 

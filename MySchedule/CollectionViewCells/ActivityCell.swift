@@ -14,7 +14,7 @@ class ActivityCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
 
     @IBOutlet weak var checkView: UIImageView!
-    var baseColor:UIColor = UIColor.gray
+    var baseColor:UIColor = ColorScheme.cellColor
     
     override func awakeFromNib() {
         super.awakeFromNib()

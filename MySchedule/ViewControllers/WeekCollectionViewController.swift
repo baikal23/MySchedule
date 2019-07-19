@@ -98,7 +98,7 @@ class WeekCollectionViewController: UICollectionViewController, UICollectionView
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WeekCollectionViewCell
-        cell.backgroundColor = UIColor.gray
+        cell.backgroundColor = ColorScheme.cellColor
         
         let cellActivityItem = weeklyItemForIndexPath(indexPath)
         cell.activityNameLabel.text! = cellActivityItem.activityName

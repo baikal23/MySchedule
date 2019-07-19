@@ -61,6 +61,7 @@ class AddActivitiesViewController: UIViewController, UIPickerViewDelegate, UIPic
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
+        
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(AddActivitiesViewController.donePressed))
         self.navigationItem.leftBarButtonItem = newBackButton

@@ -38,19 +38,20 @@ let pdfPageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
 let pdfMargin = Double(100.0)
 let pdfFont = UIFont.systemFont(ofSize: 24.0)
 
-let cornerRadius = CGFloat(20.0)
+let cornerRadius = CGFloat(10.0)
 let borderWidth = CGFloat(1.0)
 public struct ColorScheme {
     static let buttonTextColor = UIColor.white
     static let buttonColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:1.0) // for buttons
+    static let backButtonColor = UIColor.red
     static let labelBackgroundColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:0.2)
     static let buttonSelectedColor = UIColor(red:0.00, green:0.27, blue:0.35, alpha:1.0)
-    static let buttonViewFrameColor = UIColor.clear // on question pages
+    static let buttonViewFrameColor = UIColor.clear 
     static let standardTextColor = UIColor(red:0.00, green:0.27, blue:0.35, alpha:1.0)
+    static let cellColor = ColorScheme.ourGrayColor
     static let standardButtonTextColor = UIColor.white
     static let pageNavButtonColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:1.0)
     static let validDataColor = UIColor(red:0.2, green:0.76, blue:0.35, alpha:1.0)
-    //static let pageBackgroundColor = UIColor(red:0.00, green:0.60, blue:0.70, alpha:1.0)
     static let pageBackgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
     static let lightTextColor = UIColor(red:0.38, green:0.65, blue:0.77, alpha:1.0)
     static let ourGrayColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)

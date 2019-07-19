@@ -10,7 +10,7 @@ import UIKit
 
 class ScheduleBlockCell: UICollectionViewCell {
 
-    var baseColor:UIColor = UIColor.gray
+    var baseColor:UIColor = ColorScheme.cellColor
     
     @IBOutlet weak var label: UILabel!
     

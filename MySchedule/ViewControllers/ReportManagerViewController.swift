@@ -39,6 +39,7 @@ class ReportManagerViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func setupUI() {
+        
         self.view.backgroundColor = ColorScheme.pageBackgroundColor
         self.reportForButton.setTitleColor(ColorScheme.buttonTextColor, for: .normal)
         self.reportForButton.backgroundColor = ColorScheme.buttonColor

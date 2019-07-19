@@ -10,9 +10,9 @@ import UIKit
 
 class WeekCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var activityNameLabel: UILabel!
-    
     @IBOutlet weak var activityParticipantLabel: UILabel!
-     var baseColor:UIColor = UIColor.gray
+    
+     var baseColor:UIColor = ColorScheme.cellColor
     
     override func awakeFromNib() {
         super.awakeFromNib()
