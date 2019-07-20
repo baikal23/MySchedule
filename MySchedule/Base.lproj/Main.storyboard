@@ -64,14 +64,27 @@
                                     <action selector="goButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTe-Sg-jjT"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDQ-PC-gtP">
+                                <rect key="frame" x="224" y="688" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="hhR-nw-VoY"/>
+                                    <constraint firstAttribute="width" constant="320" id="l0v-em-lnK"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AB2-k2-fc1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="P96-N1-bSQ"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="sDQ-PC-gtP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="02P-DF-f9S"/>
                             <constraint firstItem="iWQ-La-Qix" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="179" id="04J-Re-1JW"/>
                             <constraint firstItem="t6I-L3-UZ6" firstAttribute="top" secondItem="czh-5a-PrO" secondAttribute="bottom" constant="20" id="9Am-Fx-pjC"/>
                             <constraint firstItem="czh-5a-PrO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="CED-te-BBT"/>
                             <constraint firstItem="t6I-L3-UZ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ChE-Vm-Cwg"/>
                             <constraint firstItem="czh-5a-PrO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GEf-Jx-iNQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sDQ-PC-gtP" secondAttribute="bottom" constant="120" id="Lyd-59-GSK"/>
                             <constraint firstItem="61f-SE-qt2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YLL-4c-Vle"/>
                             <constraint firstItem="FVW-SA-MaQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eOe-zp-p7O"/>
                             <constraint firstItem="iWQ-La-Qix" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="179" id="hez-Ev-QO8"/>
@@ -86,6 +99,7 @@
                         <outlet property="letsGoButton" destination="iWQ-La-Qix" id="sfn-Oh-B61"/>
                         <outlet property="passwordTextField" destination="FVW-SA-MaQ" id="Kw9-qq-OCn"/>
                         <outlet property="userTextField" destination="61f-SE-qt2" id="qMp-Il-XiP"/>
+                        <outlet property="weekPickerView" destination="sDQ-PC-gtP" id="8sg-07-XlG"/>
                         <segue destination="jNz-TU-wOB" kind="show" identifier="adminSegue" id="YjQ-z3-J4y"/>
                         <segue destination="wHO-Rs-qxL" kind="show" identifier="signUpSegue" id="Jub-9x-r7z"/>
                     </connections>

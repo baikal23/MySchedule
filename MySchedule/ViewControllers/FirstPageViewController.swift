@@ -8,8 +8,13 @@
 
 import UIKit
 
-class FirstPageViewController: UIViewController, UITextFieldDelegate {
-
+class FirstPageViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
+    var weekPickerData:[String] = []
+    var mondayDate:Date = Date()
+    var currentWeek:Week!
+    
+    @IBOutlet weak var weekPickerView: UIPickerView!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var letsGoButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,6 +26,10 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.isEnabled = false
         userTextField.delegate = self
         passwordTextField.delegate = self
+        weekPickerView.delegate = self
+        weekPickerView.dataSource = self
+        weekPickerData = CalendarDays.getNextMondays()
+        self.pickerView(self.weekPickerView, didSelectRow: 0, inComponent: 0)
         // Do any additional setup after loading the view.
         self.setupUI()
     }
@@ -72,8 +81,33 @@ class FirstPageViewController: UIViewController, UITextFieldDelegate {
             let destinationVC = destinationNv.viewControllers[0] as! SignUpCollectionViewController
             let participant = Participants.getParticipantWithName(userTextField.text!)
             destinationVC.participant = participant
+            destinationVC.currentWeek = currentWeek
         }
         
     }
+    //MARK: PickerView Methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return weekPickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return weekPickerData[row]
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        mondayDate = CalendarDays.dateFromString(weekPickerData[row])
+        print ("Date is \(mondayDate)")
+        // try this here - it works
+        let date = mondayDate
+        currentWeek = Week.getWeekOf(date)
+    }
+    
 
 }

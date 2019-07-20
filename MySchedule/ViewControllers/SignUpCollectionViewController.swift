@@ -24,8 +24,9 @@ class SignUpCollectionViewController: UICollectionViewController, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         currentBlock = self.verifyBlock(theBlock: currentBlock)
-        let lastMonday = CalendarDays.getLastMonday()
-        currentWeek = Week.getWeekOf(lastMonday)
+        //let lastMonday = CalendarDays.getLastMonday()
+       // currentWeek = Week.getWeekOf(lastMonday)
+        print("Current week is \(currentWeek.dateStamp)")
         self.getItemsToDisplay()
         self.collectionView.allowsMultipleSelection = true
         self.setupUI()
