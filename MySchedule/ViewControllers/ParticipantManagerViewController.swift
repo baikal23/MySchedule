@@ -68,9 +68,21 @@ class ParticipantManagerViewController: UIViewController, UITableViewDelegate, U
             self.present(alert, animated: true, completion: nil)
             return
         }
-        Participants.addParticipant(participant: currentParticipant)
         self.participants = Participants.getParticipants()
-        self.tableView.reloadData()
+        for person in participants {
+            if person.name == currentParticipant.name {
+                let alert = UIAlertController(title: "Alert", message: "That person is already registered", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            } else {
+                Participants.addParticipant(participant: currentParticipant)
+                self.participants = Participants.getParticipants()
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     @IBAction func printSchedulePressed(_ sender: Any) {

@@ -44,7 +44,7 @@
 // more layout work - BIG FONT for nav bar - done in AppDelegate
 // back to default font color and size in ParticipantManager collectionView
 // added date picker to FirstPageVC and reset the date chooser to start with current week (wea earlier for testing)
-
+// cannot double register the same participant
 import UIKit
 
 @UIApplicationMain

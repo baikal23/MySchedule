@@ -37,6 +37,7 @@ class FirstPageViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
         passwordTextField.isHidden = true
         passwordTextField.isEnabled = false
         userTextField.text = ""
+        passwordTextField.text = "password"
     }
     func setupUI() {
         self.navigationController?.navigationBar.tintColor = ColorScheme.backButtonColor
