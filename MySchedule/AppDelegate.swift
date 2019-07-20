@@ -41,7 +41,7 @@
 // aded ScrollView to ActivityManagerVC
 // updated layouts and added admin password
 // started playing with setupUI for colors - must have alpha = 1 for view background color
-// more layout work - NEED BIG FONT for nav bar
+// more layout work - NEED BIG FONT for nav bar - done in AppDelegate
 
 import UIKit
 
@@ -53,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let customFont = barButtonFont // from Constants.swift
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : customFont], for: .normal)
         return true
     }
 

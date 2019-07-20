@@ -38,6 +38,7 @@ let pdfPageSize = CGSize(width: pdfPageWidth, height: pdfPageHeight)
 let pdfMargin = Double(100.0)
 let pdfFont = UIFont.systemFont(ofSize: 24.0)
 let cellFont = UIFont.systemFont(ofSize: 32.0)
+let barButtonFont = UIFont.boldSystemFont(ofSize: 32.0)
 
 let cornerRadius = CGFloat(10.0)
 let borderWidth = CGFloat(1.0)
